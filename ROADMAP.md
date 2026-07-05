@@ -19,7 +19,16 @@
 - [x] Internal design-system preview page
 - [x] STYLEGUIDE.md and DECISIONS.md updates
 
-## Phase 3 — Homepage & core pages
+## Phase 3 — Intellectual content architecture (complete)
+
+- [x] Research Program page structure
+- [x] Projects index with flagship / infrastructure groupings
+- [x] Project detail template (`/projects/[slug]`)
+- [x] Digital Scholarship & Research Infrastructure page
+- [x] Expanded typed content model
+- [x] Reusable research and project components
+
+## Phase 4 — Homepage & remaining pages
 
 - [ ] Homepage: hero, research themes, current research questions, featured projects
 - [ ] Research Program page with Current Book Project feature

@@ -10,7 +10,7 @@ export const researchThemes: ResearchTheme[] = [
   {
     id: "authoritarianism",
     number: "02",
-    title: "Authoritarianism & Aesthetics",
+    title: "Authoritarianism, Crisis & Cultural Production",
     description: "Theme description pending.",
   },
   {
@@ -28,7 +28,7 @@ export const researchThemes: ResearchTheme[] = [
   {
     id: "public-humanities",
     number: "05",
-    title: "Public Humanities",
+    title: "Public Humanities & Democratic Resilience",
     description: "Theme description pending.",
   },
 ];

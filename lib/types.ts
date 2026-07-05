@@ -17,9 +17,7 @@ export interface SiteConfig {
 }
 
 export interface NavItem {
-  /** Full label — pages, footer, mobile nav */
   label: string;
-  /** Shorter label for desktop header when needed */
   shortLabel?: string;
   href: string;
   external?: boolean;
@@ -37,18 +35,80 @@ export interface ResearchQuestion {
   question: LocalizedString;
 }
 
-export type ProjectTier = "flagship" | "applied" | "book";
+export interface ResearchProgramContent {
+  positioningStatement: LocalizedString;
+  researchVision: LocalizedString;
+  futureDirections: LocalizedString;
+  bookProject: {
+    title: LocalizedString;
+    subtitle: LocalizedString;
+    summary: LocalizedString;
+    status: ProjectStatus;
+    slug: string;
+  };
+}
 
+export type ProjectTier = "flagship" | "infrastructure";
+
+export type ProjectStatus =
+  | "active"
+  | "in-development"
+  | "planned"
+  | "beta"
+  | "prototype"
+  | "placeholder";
+
+export interface ProjectLink {
+  label: LocalizedString;
+  url: string;
+  external?: boolean;
+}
+
+/** Summary fields for index cards and detail hero */
 export interface Project {
   slug: string;
   title: LocalizedString;
+  subtitle: LocalizedString;
   tier: ProjectTier;
   category: LocalizedString;
-  tagline: LocalizedString;
   summary: LocalizedString;
-  status: "active" | "in-development" | "planned" | "placeholder";
+  status: ProjectStatus;
+  role: LocalizedString;
+  collaborators: LocalizedString[];
+  tags: string[];
+  image?: string;
   featured?: boolean;
-  externalUrl?: string;
+}
+
+/** Full project detail — extends summary with narrative sections */
+export interface ProjectDetail extends Project {
+  problem: LocalizedString;
+  whyItMatters: LocalizedString;
+  researchQuestions: LocalizedString[];
+  methodology: LocalizedString;
+  technologies: string[];
+  outcomes: LocalizedString[];
+  relatedPublicationIds: string[];
+  relatedCourseIds: string[];
+  relatedPublicHumanitiesIds: string[];
+  links: ProjectLink[];
+}
+
+export interface InfrastructureStage {
+  id: string;
+  label: LocalizedString;
+  description: LocalizedString;
+}
+
+export interface DigitalScholarshipContent {
+  intro: LocalizedString;
+  evolution: InfrastructureStage[];
+  philosophy: LocalizedString;
+  infrastructure: LocalizedString;
+  digitalMethods: LocalizedString;
+  ethicalAI: LocalizedString;
+  openScholarship: LocalizedString;
+  futureDirections: LocalizedString;
 }
 
 export interface Publication {

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/Container";
-import { PageHeader } from "@/components/editorial/PageHeader";
+import { ProjectDetailTemplate } from "@/components/projects/ProjectDetailTemplate";
 import { getProjectBySlug, projects } from "@/content/projects";
 
 interface ProjectPageProps {
@@ -15,7 +15,10 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return { title: "Project not found" };
-  return { title: project.title };
+  return {
+    title: project.title,
+    description: project.summary,
+  };
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -25,15 +28,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <Container className="py-12 md:py-16">
-      <PageHeader
-        kicker={project.category}
-        title={project.title}
-        description={project.tagline}
-      />
-      <p className="text-ink-muted">{project.summary}</p>
-      <p className="mt-4 text-sm text-ink-muted">
-        Full project page content pending (Phase 2).
-      </p>
+      <ProjectDetailTemplate project={project} />
     </Container>
   );
 }

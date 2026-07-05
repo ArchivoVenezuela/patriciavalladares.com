@@ -1,35 +1,74 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
-import { bookProject } from "@/content/projects";
-import { researchThemes } from "@/content/themes";
+import { ResearchQuestion } from "@/components/research/ResearchQuestion";
+import { ResearchTheme } from "@/components/research/ResearchTheme";
+import { researchProgram } from "@/content/research";
+import { researchQuestions, researchThemes } from "@/content/themes";
 
 export const metadata = { title: "Research Program" };
 
 export default function ResearchPage() {
+  const { bookProject } = researchProgram;
+
   return (
     <Container className="py-12 md:py-16">
       <PageHeader
         kicker="Research Program"
         title="Research Program"
-        description="Research program overview pending."
+        description={researchProgram.positioningStatement}
+        folioLabel="Research — 01"
       />
-      <Section kicker="Themes" title="Lines of inquiry">
-        <ul className="space-y-6">
-          {researchThemes.map((theme) => (
-            <li key={theme.id} className="border-b border-border pb-6">
-              <span className="font-display text-sm text-gold">{theme.number}</span>
-              <h3 className="mt-1 font-display text-xl text-ink">{theme.title}</h3>
-              <p className="mt-2 text-ink-muted">{theme.description}</p>
-            </li>
-          ))}
-        </ul>
+
+      <Section kicker="Vision" title="Research vision" number="01">
+        <p className="max-w-3xl text-ink-muted leading-relaxed">
+          {researchProgram.researchVision}
+        </p>
       </Section>
-      {bookProject && (
-        <Section kicker="Monograph" title={bookProject.title}>
-          <p className="text-ink-muted">{bookProject.summary}</p>
-        </Section>
-      )}
+
+      <Section kicker="Themes" title="Research themes" number="02">
+        <div className="space-y-2">
+          {researchThemes.map((theme) => (
+            <ResearchTheme key={theme.id} theme={theme} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        kicker="Inquiry"
+        title="Current research questions"
+        number="03"
+      >
+        <div className="space-y-8 max-w-3xl">
+          {researchQuestions.map((item, index) => (
+            <ResearchQuestion key={item.id} item={item} index={index + 1} />
+          ))}
+        </div>
+      </Section>
+
+      <Section kicker="Monograph" title={bookProject.title} number="04">
+        <p className="max-w-3xl text-lg italic text-ink-muted">
+          {bookProject.subtitle}
+        </p>
+        <p className="mt-4 max-w-3xl text-ink-muted leading-relaxed">
+          {bookProject.summary}
+        </p>
+        <p className="mt-6">
+          <Link
+            href={`/projects/${bookProject.slug}`}
+            className="text-link"
+          >
+            View book project →
+          </Link>
+        </p>
+      </Section>
+
+      <Section kicker="Horizon" title="Future directions" number="05">
+        <p className="max-w-3xl text-ink-muted leading-relaxed">
+          {researchProgram.futureDirections}
+        </p>
+      </Section>
     </Container>
   );
 }

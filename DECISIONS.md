@@ -255,3 +255,86 @@ The pairing already supports the archival-editorial direction. Changing fonts mi
 ### Status
 
 Accepted
+
+---
+
+## 2026-07-05 — Phase 3 project tier model
+
+### Decision
+
+Reorganize projects into `flagship` and `infrastructure` tiers. FieldScholar and Current Book Project are flagship; MARACAS, AREPA, and AVOCADO are supporting infrastructure.
+
+### Why
+
+Aligns with Phase 3 intellectual architecture: six flagship initiatives define the research identity; workflow tools support them without competing for narrative prominence.
+
+### Alternatives considered
+
+- Previous model: FieldScholar as applied tool, book under Research Program only
+- Flat list without tiers
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — ProjectDetail content model
+
+### Decision
+
+Extend `Project` with full `ProjectDetail` fields (problem, methodology, outcomes, related content IDs) in a single `content/projects.ts` file. Pages consume structured objects via `ProjectDetailTemplate`.
+
+### Why
+
+Avoids hard-coded JSX blocks, supports static generation, and prepares for bilingual expansion without a CMS.
+
+### Alternatives considered
+
+- Separate JSON files per project
+- Markdown files per project
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Homepage deferred to Phase 4
+
+### Decision
+
+Build core intellectual pages (Research Program, Projects, Digital Scholarship) before the homepage curated entry point.
+
+### Why
+
+The homepage should synthesize existing content architecture rather than precede it. Reduces placeholder duplication and ensures consistent narrative.
+
+### Alternatives considered
+
+- Homepage first (original roadmap)
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Digital Scholarship evolution timeline
+
+### Decision
+
+Present the archives → metadata → multilingual → infrastructure → AI trajectory as a semantic ordered list (`EvolutionTimeline`), not animation or diagram-heavy UI.
+
+### Why
+
+Accessible, printable, intellectually clear. Reinforces AI as terminal extension of humanities infrastructure without tech-branding visuals.
+
+### Alternatives considered
+
+- Mermaid/flowchart diagram
+- Animated pipeline graphic
+
+### Status
+
+Accepted
