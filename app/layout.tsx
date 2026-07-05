@@ -1,41 +1,44 @@
 import type { Metadata } from "next";
-import { Fraunces, Work_Sans } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Newsreader } from "next/font/google";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { siteConfig } from "@/content/site";
+import { personJsonLd, websiteJsonLd } from "@/lib/seo/jsonld";
+import { rootMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
+  display: "swap",
+  axes: ["opsz"],
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  metadataBase: new URL(siteConfig.url),
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang={siteConfig.locale}
-      className={`${fraunces.variable} ${workSans.variable} h-full`}
+      lang="en"
+      className={`${newsreader.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} h-full`}
     >
       <body className="flex min-h-full flex-col antialiased">
+        <JsonLd data={[personJsonLd(), websiteJsonLd()]} />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

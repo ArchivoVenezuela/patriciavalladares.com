@@ -133,6 +133,9 @@ export const articles: Publication[] = [
   },
 ];
 
+export const homeBooks = books.filter((b) => b.featured);
+export const homeArticles = articles.filter((a) => a.featured).slice(0, 4);
+
 export const featuredPublications: Publication[] = [
   ...books.filter((b) => b.featured),
   ...articles.filter((a) => a.featured),

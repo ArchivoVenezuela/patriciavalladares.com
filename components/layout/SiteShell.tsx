@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
@@ -6,16 +9,19 @@ interface SiteShellProps {
 }
 
 export function SiteShell({ children }: SiteShellProps) {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <>
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-      <Header />
+      {!isHome && <Header />}
       <main id="main-content" className="flex-1">
         {children}
       </main>
-      <Footer />
+      {!isHome && <Footer />}
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       <PageHeader
         kicker="Projects"
         title="Projects"
-        description="Flagship research projects and supporting infrastructure for multilingual knowledge infrastructures. Placeholder summaries throughout."
+        description="Flagship research projects and applied platforms supporting multilingual knowledge infrastructures."
         folioLabel="Projects — 01"
       />
 
@@ -28,14 +28,14 @@ export default function ProjectsPage() {
       </Section>
 
       <Section
-        kicker="Infrastructure"
-        title="Supporting Infrastructure"
+        kicker="Platforms"
+        title="Applied Platforms & Tools"
         number="02"
       >
         <p className="mb-8 max-w-2xl text-sm text-ink-muted">
           Archival workflow tools and utilities that support flagship projects.
-          Presented as supporting infrastructure, not headline research
-          initiatives.
+          Presented as applied platforms and supporting infrastructure, not
+          headline research initiatives.
         </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {infrastructureProjects.map((project) => (

@@ -1,0 +1,15 @@
+export const colors = {
+  paper: "#F2EEE4",
+  paperLight: "#FAF7F0",
+  paperDrawer: "#EDE8DC",
+  ink: "#26241F",
+  inkMuted: "#6E685E",
+  inkBody: "#4A463E",
+  oxblood: "#611F1B",
+  forest: "#17251C",
+  forestMuted: "#2C3A2E",
+  gold: "#9A7434",
+  goldLight: "#C3A878",
+  cream: "#E9E4D6",
+  creamMuted: "#B9C2B4",
+} as const;

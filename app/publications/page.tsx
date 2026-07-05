@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { BookCard } from "@/components/content/BookCard";
 import { PublicationEntry } from "@/components/content/PublicationEntry";
+import { PublicationsFilter } from "@/components/content/PublicationsFilter";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 import {
@@ -23,7 +24,7 @@ export default function PublicationsPage() {
       />
 
       <Section kicker="Featured" title="Featured Publications" number="01">
-        <div className="space-y-4 max-w-3xl">
+        <div className="max-w-3xl space-y-4">
           {featuredPublications.map((pub) => (
             <PublicationEntry key={pub.id} publication={pub} />
           ))}
@@ -39,7 +40,7 @@ export default function PublicationsPage() {
       </Section>
 
       <Section kicker="Articles" title="Selected Articles" number="03">
-        <div className="space-y-4 max-w-3xl">
+        <div className="max-w-3xl space-y-4">
           {selectedArticles.map((pub) => (
             <PublicationEntry key={pub.id} publication={pub} />
           ))}
@@ -47,11 +48,7 @@ export default function PublicationsPage() {
       </Section>
 
       <Section kicker="Complete" title="Complete Publications" number="04">
-        <div className="space-y-4 max-w-3xl">
-          {allPublications.map((pub) => (
-            <PublicationEntry key={pub.id} publication={pub} />
-          ))}
-        </div>
+        <PublicationsFilter publications={allPublications} />
       </Section>
     </Container>
   );

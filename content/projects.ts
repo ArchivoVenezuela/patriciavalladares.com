@@ -149,7 +149,7 @@ export const projects: ProjectDetail[] = [
     slug: "fieldscholar",
     title: "FieldScholar",
     subtitle: "Fieldwork annotation and research capture",
-    tier: "flagship",
+    tier: "infrastructure",
     category: "Applied Platform",
     summary:
       "A mobile research companion for capturing, annotating, and organizing field notes and interviews—with offline capability and export to qualitative analysis workflows.",
@@ -181,9 +181,9 @@ export const projects: ProjectDetail[] = [
   },
   {
     slug: "current-book-project",
-    title: "Current Book Project",
-    subtitle: "Diasporic cultural memory and narrative resistance (working title)",
-    tier: "flagship",
+    title: "Archiving the Present",
+    subtitle: "Monograph · in development",
+    tier: "infrastructure",
     category: "Monograph in Progress",
     summary:
       "A monograph examining Venezuelan diasporic fiction and film as sites of gendered displacement, narrative resistance, and reimagined belonging.",
@@ -284,8 +284,17 @@ export const projects: ProjectDetail[] = [
   },
 ];
 
-export const flagshipProjects = projects.filter((p) => p.tier === "flagship");
-export const infrastructureProjects = projects.filter((p) => p.tier === "infrastructure");
+export const flagshipProjects = projects.filter((p) =>
+  [
+    "archivo-venezuela",
+    "archivo-studio",
+    "graduate-certificate-applied-dh",
+    "ai-lab-humanities",
+  ].includes(p.slug),
+);
+export const infrastructureProjects = projects.filter((p) =>
+  ["fieldscholar", "maracas", "arepa", "avocado"].includes(p.slug),
+);
 export const appliedProjects = infrastructureProjects;
 export const bookProject = projects.find((p) => p.slug === "current-book-project");
 export const featuredHomeProjects = flagshipProjects.filter((p) =>

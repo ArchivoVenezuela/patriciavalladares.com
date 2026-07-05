@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body { margin: 0; background: #F2EEE4; color: #26241F; font-family: 'Newsreader', Georgia, serif; }
+  ::selection { background: #611F1B; color: #F2EEE4; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  a { color: inherit; }
+  @keyframes flowdash { to { stroke-dashoffset: -400; } }
+  @keyframes hairgrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background:#F2EEE4;">
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:14px clamp(20px,4vw,56px); background:rgba(242,238,228,0.9); backdrop-filter:blur(8px); border-bottom:1px solid rgba(38,36,31,0.14);">
+    <a href="#top" style="text-decoration:none; display:flex; flex-direction:column; gap:2px;">
+      <span style="font-family:'Newsreader',serif; font-size:19px; font-weight:500; letter-spacing:0.01em; color:#26241F;">Patricia&nbsp;Valladares-Ruiz</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.34em; text-transform:uppercase; color:#9A7434;">Research&nbsp;Program</span>
+    </a>
+    <nav style="display:flex; align-items:center; gap:clamp(12px,1.8vw,26px); font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase;">
+      <a data-navlink="instruments" href="#instruments" style="text-decoration:none; color:#6E685E; opacity:0.7; transition:color .3s,opacity .3s;">Instruments</a>
+      <a data-navlink="archive" href="#archive" style="text-decoration:none; color:#6E685E; opacity:0.7; transition:color .3s,opacity .3s;">Archive</a>
+      <a data-navlink="migration" href="#migration" style="text-decoration:none; color:#6E685E; opacity:0.7; transition:color .3s,opacity .3s;">Migration</a>
+      <a data-navlink="ai" href="#ai" style="text-decoration:none; color:#6E685E; opacity:0.7; transition:color .3s,opacity .3s;">Critical&nbsp;AI</a>
+      <a data-navlink="index" href="#index" style="text-decoration:none; color:#6E685E; opacity:0.7; transition:color .3s,opacity .3s;">Index</a>
+      <a data-navlink="about" href="#about" style="text-decoration:none; color:#6E685E; opacity:0.7; transition:color .3s,opacity .3s;">About</a>
+      <a data-navlink="contact" href="#contact" style="text-decoration:none; color:#26241F; border:1px solid rgba(38,36,31,0.4); padding:6px 12px; border-radius:1px;">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════ 00 · MASTHEAD ═══════════ -->
+  <section id="top" data-section="hero" style="scroll-margin-top:80px; min-height:calc(100vh - 58px); display:flex; flex-direction:column; justify-content:space-between; padding:clamp(30px,5vh,52px) clamp(20px,4vw,56px) clamp(28px,4vh,44px); border-bottom:1px solid rgba(38,36,31,0.14);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434;">
+      <span>Pl.&nbsp;00 — Masthead</span>
+      <span style="color:#6E685E;">One question · seven instruments</span>
+    </div>
+    <div style="max-width:1300px; width:100%; margin:0 auto;">
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#611F1B; margin:0 0 clamp(18px,3vh,30px);">The central question</p>
+      <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(40px,7vw,116px); line-height:0.99; letter-spacing:-0.02em; margin:0; max-width:19ch; text-wrap:balance;">
+        What survives when institutions <span style="font-style:italic; color:#17251C;">collapse</span>, communities <span style="font-style:italic; color:#17251C;">migrate</span>, and machines decide what is <span style="font-style:italic; color:#611F1B;">seen?</span>
+      </h1>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; border-top:1px solid rgba(38,36,31,0.14); padding-top:20px;">
+      <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.5; color:#4A463E; margin:0; max-width:44ch;">A research program preserving endangered cultural knowledge — where the archive, not the algorithm, is the protagonist.</p>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#9A7434;">↓ &nbsp;Scroll to enter</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ INTERLUDE A · pull quote ═══════════ -->
+  <section data-section="interludeA" style="padding:clamp(80px,16vh,200px) clamp(20px,4vw,56px); text-align:center; border-bottom:1px solid rgba(38,36,31,0.14);">
+    <div data-reveal style="max-width:20ch; margin:0 auto;">
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434; margin:0 0 34px;">Interlude</p>
+      <p style="font-family:'Newsreader',serif; font-weight:300; font-style:italic; font-size:clamp(28px,4.6vw,64px); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#17251C;">To preserve is to make a decision about the future.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 01 · INSTRUMENTS — interactive knowledge graph ═══════════ -->
+  <section id="instruments" data-section="instruments" style="scroll-margin-top:0; background:#17251C; color:#E9E4D6; padding:clamp(56px,9vh,120px) clamp(20px,4vw,56px);">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:clamp(28px,4vh,48px);">
+        <div>
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#C3A878; margin:0 0 14px;">Fig. 01 — The Ecosystem</p>
+          <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(30px,4vw,58px); line-height:1.02; letter-spacing:-0.02em; margin:0; color:#F2EEE4;">One question,<br>seven instruments.</h2>
+        </div>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.12em; color:#8FA08E; max-width:30ch; line-height:1.9;">Hover a node. Not separate projects — a single living infrastructure.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:minmax(0,1.9fr) minmax(240px,0.9fr); gap:clamp(20px,3vw,52px); align-items:center;">
+        <div style="width:100%;">
+          <svg viewBox="0 0 900 560" width="100%" style="display:block; overflow:visible;" font-family="'IBM Plex Mono', monospace">
+            <g data-edges stroke="#4A5A4C" stroke-width="1">
+              <line data-edge="archive" x1="450" y1="280" x2="450" y2="110"></line>
+              <line data-edge="studio" x1="450" y1="280" x2="720" y2="180"></line>
+              <line data-edge="book" x1="450" y1="280" x2="770" y2="360"></line>
+              <line data-edge="ailab" x1="450" y1="280" x2="560" y2="490"></line>
+              <line data-edge="cert" x1="450" y1="280" x2="340" y2="490"></line>
+              <line data-edge="counter" x1="450" y1="280" x2="130" y2="360"></line>
+              <line data-edge="migration" x1="450" y1="280" x2="180" y2="180"></line>
+            </g>
+            <g stroke="#33402F" stroke-width="1" stroke-dasharray="2 6">
+              <line x1="450" y1="110" x2="720" y2="180"></line>
+              <line x1="720" y1="180" x2="770" y2="360"></line>
+              <line x1="770" y1="360" x2="560" y2="490"></line>
+              <line x1="560" y1="490" x2="340" y2="490"></line>
+              <line x1="340" y1="490" x2="130" y2="360"></line>
+              <line x1="130" y1="360" x2="180" y2="180"></line>
+              <line x1="180" y1="180" x2="450" y2="110"></line>
+            </g>
+            <g data-node="center" tabindex="0" style="cursor:default; outline:none;">
+              <circle cx="450" cy="280" r="70" fill="#101A13" stroke="#C3A878" stroke-width="1.5"></circle>
+              <text x="450" y="274" text-anchor="middle" fill="#F2EEE4" font-size="12" letter-spacing="1">CULTURAL</text>
+              <text x="450" y="291" text-anchor="middle" fill="#F2EEE4" font-size="12" letter-spacing="1">KNOWLEDGE</text>
+              <text x="450" y="309" text-anchor="middle" fill="#C3A878" font-size="9">the question</text>
+            </g>
+            <g data-node="archive" tabindex="0" style="cursor:pointer; outline:none;">
+              <circle cx="450" cy="110" r="32" fill="#2C3A2E" stroke="#5C6B5E"></circle>
+              <text x="450" y="107" text-anchor="middle" fill="#E9E4D6" font-size="9.5">ARCHIVO</text>
+              <text x="450" y="119" text-anchor="middle" fill="#E9E4D6" font-size="9.5">VENEZUELA</text>
+            </g>
+            <g data-node="studio" tabindex="0" style="cursor:pointer; outline:none;">
+              <circle cx="720" cy="180" r="32" fill="#2C3A2E" stroke="#5C6B5E"></circle>
+              <text x="720" y="177" text-anchor="middle" fill="#E9E4D6" font-size="9.5">ARCHIVO</text>
+              <text x="720" y="189" text-anchor="middle" fill="#E9E4D6" font-size="9.5">STUDIO</text>
+            </g>
+            <g data-node="book" tabindex="0" style="cursor:pointer; outline:none;">
+              <circle cx="770" cy="360" r="32" fill="#2C3A2E" stroke="#5C6B5E"></circle>
+              <text x="770" y="357" text-anchor="middle" fill="#E9E4D6" font-size="9.5">THE</text>
+              <text x="770" y="369" text-anchor="middle" fill="#E9E4D6" font-size="9.5">BOOK</text>
+            </g>
+            <g data-node="ailab" tabindex="0" style="cursor:pointer; outline:none;">
+              <circle cx="560" cy="490" r="32" fill="#2C3A2E" stroke="#5C6B5E"></circle>
+              <text x="560" y="487" text-anchor="middle" fill="#E9E4D6" font-size="9.5">AI</text>
+              <text x="560" y="499" text-anchor="middle" fill="#E9E4D6" font-size="9.5">LAB</text>
+            </g>
+            <g data-node="cert" tabindex="0" style="cursor:pointer; outline:none;">
+              <circle cx="340" cy="490" r="32" fill="#2C3A2E" stroke="#5C6B5E"></circle>
+              <text x="340" y="487" text-anchor="middle" fill="#E9E4D6" font-size="9">GRAD.</text>
+              <text x="340" y="499" text-anchor="middle" fill="#E9E4D6" font-size="9">CERT.</text>
+            </g>
+            <g data-node="counter" tabindex="0" style="cursor:pointer; outline:none;">
+              <circle cx="130" cy="360" r="32" fill="#3A2A2A" stroke="#8A5A54"></circle>
+              <text x="130" y="357" text-anchor="middle" fill="#E9E4D6" font-size="9">COUNTER-</text>
+              <text x="130" y="369" text-anchor="middle" fill="#E9E4D6" font-size="9">ARCHIVE</text>
+            </g>
+            <g data-node="migration" tabindex="0" style="cursor:pointer; outline:none;">
+              <circle cx="180" cy="180" r="32" fill="#3A2A2A" stroke="#8A5A54"></circle>
+              <text x="180" y="177" text-anchor="middle" fill="#E9E4D6" font-size="9.5">MIGRA-</text>
+              <text x="180" y="189" text-anchor="middle" fill="#E9E4D6" font-size="9.5">TION</text>
+            </g>
+          </svg>
+        </div>
+        <div style="border-left:1px solid rgba(233,228,214,0.2); padding-left:clamp(18px,2vw,30px); min-height:180px;">
+          <div data-graph-index style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#C3A878; margin-bottom:16px;">The question</div>
+          <h3 data-graph-title style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(24px,2.6vw,34px); line-height:1.08; margin:0 0 16px; color:#F2EEE4;">Cultural knowledge</h3>
+          <p data-graph-text style="font-size:16px; line-height:1.6; color:#B9C2B4; margin:0; max-width:34ch;">What survives when institutions collapse, communities migrate, and machines decide what is seen?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 02 · ARCHIVE — collection explorer ═══════════ -->
+  <section id="archive" data-section="archive" style="scroll-margin-top:70px; padding:clamp(56px,9vh,120px) clamp(20px,4vw,56px); border-bottom:1px solid rgba(38,36,31,0.14);">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(24px,4vw,64px); align-items:end; margin-bottom:clamp(36px,5vh,60px);">
+        <div>
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434; margin:0 0 14px;">Pl. 01 — The Flagship Archive</p>
+          <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(32px,4.4vw,62px); line-height:1.0; letter-spacing:-0.02em; margin:0;">Archivo Venezuela</h2>
+        </div>
+        <p style="font-size:clamp(16px,1.5vw,20px); line-height:1.5; color:#4A463E; margin:0; max-width:40ch;">A nation's record, gathered from a diaspora spread across three continents. Open the drawer — every object carries its journey.</p>
+      </div>
+
+      <!-- inline stat strip -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); border-top:2px solid #26241F; border-bottom:1px solid rgba(38,36,31,0.16); margin-bottom:clamp(32px,5vh,52px);">
+        <div style="padding:18px 16px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'Newsreader',serif; font-size:clamp(28px,3vw,40px); line-height:1; color:#611F1B;">14,200</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#6E685E; margin-top:8px;">Records</div></div>
+        <div style="padding:18px 16px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'Newsreader',serif; font-size:clamp(28px,3vw,40px); line-height:1; color:#17251C;">40+</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#6E685E; margin-top:8px;">Collections</div></div>
+        <div style="padding:18px 16px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'Newsreader',serif; font-size:clamp(28px,3vw,40px); line-height:1; color:#17251C;">3</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#6E685E; margin-top:8px;">Continents</div></div>
+        <div style="padding:18px 16px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'Newsreader',serif; font-size:clamp(28px,3vw,40px); line-height:1; color:#17251C;">6</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#6E685E; margin-top:8px;">Partners</div></div>
+        <div style="padding:18px 16px;"><div style="font-family:'Newsreader',serif; font-size:clamp(28px,3vw,40px); line-height:1; color:#611F1B;">1998</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#6E685E; margin-top:8px;">Earliest · ongoing</div></div>
+      </div>
+
+      <!-- explorer -->
+      <div data-reveal style="display:grid; grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr); gap:clamp(24px,4vw,52px); align-items:start;">
+        <div>
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9A7434; margin:0 0 16px;">The drawer — select a specimen</p>
+          <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px;">
+            <button data-specimen="0" aria-label="Specimen AV-1998-0417" style="cursor:pointer; padding:0; aspect-ratio:3/4; background:#EDE8DC; background-image:repeating-linear-gradient(135deg, rgba(110,104,94,0.15) 0 1px, transparent 1px 12px); border:1px solid #26241F; position:relative;"><span style="position:absolute; left:6px; bottom:6px; font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:0.06em; color:#6E685E;">1998</span></button>
+            <button data-specimen="1" aria-label="Specimen AV-2004-1130" style="cursor:pointer; padding:0; aspect-ratio:3/4; background:#EDE8DC; background-image:repeating-linear-gradient(135deg, rgba(110,104,94,0.15) 0 1px, transparent 1px 12px); border:1px solid rgba(38,36,31,0.25); position:relative;"><span style="position:absolute; left:6px; bottom:6px; font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:0.06em; color:#6E685E;">2004</span></button>
+            <button data-specimen="2" aria-label="Specimen AV-2011-0022" style="cursor:pointer; padding:0; aspect-ratio:3/4; background:#EDE8DC; background-image:repeating-linear-gradient(135deg, rgba(110,104,94,0.15) 0 1px, transparent 1px 12px); border:1px solid rgba(38,36,31,0.25); position:relative;"><span style="position:absolute; left:6px; bottom:6px; font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:0.06em; color:#6E685E;">2011</span></button>
+            <button data-specimen="3" aria-label="Specimen AV-2017-0555" style="cursor:pointer; padding:0; aspect-ratio:3/4; background:#EDE8DC; background-image:repeating-linear-gradient(135deg, rgba(110,104,94,0.15) 0 1px, transparent 1px 12px); border:1px solid rgba(38,36,31,0.25); position:relative;"><span style="position:absolute; left:6px; bottom:6px; font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:0.06em; color:#6E685E;">2017</span></button>
+            <button data-specimen="4" aria-label="Specimen AV-2020-0810" style="cursor:pointer; padding:0; aspect-ratio:3/4; background:#EDE8DC; background-image:repeating-linear-gradient(135deg, rgba(110,104,94,0.15) 0 1px, transparent 1px 12px); border:1px solid rgba(38,36,31,0.25); position:relative;"><span style="position:absolute; left:6px; bottom:6px; font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:0.06em; color:#6E685E;">2020</span></button>
+          </div>
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.1em; color:#6E685E; margin:16px 0 0; line-height:1.7;">Five of 14,200. Periodicals · oral testimony · posters · photographs · born-digital records.</p>
+        </div>
+        <!-- catalog record -->
+        <div style="background:#FAF7F0; border:1px solid #26241F; padding:0;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#F2EEE4; background:#17251C; padding:10px 18px;">Catalog record</div>
+          <div style="padding:20px 20px 22px;">
+            <div data-sp-id style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#611F1B; margin-bottom:12px;">AV-1998-0417</div>
+            <h4 data-sp-title style="font-family:'Newsreader',serif; font-style:italic; font-weight:400; font-size:22px; line-height:1.2; margin:0 0 16px; color:#26241F;">Boletín del exilio, no. 12</h4>
+            <div data-sp-meta style="font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:2; color:#4A463E; border-top:1px solid rgba(38,36,31,0.16); padding-top:12px;"></div>
+            <p data-sp-note style="font-family:'Newsreader',serif; font-style:italic; font-size:16px; line-height:1.5; color:#17251C; margin:16px 0 0; border-top:1px solid rgba(38,36,31,0.16); padding-top:14px;">Staples rusted through. We scanned it the afternoon it arrived.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ INTERLUDE B · MIGRATION MAP ═══════════ -->
+  <section id="migration" data-section="migration" style="scroll-margin-top:0; background:#211F1A; color:#E9E4D6; padding:clamp(56px,9vh,120px) clamp(20px,4vw,56px); overflow:hidden;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:clamp(24px,3vh,40px);">
+        <div>
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#C3A878; margin:0 0 14px;">Fig. 02 — Dispersal</p>
+          <h2 style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(28px,4vw,56px); line-height:1.05; letter-spacing:-0.015em; margin:0; color:#F2EEE4;">Memory travels<br>with its people.</h2>
+        </div>
+        <div style="text-align:right;">
+          <div data-map-city style="font-family:'Newsreader',serif; font-size:clamp(20px,2.4vw,30px); color:#C3A878; line-height:1.1;">Caracas</div>
+          <div data-map-count style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#8A857A; margin-top:6px;">Point of origin</div>
+        </div>
+      </div>
+      <div data-reveal style="width:100%;">
+        <svg viewBox="0 0 1000 480" width="100%" style="display:block; overflow:visible;" font-family="'IBM Plex Mono', monospace">
+          <g data-flowgroup fill="none" stroke="#7A6A4A" stroke-width="1.4" stroke-dasharray="3 7">
+            <path data-flow d="M250 250 Q200 200 150 330"></path>
+            <path data-flow d="M250 250 Q290 105 330 140"></path>
+            <path data-flow d="M250 250 Q505 90 760 150"></path>
+            <path data-flow d="M250 250 Q475 120 700 210"></path>
+            <path data-flow d="M250 250 Q230 360 300 430"></path>
+            <path data-flow d="M250 250 Q320 380 420 440"></path>
+          </g>
+          <!-- origin -->
+          <g data-city="origin" data-name="Caracas" data-count="Point of origin" style="cursor:default;">
+            <circle cx="250" cy="250" r="8" fill="#C3A878"></circle>
+            <circle cx="250" cy="250" r="15" fill="none" stroke="#C3A878" stroke-width="1" opacity="0.5"></circle>
+            <text x="250" y="234" text-anchor="middle" fill="#E9E4D6" font-size="11" letter-spacing="0.5">CARACAS</text>
+          </g>
+          <!-- destinations -->
+          <g data-city="dest" data-name="Bogotá" data-count="14 collections" style="cursor:pointer;"><circle cx="150" cy="330" r="6" fill="#8FA08E"></circle><text x="150" y="352" text-anchor="middle" fill="#9AA398" font-size="10">BOGOTÁ</text></g>
+          <g data-city="dest" data-name="Miami" data-count="22 collections" style="cursor:pointer;"><circle cx="330" cy="140" r="6" fill="#8FA08E"></circle><text x="330" y="128" text-anchor="middle" fill="#9AA398" font-size="10">MIAMI</text></g>
+          <g data-city="dest" data-name="Madrid" data-count="18 collections" style="cursor:pointer;"><circle cx="760" cy="150" r="6" fill="#8FA08E"></circle><text x="760" y="138" text-anchor="middle" fill="#9AA398" font-size="10">MADRID</text></g>
+          <g data-city="dest" data-name="Lisboa" data-count="9 collections" style="cursor:pointer;"><circle cx="700" cy="210" r="6" fill="#8FA08E"></circle><text x="700" y="230" text-anchor="middle" fill="#9AA398" font-size="10">LISBOA</text></g>
+          <g data-city="dest" data-name="Santiago" data-count="11 collections" style="cursor:pointer;"><circle cx="300" cy="430" r="6" fill="#8FA08E"></circle><text x="300" y="452" text-anchor="middle" fill="#9AA398" font-size="10">SANTIAGO</text></g>
+          <g data-city="dest" data-name="Buenos Aires" data-count="13 collections" style="cursor:pointer;"><circle cx="420" cy="440" r="6" fill="#8FA08E"></circle><text x="420" y="462" text-anchor="middle" fill="#9AA398" font-size="10">BUENOS AIRES</text></g>
+        </svg>
+      </div>
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; color:#8A857A; margin:clamp(16px,3vh,28px) 0 0; max-width:56ch; line-height:1.8;">Each line is a collection carried out of the country by hand, by phone, by memory — then described and reconnected in the archive. Hover a city.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 03 · CRITICAL AI — machine vs community ═══════════ -->
+  <section id="ai" data-section="ai" style="scroll-margin-top:70px; padding:clamp(56px,9vh,120px) clamp(20px,4vw,56px); border-bottom:1px solid rgba(38,36,31,0.14); background:#FAF7F0;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="max-width:60ch; margin-bottom:clamp(32px,5vh,52px);">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434; margin:0 0 14px;">Fig. 03 — Critical AI</p>
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(30px,4vw,56px); line-height:1.03; letter-spacing:-0.02em; margin:0 0 16px;">The same object, read two ways.</h2>
+        <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.55; color:#4A463E; margin:0;">A machine classifies what it can measure. A community knows what it means. The gap between them is where memory is lost.</p>
+      </div>
+
+      <div style="display:inline-flex; border:1px solid #26241F; margin-bottom:clamp(24px,4vh,40px); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase;">
+        <button data-ai="machine" style="cursor:pointer; padding:10px 18px; border:none; background:#26241F; color:#F2EEE4;">Machine reading</button>
+        <button data-ai="community" style="cursor:pointer; padding:10px 18px; border:none; background:transparent; color:#26241F;">Community reading</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:minmax(0,0.85fr) minmax(0,1fr) minmax(0,1fr); gap:clamp(18px,2.5vw,36px); align-items:stretch;">
+        <!-- object -->
+        <div style="position:relative; background:#EDE8DC; background-image:repeating-linear-gradient(135deg, rgba(110,104,94,0.15) 0 1px, transparent 1px 13px); border:1px solid #26241F; min-height:280px; display:flex; flex-direction:column; justify-content:space-between; padding:16px;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#611F1B;">AV-2017-0555</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#6E685E; line-height:1.6;">[ photograph ]<br>Caracas, 2017</span>
+        </div>
+        <!-- machine col -->
+        <div data-aicol="machine" style="border:1px solid rgba(38,36,31,0.4); padding:22px; transition:opacity .4s; background:#F2EEE4;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#6E685E; margin-bottom:16px; display:flex; justify-content:space-between;"><span>Machine reading</span><span style="color:#9A7434;">conf. 0.71</span></div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 10px; border:1px solid rgba(38,36,31,0.3); color:#4A463E;">crowd</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 10px; border:1px solid rgba(38,36,31,0.3); color:#4A463E;">street</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 10px; border:1px solid rgba(38,36,31,0.3); color:#4A463E;">daytime</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 10px; border:1px solid rgba(38,36,31,0.3); color:#4A463E;">people · 40+</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 10px; border:1px solid rgba(38,36,31,0.3); color:#4A463E;">urban area</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 10px; border:1px solid rgba(38,36,31,0.3); color:#4A463E;">event</span>
+          </div>
+          <p style="font-size:15px; line-height:1.55; color:#6E685E; margin:0; font-style:italic;">Classified as “public gathering.” No date beyond EXIF. No names. No reason.</p>
+        </div>
+        <!-- community col -->
+        <div data-aicol="community" style="border:1px solid #17251C; padding:22px; transition:opacity .4s; background:#17251C; color:#E9E4D6;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#C3A878; margin-bottom:16px;">Community reading</div>
+          <p style="font-family:'Newsreader',serif; font-size:clamp(17px,1.6vw,21px); line-height:1.5; color:#F2EEE4; margin:0 0 16px;">A <span style="font-style:italic;">vigil</span>, not a riot. The candles are cropped out. The banner names the disappeared.</p>
+          <p style="font-size:14px; line-height:1.6; color:#B9C2B4; margin:0;">Photographed by a participant, later exiled. The image left the country on a phone. What the model reads as “crowd,” a mother reads as her son.</p>
+        </div>
+      </div>
+      <p data-ai-caption style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#611F1B; margin:clamp(20px,3vh,32px) 0 0;">→ &nbsp;What the machine cannot see is precisely what the archive exists to keep.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 04 · INDEX OF INSTRUMENTS — museum labels ═══════════ -->
+  <section id="index" data-section="index" style="scroll-margin-top:70px; padding:clamp(56px,9vh,120px) clamp(20px,4vw,56px); border-bottom:1px solid rgba(38,36,31,0.14);">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="margin-bottom:clamp(32px,5vh,52px);">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434; margin:0 0 14px;">Pl. 02 — Index of Instruments</p>
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(30px,4vw,56px); line-height:1.03; letter-spacing:-0.02em; margin:0;">Object labels</h2>
+      </div>
+      <div data-reveal>
+        <div style="display:grid; grid-template-columns:56px minmax(0,1.4fr) minmax(0,1.6fr) auto; gap:clamp(14px,2.5vw,36px); align-items:baseline; padding:24px 0; border-top:1px solid rgba(38,36,31,0.2);">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#611F1B;">01</span>
+          <div><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(22px,2.4vw,32px); line-height:1.1; margin:0;">Archivo Venezuela</h3><p style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#9A7434; margin:6px 0 0;">Digital archive · 1998–present</p></div>
+          <p style="font-size:15px; line-height:1.5; color:#6E685E; margin:0; max-width:44ch;">The founding case. A dispersed nation's record, made legible and public.</p>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#6E685E; white-space:nowrap;">Counter-Archive · Migration</span>
+        </div>
+        <div style="display:grid; grid-template-columns:56px minmax(0,1.4fr) minmax(0,1.6fr) auto; gap:clamp(14px,2.5vw,36px); align-items:baseline; padding:24px 0; border-top:1px solid rgba(38,36,31,0.2);">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#26241F;">02</span>
+          <div><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(22px,2.4vw,32px); line-height:1.1; margin:0;">Archivo Studio</h3><p style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#9A7434; margin:6px 0 0;">Methods studio</p></div>
+          <p style="font-size:15px; line-height:1.5; color:#6E685E; margin:0; max-width:44ch;">Where metadata standards, protocols, and interfaces are designed.</p>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#6E685E; white-space:nowrap;">Infrastructures</span>
+        </div>
+        <div style="display:grid; grid-template-columns:56px minmax(0,1.4fr) minmax(0,1.6fr) auto; gap:clamp(14px,2.5vw,36px); align-items:baseline; padding:24px 0; border-top:1px solid rgba(38,36,31,0.2);">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#26241F;">03</span>
+          <div><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(22px,2.4vw,32px); line-height:1.1; margin:0;"><span style="font-style:italic;">Archiving the Present</span></h3><p style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#9A7434; margin:6px 0 0;">Monograph · in press 2026</p></div>
+          <p style="font-size:15px; line-height:1.5; color:#6E685E; margin:0; max-width:44ch;">The argument in long form. Part history, part manifesto, part field manual.</p>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#6E685E; white-space:nowrap;">Cultural Memory</span>
+        </div>
+        <div style="display:grid; grid-template-columns:56px minmax(0,1.4fr) minmax(0,1.6fr) auto; gap:clamp(14px,2.5vw,36px); align-items:baseline; padding:24px 0; border-top:1px solid rgba(38,36,31,0.2);">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#26241F;">04</span>
+          <div><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(22px,2.4vw,32px); line-height:1.1; margin:0;">Applied DH Certificate</h3><p style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#9A7434; margin:6px 0 0;">Graduate program · since 2020</p></div>
+          <p style="font-size:15px; line-height:1.5; color:#6E685E; margin:0; max-width:44ch;">Training the next generation to build and steward, not only to critique.</p>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#6E685E; white-space:nowrap;">Public Humanities</span>
+        </div>
+        <div style="display:grid; grid-template-columns:56px minmax(0,1.4fr) minmax(0,1.6fr) auto; gap:clamp(14px,2.5vw,36px); align-items:baseline; padding:24px 0; border-top:1px solid rgba(38,36,31,0.2); border-bottom:1px solid rgba(38,36,31,0.2);">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#611F1B;">05</span>
+          <div><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(22px,2.4vw,32px); line-height:1.1; margin:0;">AI Lab</h3><p style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#9A7434; margin:6px 0 0;">Laboratory · since 2023</p></div>
+          <p style="font-size:15px; line-height:1.5; color:#6E685E; margin:0; max-width:44ch;">Testing how machines describe culture — and building humane alternatives.</p>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#6E685E; white-space:nowrap;">Critical AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ INTERLUDE C · TIMELINE ═══════════ -->
+  <section data-section="timeline" style="padding:clamp(56px,9vh,120px) clamp(20px,4vw,56px); border-bottom:1px solid rgba(38,36,31,0.14); background:#FAF7F0;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434; margin:0 0 clamp(28px,4vh,44px);">Fig. 04 — Chronology of a program</p>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); border-top:2px solid #26241F;">
+        <div style="padding:22px 16px 24px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#611F1B; margin-bottom:12px;">1998</div><div style="font-family:'Newsreader',serif; font-size:17px; line-height:1.25;">First rescue</div><p style="font-size:13px; line-height:1.5; color:#6E685E; margin:8px 0 0;">A single collection digitized before it was lost.</p></div>
+        <div style="padding:22px 16px 24px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#26241F; margin-bottom:12px;">2013</div><div style="font-family:'Newsreader',serif; font-size:17px; line-height:1.25;">Studio founded</div><p style="font-size:13px; line-height:1.5; color:#6E685E; margin:8px 0 0;">Rescue becomes method and standard.</p></div>
+        <div style="padding:22px 16px 24px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#26241F; margin-bottom:12px;">2017</div><div style="font-family:'Newsreader',serif; font-size:17px; line-height:1.25;">Diaspora network</div><p style="font-size:13px; line-height:1.5; color:#6E685E; margin:8px 0 0;">Communities become collaborators across continents.</p></div>
+        <div style="padding:22px 16px 24px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#26241F; margin-bottom:12px;">2020</div><div style="font-family:'Newsreader',serif; font-size:17px; line-height:1.25;">Certificate launches</div><p style="font-size:13px; line-height:1.5; color:#6E685E; margin:8px 0 0;">The practice becomes a curriculum.</p></div>
+        <div style="padding:22px 16px 24px; border-right:1px solid rgba(38,36,31,0.14);"><div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#26241F; margin-bottom:12px;">2023</div><div style="font-family:'Newsreader',serif; font-size:17px; line-height:1.25;">AI Lab</div><p style="font-size:13px; line-height:1.5; color:#6E685E; margin:8px 0 0;">The program turns to face the machine.</p></div>
+        <div style="padding:22px 16px 24px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#611F1B; margin-bottom:12px;">2026</div><div style="font-family:'Newsreader',serif; font-size:17px; line-height:1.25;"><span style="font-style:italic;">The book</span></div><p style="font-size:13px; line-height:1.5; color:#6E685E; margin:8px 0 0;">Two decades distilled into one argument.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 05 · PUBLICATIONS ═══════════ -->
+  <section id="publications" data-section="publications" style="scroll-margin-top:70px; padding:clamp(56px,9vh,120px) clamp(20px,4vw,56px); border-bottom:1px solid rgba(38,36,31,0.14);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434; margin:0 0 clamp(28px,4vh,44px);">Pl. 03 — Selected writing</p>
+      <div data-reveal>
+        <div style="display:grid; grid-template-columns:60px 1fr auto; gap:clamp(14px,2.5vw,32px); align-items:baseline; padding:20px 0; border-top:1px solid rgba(38,36,31,0.2);"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#611F1B;">2026</span><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(18px,1.9vw,24px); line-height:1.25; margin:0;"><span style="font-style:italic;">Archiving the Present: Memory, Migration, and the Machine</span></h3><span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#9A7434;">Book</span></div>
+        <div style="display:grid; grid-template-columns:60px 1fr auto; gap:clamp(14px,2.5vw,32px); align-items:baseline; padding:20px 0; border-top:1px solid rgba(38,36,31,0.2);"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#26241F;">2025</span><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(18px,1.9vw,24px); line-height:1.25; margin:0;">“The Counter-Archive as Method”</h3><span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#9A7434;">Article</span></div>
+        <div style="display:grid; grid-template-columns:60px 1fr auto; gap:clamp(14px,2.5vw,32px); align-items:baseline; padding:20px 0; border-top:1px solid rgba(38,36,31,0.2);"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#26241F;">2024</span><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(18px,1.9vw,24px); line-height:1.25; margin:0;">“What the Model Cannot See: Machine Description and the Colonial Record”</h3><span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#9A7434;">Article</span></div>
+        <div style="display:grid; grid-template-columns:60px 1fr auto; gap:clamp(14px,2.5vw,32px); align-items:baseline; padding:20px 0; border-top:1px solid rgba(38,36,31,0.2); border-bottom:1px solid rgba(38,36,31,0.2);"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#26241F;">2022</span><h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(18px,1.9vw,24px); line-height:1.25; margin:0;">“Infrastructures of Return: Building Archives for the Displaced”</h3><span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#9A7434;">Chapter</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 06 · THE SCHOLAR THROUGH THE WORK ═══════════ -->
+  <section id="about" data-section="about" style="scroll-margin-top:70px; padding:clamp(64px,11vh,150px) clamp(20px,4vw,56px); border-bottom:1px solid rgba(38,36,31,0.14); background:#FAF7F0;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="max-width:26ch; margin-bottom:clamp(40px,7vh,80px);">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#9A7434; margin:0 0 24px;">Pl. 04 — The scholar, through the work</p>
+        <h2 style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(30px,4.6vw,64px); line-height:1.06; letter-spacing:-0.02em; margin:0; color:#26241F;">She does not appear here. <span style="font-style:italic; color:#611F1B;">Her questions do.</span></h2>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:0; border-top:2px solid #26241F;">
+        <div style="padding:26px 22px 30px; border-right:1px solid rgba(38,36,31,0.16); border-bottom:1px solid rgba(38,36,31,0.16);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A7434; margin-bottom:14px;">What she asks</div>
+          <p style="font-family:'Newsreader',serif; font-size:18px; line-height:1.4; margin:0; color:#26241F;">How does a culture remember itself once its institutions are gone?</p>
+        </div>
+        <div style="padding:26px 22px 30px; border-right:1px solid rgba(38,36,31,0.16); border-bottom:1px solid rgba(38,36,31,0.16);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A7434; margin-bottom:14px;">How she works</div>
+          <p style="font-size:15px; line-height:1.6; margin:0; color:#4A463E;">Archival, computational, and public — with communities as collaborators, never as subjects.</p>
+        </div>
+        <div style="padding:26px 22px 30px; border-right:1px solid rgba(38,36,31,0.16); border-bottom:1px solid rgba(38,36,31,0.16);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A7434; margin-bottom:14px;">Who she works with</div>
+          <p style="font-size:15px; line-height:1.6; margin:0; color:#4A463E;">Six partner institutions across the Americas and Europe; libraries, archives, and museums.</p>
+        </div>
+        <div style="padding:26px 22px 30px; border-bottom:1px solid rgba(38,36,31,0.16);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A7434; margin-bottom:14px;">What remains</div>
+          <p style="font-size:15px; line-height:1.6; margin:0; color:#4A463E;">Infrastructure others can use — an archive, a studio, a book, a curriculum, a lab.</p>
+        </div>
+      </div>
+      <p style="font-family:'Newsreader',serif; font-style:italic; font-size:clamp(17px,1.6vw,21px); line-height:1.55; color:#6E685E; margin:clamp(28px,4vh,44px) 0 0; max-width:60ch;">Patricia Valladares-Ruiz works at the intersection of the digital humanities and Latin American and Caribbean studies. For two decades she has treated the building of research infrastructure as a scholarly act in its own right.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER · CORRESPONDENCE ═══════════ -->
+  <footer id="contact" data-section="contact" style="scroll-margin-top:70px; background:#17251C; color:#E9E4D6; padding:clamp(64px,11vh,140px) clamp(20px,4vw,56px) clamp(36px,6vh,60px);">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:clamp(32px,5vw,68px); align-items:start;">
+        <div style="grid-column:1 / -1; max-width:22ch;">
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#C3A878; margin:0 0 22px;">Correspondence</p>
+          <h2 style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(34px,5.5vw,76px); line-height:1.0; letter-spacing:-0.02em; margin:0; color:#F2EEE4;">Write to the program.</h2>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.04em; line-height:2.1; color:#B9B2A2;">
+          <div style="color:#C3A878; text-transform:uppercase; letter-spacing:0.16em; font-size:9.5px; margin-bottom:10px;">Direct</div>
+          <a href="mailto:pvalladares@example.edu" style="color:#F2EEE4; text-decoration:none; border-bottom:1px solid rgba(233,228,214,0.3);">pvalladares@example.edu</a>
+          <div style="margin-top:8px;">By appointment · in person or remote</div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.04em; line-height:2.1; color:#B9B2A2;">
+          <div style="color:#C3A878; text-transform:uppercase; letter-spacing:0.16em; font-size:9.5px; margin-bottom:10px;">Inquiries from</div>
+          <div>Grant reviewers · Search committees</div>
+          <div>Libraries · Archives · Museums</div>
+          <div>Graduate students · Collaborators</div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.04em; line-height:2.1; color:#B9B2A2;">
+          <div style="color:#C3A878; text-transform:uppercase; letter-spacing:0.16em; font-size:9.5px; margin-bottom:10px;">Navigate</div>
+          <a href="#instruments" style="color:#B9B2A2; text-decoration:none; display:block;">Instruments</a>
+          <a href="#archive" style="color:#B9B2A2; text-decoration:none; display:block;">Archive</a>
+          <a href="#ai" style="color:#B9B2A2; text-decoration:none; display:block;">Critical AI</a>
+          <a href="#index" style="color:#B9B2A2; text-decoration:none; display:block;">Index</a>
+        </div>
+      </div>
+      <div style="margin-top:clamp(44px,8vh,84px); padding-top:24px; border-top:1px solid rgba(233,228,214,0.18); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#8A857A;">
+        <span>Patricia Valladares-Ruiz — Research Program</span>
+        <span>Set in Newsreader &amp; IBM Plex · © 2026</span>
+        <span>Preserving what institutions cannot</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---- scroll reveals (progressive) ---- */
+    if (!reduce && 'IntersectionObserver' in window) {
+      const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+      nodes.forEach(n => {
+        n.style.opacity = '0';
+        n.style.transform = 'translateY(16px)';
+        n.style.transition = 'opacity 0.9s cubic-bezier(0.2,0.6,0.2,1), transform 0.9s cubic-bezier(0.2,0.6,0.2,1)';
+      });
+      const io = new IntersectionObserver((es) => es.forEach(e => {
+        if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); }
+      }), { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      nodes.forEach(n => io.observe(n));
+    }
+
+    /* ---- nav active-section highlight ---- */
+    if ('IntersectionObserver' in window) {
+      const links = {};
+      document.querySelectorAll('[data-navlink]').forEach(l => { links[l.getAttribute('data-navlink')] = l; });
+      const dim = () => Object.keys(links).forEach(k => {
+        const l = links[k]; if (l.getAttribute('href') === '#contact') return;
+        l.style.color = '#6E685E'; l.style.opacity = '0.7';
+      });
+      const so = new IntersectionObserver((es) => es.forEach(e => {
+        if (e.isIntersecting) { const id = e.target.getAttribute('data-section'); if (links[id]) { dim(); links[id].style.color = '#26241F'; links[id].style.opacity = '1'; } }
+      }), { rootMargin: '-45% 0px -50% 0px' });
+      document.querySelectorAll('[data-section]').forEach(s => so.observe(s));
+    }
+
+    /* ---- interactive knowledge graph ---- */
+    (() => {
+      const info = {
+        center:   { i: 'The question', t: 'Cultural knowledge', d: 'What survives when institutions collapse, communities migrate, and machines decide what is seen?' },
+        archive:  { i: 'Ex. 01 · Archive', t: 'Archivo Venezuela', d: 'A nation\u2019s record, gathered from its diaspora across three continents.' },
+        studio:   { i: 'Ex. 02 · Studio', t: 'Archivo Studio', d: 'The workshop where description standards and interfaces are built.' },
+        book:     { i: 'Ex. 03 · Book', t: 'Archiving the Present', d: 'The program\u2019s argument in long form. In press, 2026.' },
+        cert:     { i: 'Ex. 04 · Teaching', t: 'Applied DH Certificate', d: 'A graduate curriculum that trains builders, not spectators.' },
+        ailab:    { i: 'Ex. 05 · Lab', t: 'AI Lab', d: 'Where the machine\u2019s account of culture is tested and rebuilt.' },
+        counter:  { i: 'Method', t: 'Counter-Archive', d: 'Memory recorded against the grain of the official record.' },
+        migration:{ i: 'Condition', t: 'Migration', d: 'What memory does when its people are dispersed.' },
+      };
+      const nodeEls = Array.from(document.querySelectorAll('[data-node]'));
+      const edgeEls = Array.from(document.querySelectorAll('[data-edge]'));
+      const idxEl = document.querySelector('[data-graph-index]');
+      const titleEl = document.querySelector('[data-graph-title]');
+      const textEl = document.querySelector('[data-graph-text]');
+      if (!nodeEls.length || !titleEl) return;
+      const paint = (key) => {
+        const d = info[key]; if (!d) return;
+        idxEl.textContent = d.i; titleEl.textContent = d.t; textEl.textContent = d.d;
+        nodeEls.forEach(n => { n.style.opacity = (key === 'center' || n.getAttribute('data-node') === key) ? '1' : '0.32'; n.style.transition = 'opacity .3s'; });
+        edgeEls.forEach(e => {
+          const on = e.getAttribute('data-edge') === key;
+          e.setAttribute('stroke', on ? '#C3A878' : '#4A5A4C');
+          e.setAttribute('stroke-width', on ? '2' : '1');
+        });
+      };
+      const reset = () => {
+        paint('center');
+        nodeEls.forEach(n => n.style.opacity = '1');
+        edgeEls.forEach(e => { e.setAttribute('stroke', '#4A5A4C'); e.setAttribute('stroke-width', '1'); });
+      };
+      nodeEls.forEach(n => {
+        const key = n.getAttribute('data-node');
+        n.addEventListener('mouseenter', () => paint(key));
+        n.addEventListener('focus', () => paint(key));
+      });
+      const svg = nodeEls[0].closest('svg');
+      if (svg) { svg.addEventListener('mouseleave', reset); }
+      reset();
+    })();
+
+    /* ---- collection explorer ---- */
+    (() => {
+      const specimens = [
+        { id: 'AV-1998-0417', title: 'Bolet\u00edn del exilio, no. 12', meta: [['Type', 'Periodical \u00b7 print \u2192 digital'], ['Origin', 'Caracas \u2192 Bogot\u00e1 \u2192 Miami'], ['Date', '1998'], ['Rights', 'Community stewardship']], note: 'Staples rusted through. We scanned it the afternoon it arrived.' },
+        { id: 'AV-2004-1130', title: 'Casete \u2014 testimonio oral', meta: [['Type', 'Audio \u00b7 90 min'], ['Origin', 'Maracaibo'], ['Date', '2004'], ['Rights', 'Restricted \u00b7 family consent']], note: 'The last recording of a voice now gone.' },
+        { id: 'AV-2011-0022', title: 'Cartel \u2014 marcha estudiantil', meta: [['Type', 'Poster \u00b7 offset'], ['Origin', 'Caracas'], ['Date', '2011'], ['Rights', 'Open access']], note: 'Folded eight times to fit a pocket across a border.' },
+        { id: 'AV-2017-0555', title: 'Fotograf\u00eda \u2014 vigilia', meta: [['Type', 'Photograph \u00b7 born-digital'], ['Origin', 'Caracas'], ['Date', '2017'], ['Rights', 'Photographer, in exile']], note: 'A vigil, not a riot. The candles are cropped out.' },
+        { id: 'AV-2020-0810', title: 'Hilo \u2014 archivo born-digital', meta: [['Type', 'Social media \u00b7 thread'], ['Origin', 'Diaspora'], ['Date', '2020'], ['Rights', 'Community capture']], note: 'Deleted by the platform; preserved by the community.' },
+      ];
+      const tiles = Array.from(document.querySelectorAll('[data-specimen]'));
+      const idEl = document.querySelector('[data-sp-id]');
+      const titleEl = document.querySelector('[data-sp-title]');
+      const metaEl = document.querySelector('[data-sp-meta]');
+      const noteEl = document.querySelector('[data-sp-note]');
+      if (!tiles.length || !idEl) return;
+      const show = (i) => {
+        const s = specimens[i]; if (!s) return;
+        idEl.textContent = s.id; titleEl.textContent = s.title; noteEl.textContent = s.note;
+        metaEl.innerHTML = s.meta.map(m => '<div><span style="color:#9A7434;">' + m[0] + '&nbsp;&nbsp;&nbsp;&nbsp;</span>' + m[1] + '</div>').join('');
+        tiles.forEach(t => { const on = +t.getAttribute('data-specimen') === i; t.style.borderColor = on ? '#611F1B' : 'rgba(38,36,31,0.25)'; t.style.borderWidth = on ? '2px' : '1px'; });
+      };
+      tiles.forEach(t => t.addEventListener('click', () => show(+t.getAttribute('data-specimen'))));
+      show(0);
+    })();
+
+    /* ---- migration map ---- */
+    (() => {
+      const cityEl = document.querySelector('[data-map-city]');
+      const countEl = document.querySelector('[data-map-count]');
+      const cities = Array.from(document.querySelectorAll('[data-city]'));
+      if (!reduce) {
+        document.querySelectorAll('[data-flow]').forEach((p, i) => {
+          p.style.animation = 'flowdash ' + (7 + i) + 's linear infinite';
+        });
+      }
+      cities.forEach(c => {
+        const set = () => { if (cityEl) cityEl.textContent = c.getAttribute('data-name'); if (countEl) countEl.textContent = c.getAttribute('data-count'); c.querySelectorAll('circle').forEach(ci => ci.setAttribute('fill', c.getAttribute('data-city') === 'dest' ? '#C3A878' : '#C3A878')); };
+        const clear = () => { c.querySelectorAll('circle').forEach(ci => { if (ci.getAttribute('r') === '6') ci.setAttribute('fill', '#8FA08E'); }); };
+        c.addEventListener('mouseenter', set);
+        c.addEventListener('mouseleave', clear);
+      });
+    })();
+
+    /* ---- critical AI reading toggle ---- */
+    (() => {
+      const btns = Array.from(document.querySelectorAll('[data-ai]'));
+      const cols = { machine: document.querySelector('[data-aicol="machine"]'), community: document.querySelector('[data-aicol="community"]') };
+      const cap = document.querySelector('[data-ai-caption]');
+      if (!btns.length) return;
+      const caps = {
+        machine: '\u2192  The machine sees measurements: a crowd, a street, a confidence score.',
+        community: '\u2192  What the machine cannot see is precisely what the archive exists to keep.',
+      };
+      const set = (mode) => {
+        Object.keys(cols).forEach(k => { if (cols[k]) cols[k].style.opacity = (k === mode) ? '1' : '0.32'; });
+        btns.forEach(b => { const on = b.getAttribute('data-ai') === mode; b.style.background = on ? '#26241F' : 'transparent'; b.style.color = on ? '#F2EEE4' : '#26241F'; });
+        if (cap) cap.textContent = caps[mode];
+      };
+      btns.forEach(b => b.addEventListener('click', () => set(b.getAttribute('data-ai'))));
+      set('machine');
+    })();
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

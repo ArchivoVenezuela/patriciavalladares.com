@@ -395,3 +395,66 @@ Each page contributes a distinct piece of the overall story; reduces redundancy 
 ### Status
 
 Accepted
+
+---
+
+## 2026-07-05 — Three-layer project model (Design · Content · Architecture)
+
+### Decision
+
+Treat three sources as authoritative with distinct responsibilities, merged at implementation time — never allowing one layer to overwrite another:
+
+1. **Claude Design prototype** — primary design authority (layout, composition, typography, interactions, visual rhythm).
+2. **Author draft** (`content/draft.ts`, from `Texto para la web.md`) — primary content authority (voice, claims, scholarly tone).
+3. **Approved website plan** — primary information architecture (navigation, section order, project grouping, research questions, page hierarchy).
+
+### Why
+
+A wireframe-style homepage was mistakenly substituted for the Claude Design homepage, replacing both the approved visual design and the author's draft text with generic marketing copy. This decision prevents silent layout replacement and documents the merge rule: Design + Content + Architecture = final site.
+
+### Alternatives considered
+
+- Plan wireframe as sole homepage spec (rejected — overwrites design)
+- Generic `content/themes.ts` copy as homepage text (rejected — overwrites author draft)
+- Design-only implementation without structural plan (rejected — loses IA requirements)
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Claude Design homepage restored
+
+### Decision
+
+Restore the Claude Design homepage (`Masthead` through `CorrespondenceFooter`) as the live `/` route. Integrate the approved **Current Research Questions** section (`CurrentResearchQuestions`) between `CriticalAI` and `InstrumentsIndex` without altering the prototype's visual language. Use `HomeHeader` + `CorrespondenceFooter` on the homepage; standard `Header`/`Footer` on interior pages.
+
+### Why
+
+The Claude Design prototype is the approved visual source of truth. The plan's research-questions requirement is structural and was added as a new section in the prototype's editorial rhythm — not as a replacement layout.
+
+### Alternatives considered
+
+- Plan wireframe homepage (`HomeHero`, `LinesOfInquiry`, etc.)
+- Dropping interactive sections (graph, archive drawer, migration map) for simplicity
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Interior pages use author draft where applicable
+
+### Decision
+
+Research Program page sources vision, themes, and book project copy from `content/draft.ts`. Approved structural elements (research questions, navigation labels, project tiers) come from the plan via `content/themes.ts` and filtered `content/projects.ts`.
+
+### Why
+
+Separates content authority (author draft) from architecture (plan) while preserving interior page structure required for search committees and grant reviewers.
+
+### Status
+
+Accepted
