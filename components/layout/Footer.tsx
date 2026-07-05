@@ -14,7 +14,9 @@ export function Footer() {
               {siteConfig.name}
             </p>
             <p className="mt-2 max-w-sm text-sm leading-relaxed text-paper/70">
-              Placeholder affiliation line pending.
+              {siteConfig.titleLine}
+              <br />
+              {siteConfig.affiliation}
             </p>
           </div>
           <nav aria-label="Footer navigation">

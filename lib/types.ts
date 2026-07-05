@@ -14,6 +14,10 @@ export interface SiteConfig {
   cvUrl: string;
   email: string;
   locale: string;
+  affiliation?: string;
+  department?: string;
+  titleLine?: string;
+  phone?: string;
 }
 
 export interface NavItem {
@@ -35,10 +39,17 @@ export interface ResearchQuestion {
   question: LocalizedString;
 }
 
+
+export interface PullQuote {
+  text: LocalizedString;
+  attribution?: LocalizedString;
+}
+
 export interface ResearchProgramContent {
   positioningStatement: LocalizedString;
   researchVision: LocalizedString;
   futureDirections: LocalizedString;
+  pullQuotes: PullQuote[];
   bookProject: {
     title: LocalizedString;
     subtitle: LocalizedString;
@@ -47,6 +58,38 @@ export interface ResearchProgramContent {
     slug: string;
   };
 }
+
+export interface HomePageContent {
+  hero: {
+    kicker: LocalizedString;
+    headline: LocalizedString;
+    statement: LocalizedString;
+  };
+  digitalScholarshipBand: {
+    title: LocalizedString;
+    summary: LocalizedString;
+  };
+  teachingTeaser: LocalizedString;
+  publicHumanitiesTeaser: LocalizedString;
+}
+
+export interface TeachingContent {
+  statement: LocalizedString;
+  mentorshipStatement: LocalizedString;
+  mentorship: {
+    dissertationsDirected: string;
+    dissertationCommittees: string;
+    presidentialFellows: string;
+    undergraduateInterns: string;
+  };
+  courses: Course[];
+}
+
+export interface ContactContent {
+  intro: LocalizedString;
+  officeNote?: LocalizedString;
+}
+
 
 export type ProjectTier = "flagship" | "infrastructure";
 
@@ -119,6 +162,8 @@ export interface Publication {
   year: string;
   type: "article" | "book" | "chapter" | "forthcoming";
   topic?: string;
+  pages?: string;
+  volume?: string;
   featured?: boolean;
   url?: string;
 }
@@ -126,6 +171,8 @@ export interface Publication {
 export interface Book extends Publication {
   type: "book";
   publisher: LocalizedString;
+  subtitle?: LocalizedString;
+  description?: LocalizedString;
   coverImage?: string;
 }
 
@@ -148,9 +195,12 @@ export interface NewsItem {
 export interface AboutContent {
   positioningStatement: LocalizedString;
   professionalIdentity: LocalizedString;
+  intellectualBiography: LocalizedString[];
+  epigraph?: { quote: LocalizedString; attribution?: LocalizedString };
   languages: {
     native: string[];
     fluent: string[];
+    intermediate?: string[];
     reading?: string[];
   };
   education: Array<{
@@ -166,4 +216,11 @@ export interface PublicHumanitiesItem {
   description: LocalizedString;
   year?: string;
   url?: string;
+}
+
+
+export interface PublicHumanitiesContent {
+  intro: LocalizedString;
+  statement: LocalizedString;
+  items: PublicHumanitiesItem[];
 }

@@ -338,3 +338,60 @@ Accessible, printable, intellectually clear. Reinforces AI as terminal extension
 ### Status
 
 Accepted
+
+---
+
+## 2026-07-05 — Homepage as curated entry point (Phase 4)
+
+### Decision
+
+Build the homepage after core intellectual pages, as a curated introduction (~1,200 words) linking to Research Program, Projects, Digital Scholarship, Publications, Teaching, Public Humanities, and Contact.
+
+### Why
+
+Avoids duplicating full narratives on the homepage; rewards exploration of distinct pages with non-repetitive content.
+
+### Alternatives considered
+
+- Homepage first with duplicated long-form copy
+- Single-page scroll site
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Digital Scholarship evolution sequence (Phase 4)
+
+### Decision
+
+Present evolution as: Archives → Knowledge Infrastructures → Multilingual Metadata → Public Humanities → AI (not metadata-first from Phase 3).
+
+### Why
+
+Aligns with approved Phase 4 narrative emphasizing public humanities before AI, keeping AI as terminal extension.
+
+### Alternatives considered
+
+- Phase 3 sequence ending with AI immediately after digital infrastructures
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Content distribution over verbatim narrative
+
+### Decision
+
+Extract ideas from the approved Research Program Narrative (Working Draft) and distribute across pages; no page copies the narrative verbatim.
+
+### Why
+
+Each page contributes a distinct piece of the overall story; reduces redundancy for search committees reading multiple sections.
+
+### Status
+
+Accepted

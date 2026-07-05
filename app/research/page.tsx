@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
+import { PullQuote } from "@/components/editorial/PullQuote";
 import { Section } from "@/components/editorial/Section";
 import { ResearchQuestion } from "@/components/research/ResearchQuestion";
 import { ResearchTheme } from "@/components/research/ResearchTheme";
@@ -22,9 +23,12 @@ export default function ResearchPage() {
       />
 
       <Section kicker="Vision" title="Research vision" number="01">
-        <p className="max-w-3xl text-ink-muted leading-relaxed">
+        <p className="max-w-3xl leading-relaxed text-ink-muted">
           {researchProgram.researchVision}
         </p>
+        {researchProgram.pullQuotes[0] && (
+          <PullQuote quote={researchProgram.pullQuotes[0]} />
+        )}
       </Section>
 
       <Section kicker="Themes" title="Research themes" number="02">
@@ -35,11 +39,7 @@ export default function ResearchPage() {
         </div>
       </Section>
 
-      <Section
-        kicker="Inquiry"
-        title="Current research questions"
-        number="03"
-      >
+      <Section kicker="Inquiry" title="Current research questions" number="03">
         <div className="space-y-8 max-w-3xl">
           {researchQuestions.map((item, index) => (
             <ResearchQuestion key={item.id} item={item} index={index + 1} />
@@ -51,21 +51,21 @@ export default function ResearchPage() {
         <p className="max-w-3xl text-lg italic text-ink-muted">
           {bookProject.subtitle}
         </p>
-        <p className="mt-4 max-w-3xl text-ink-muted leading-relaxed">
+        <p className="mt-4 max-w-3xl leading-relaxed text-ink-muted">
           {bookProject.summary}
         </p>
+        {researchProgram.pullQuotes[1] && (
+          <PullQuote quote={researchProgram.pullQuotes[1]} />
+        )}
         <p className="mt-6">
-          <Link
-            href={`/projects/${bookProject.slug}`}
-            className="text-link"
-          >
+          <Link href={`/projects/${bookProject.slug}`} className="text-link">
             View book project →
           </Link>
         </p>
       </Section>
 
       <Section kicker="Horizon" title="Future directions" number="05">
-        <p className="max-w-3xl text-ink-muted leading-relaxed">
+        <p className="max-w-3xl leading-relaxed text-ink-muted">
           {researchProgram.futureDirections}
         </p>
       </Section>

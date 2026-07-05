@@ -38,18 +38,20 @@ export function ProjectDetailTemplate({ project }: ProjectDetailTemplateProps) {
             <p>{project.whyItMatters}</p>
           </ProjectSection>
 
-          <ProjectSection title="Research questions" kicker="Inquiry">
-            <ul className="list-none space-y-4 pl-0">
-              {project.researchQuestions.map((q, i) => (
-                <li
-                  key={i}
-                  className="border-l-2 border-gold pl-4 font-display text-ink"
-                >
-                  {q}
-                </li>
-              ))}
-            </ul>
-          </ProjectSection>
+          {project.researchQuestions.length > 0 && (
+            <ProjectSection title="Research questions" kicker="Inquiry">
+              <ul className="list-none space-y-4 pl-0">
+                {project.researchQuestions.map((q, i) => (
+                  <li
+                    key={i}
+                    className="border-l-2 border-gold pl-4 font-display text-ink"
+                  >
+                    {q}
+                  </li>
+                ))}
+              </ul>
+            </ProjectSection>
+          )}
 
           <ProjectSection title="Methodology">
             <p>{project.methodology}</p>

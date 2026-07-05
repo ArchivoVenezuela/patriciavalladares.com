@@ -7,6 +7,33 @@
 - Structure all content for future bilingual (ES/EN) expansion
 - Flagship projects receive full narrative; infrastructure tools appear as supporting layer
 
+## Draft content status (Phase 4)
+
+| Area | Status | Notes |
+|------|--------|-------|
+| Homepage | Draft | Curated entry point; links to all core pages |
+| Research Program | Draft | Editorial sections, themes, questions, book project |
+| Projects (flagship) | Draft | First-draft narrative per project |
+| Projects (infrastructure) | Draft | Intentionally concise |
+| Digital Scholarship | Draft | Evolution timeline; AI subordinated |
+| Publications | Production data | Real books and articles from CV materials |
+| Teaching | Draft | Statement, mentorship, courses |
+| Public Humanities | Draft | Archivo Venezuela-centered |
+| About | Draft | Intellectual biography (~600 words) |
+| Contact | Draft | UC affiliation and email |
+
+### Still requires Patricia's input
+
+- [ ] Final editorial pass against Research Program Narrative (Working Draft) when shared in repo
+- [ ] Portrait and project images (`public/images/`)
+- [ ] CV PDF at `public/cv/Patricia_Valladares_CV_2025.pdf`
+- [ ] Google Scholar and ORCID URLs
+- [ ] Book project working title confirmation
+- [ ] Graduate Certificate official approval status
+- [ ] Verify mentorship counts and news dates
+- [ ] Complete publication list beyond prototype data
+- [ ] Spanish epigraph attribution on About page
+
 ## Page labels (use exactly)
 
 | Route | Visible label |
@@ -21,20 +48,9 @@
 | `/about` | About |
 | `/contact` | Contact |
 
-## Homepage (Phase 4 — not yet built)
+## Homepage (built — Phase 4)
 
-The homepage will be a curated entry point once core content pages are complete.
-
-Planned sections:
-
-1. Hero — positioning statement, portrait, CTAs
-2. Research themes — numbered editorial index
-3. Current Research Questions (three approved questions)
-4. Featured projects — flagship folio cards
-5. Digital Scholarship band — short narrative + CTA
-6. Selected publications — bibliography style
-7. Recent news
-8. Contact strip + CV download
+Curated entry point with ten sections: Hero, Research Questions, Themes, Featured Projects, Digital Scholarship band, Selected Publications, Teaching & Mentorship, Public Humanities, Recent News, Contact strip.
 
 ## Current Research Questions (approved)
 

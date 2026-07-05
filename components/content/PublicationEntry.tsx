@@ -10,7 +10,7 @@ export function PublicationEntry({
   publication,
   className,
 }: PublicationEntryProps) {
-  const { title, authors, venue, year, type, url } = publication;
+  const { title, authors, venue, year, type, url, volume, pages } = publication;
 
   const citation = (
     <>
@@ -18,7 +18,9 @@ export function PublicationEntry({
       {authors && <span className="text-ink-muted">. {authors}</span>}
       <span className="text-ink-muted">
         . <em>{venue}</em>
+        {volume && `, ${volume}`}
         {year !== "—" && ` (${year})`}
+        {pages && `, ${pages}`}
         {type === "forthcoming" && ". Forthcoming"}
         .
       </span>

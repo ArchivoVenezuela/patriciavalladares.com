@@ -1,9 +1,13 @@
 import { Container } from "@/components/layout/Container";
+import { BookCard } from "@/components/content/BookCard";
+import { PublicationEntry } from "@/components/content/PublicationEntry";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 import {
   allPublications,
+  books,
   featuredPublications,
+  selectedArticles,
 } from "@/content/publications";
 
 export const metadata = { title: "Publications" };
@@ -14,31 +18,40 @@ export default function PublicationsPage() {
       <PageHeader
         kicker="Publications"
         title="Publications"
-        description="Publication data pending."
+        description="Monographs and peer-reviewed scholarship on Latin American and Caribbean cultural production, migration, film, and diaspora studies."
+        folioLabel="Publications — 01"
       />
-      <Section kicker="Featured" title="Featured Publications">
-        <ul className="space-y-4">
+
+      <Section kicker="Featured" title="Featured Publications" number="01">
+        <div className="space-y-4 max-w-3xl">
           {featuredPublications.map((pub) => (
-            <li key={pub.id} className="border-b border-border pb-4">
-              <p className="font-display text-lg text-ink">{pub.title}</p>
-              <p className="text-sm text-ink-muted">
-                {pub.venue} ({pub.year})
-              </p>
-            </li>
+            <PublicationEntry key={pub.id} publication={pub} />
           ))}
-        </ul>
+        </div>
       </Section>
-      <Section kicker="Complete" title="All Publications">
-        <ul className="space-y-4">
-          {allPublications.map((pub) => (
-            <li key={pub.id}>
-              <p className="text-ink">{pub.title}</p>
-              <p className="text-sm text-ink-muted">
-                {pub.venue} ({pub.year})
-              </p>
-            </li>
+
+      <Section kicker="Monographs" title="Books" number="02">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {books.map((book) => (
+            <BookCard key={book.id} book={book} />
           ))}
-        </ul>
+        </div>
+      </Section>
+
+      <Section kicker="Articles" title="Selected Articles" number="03">
+        <div className="space-y-4 max-w-3xl">
+          {selectedArticles.map((pub) => (
+            <PublicationEntry key={pub.id} publication={pub} />
+          ))}
+        </div>
+      </Section>
+
+      <Section kicker="Complete" title="Complete Publications" number="04">
+        <div className="space-y-4 max-w-3xl">
+          {allPublications.map((pub) => (
+            <PublicationEntry key={pub.id} publication={pub} />
+          ))}
+        </div>
       </Section>
     </Container>
   );

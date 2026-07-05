@@ -1,54 +1,24 @@
 # Roadmap
 
 ## Phase 1 — Architecture & design foundation (complete)
-
-- [x] Next.js scaffold on local disk
-- [x] Documentation (PROJECT, DECISIONS, ROADMAP, CONTENT, ARCHITECTURE, STYLEGUIDE)
-- [x] Folder structure and placeholder routes
-- [x] Typed content scaffolding
-- [x] Design tokens and fonts
-- [x] Layout and editorial primitives
-- [x] Lint and build verification
-
 ## Phase 2 — Design system (complete)
-
-- [x] Refined Tailwind tokens and global CSS
-- [x] Layout components (Container, Header, Footer, SiteShell)
-- [x] Editorial primitives (Kicker, Rule, PageHeader, Section, FolioMarker, Epigraph, CatalogCaption)
-- [x] Content components (ProjectCard, ThemeIndexItem, PublicationEntry, NewsItem, BookCard)
-- [x] Internal design-system preview page
-- [x] STYLEGUIDE.md and DECISIONS.md updates
-
 ## Phase 3 — Intellectual content architecture (complete)
 
-- [x] Research Program page structure
-- [x] Projects index with flagship / infrastructure groupings
-- [x] Project detail template (`/projects/[slug]`)
-- [x] Digital Scholarship & Research Infrastructure page
-- [x] Expanded typed content model
-- [x] Reusable research and project components
+## Phase 4 — Content integration (complete)
 
-## Phase 4 — Homepage & remaining pages
+- [x] Homepage as curated entry point
+- [x] Research Program editorial draft
+- [x] Flagship and infrastructure project content
+- [x] Digital Scholarship narrative
+- [x] Publications with real citation data
+- [x] Teaching, Public Humanities, About, Contact drafts
 
-- [ ] Homepage: hero, research themes, current research questions, featured projects
-- [ ] Research Program page with Current Book Project feature
-- [ ] Projects index (Flagship + Applied Platforms groupings)
-- [ ] Project detail pages for six core projects
-- [ ] Digital Scholarship & Research Infrastructure narrative page
-
-## Phase 3 — Supporting pages & content
-
-- [ ] Publications (Featured + complete list with filters)
-- [ ] Teaching, Public Humanities, About, Contact
-- [ ] Populate content from approved copy and assets
-- [ ] CV download, portrait, project images
-
-## Phase 4 — Polish & deploy
+## Phase 5 — Polish, SEO & deploy
 
 - [ ] SEO: metadata, OpenGraph, JSON-LD, sitemap
 - [ ] Accessibility audit
+- [ ] Portrait, project images, CV PDF
 - [ ] Subtle Framer Motion (if approved)
-- [ ] shadcn/ui for mobile nav (if needed)
 - [ ] Vercel deployment
 - [ ] Lighthouse check
 
