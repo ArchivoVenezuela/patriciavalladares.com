@@ -2,64 +2,118 @@
 
 ## Visual identity
 
-Archival folio meets museum catalogue. Warm, credible, editorial — not a tech portfolio or generic faculty template.
+Archival folio meets museum catalogue meets academic publication. Warm, credible, editorial — intellectually serious and timeless. Not a tech portfolio, startup landing page, or generic faculty template.
+
+## Tone
+
+- Elegant and restrained
+- Warm paper, deep ink, quiet gold
+- Generous whitespace over decorative density
+- Numbered sections and catalogue details over card-grid clutter
+- Scholarly credibility over personal branding flash
 
 ## Color palette
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--color-paper` | `#faf6ef` | Page background |
-| `--color-ink` | `#1c1917` | Primary text |
-| `--color-ink-muted` | `#57534e` | Secondary text |
-| `--color-oxblood` | `#7c2d12` | Links, accents, CTAs |
-| `--color-gold` | `#a68b5b` | Rules, marginalia only — use sparingly |
-| `--color-surface` | `#ffffff` | Cards on paper |
-| `--color-border` | `#e7e0d4` | Dividers, borders |
+| `paper` | `#faf6ef` | Page background |
+| `surface` | `#ffffff` | Cards, panels on paper |
+| `ink` | `#1c1917` | Primary text, ink-band sections |
+| `ink-muted` | `#57534e` | Body secondary, descriptions |
+| `ink-faint` | `#78716c` | Dates, meta, catalogue labels |
+| `oxblood` | `#7c2d12` | Links, primary buttons, active nav |
+| `oxblood-hover` | `#9a3412` | Link/button hover |
+| `gold` | `#a68b5b` | Rules, folio markers, epigraph borders only |
+| `border` | `#e7e0d4` | Dividers, card borders |
+| `border-strong` | `#d6cfc3` | Emphasized borders, outline buttons |
 
-One dark "ink band" section per page maximum (Phase 2).
+**Rules:** One ink-band section per page maximum. Gold is never a primary CTA color.
 
 ## Typography
 
-| Role | Font | CSS variable |
-|------|------|--------------|
-| Display / headings | Fraunces | `--font-display` |
-| Body / UI | Work Sans | `--font-sans` |
+| Role | Font | Utility / variable |
+|------|------|-------------------|
+| Display / headings | Fraunces | `font-display`, `--text-display`, `--text-section` |
+| Body / UI | Work Sans | `font-sans`, default body |
 
 ### Scale
 
-- Display (h1): `clamp(2.25rem, 4vw, 3.5rem)`
-- Section (h2): `clamp(1.75rem, 3vw, 2.5rem)`
-- Subsection (h3): `1.25rem–1.5rem`
-- Body: `1rem`, line-height `1.7`
-- Kicker / label: `0.75rem`, small-caps, letter-spacing `0.12em`
-
-## Editorial devices
-
-- **Kicker** — small-caps label above section titles
-- **Rule** — thin horizontal line, gold or border color
-- **Numbered sections** — `01`, `02` in margins or before titles
-- **Catalogue captions** — small text under images (Phase 2)
-- **Hanging-indent citations** — publications list (Phase 2)
+| Element | Size |
+|---------|------|
+| Display (h1) | `clamp(2.25rem, 4vw, 3.5rem)` |
+| Section (h2) | `clamp(1.75rem, 3vw, 2.5rem)` |
+| Subsection (h3) | `1.25rem–1.5rem` |
+| Body | `1rem`, line-height `1.7` |
+| Kicker | `0.75rem`, `.text-kicker` |
 
 ## Spacing
 
-Generous whitespace. Section padding: `4rem–6rem` vertical on desktop, `3rem` on mobile. Max content width: `72rem` (1152px).
+| Token | Value | Usage |
+|-------|-------|-------|
+| `py-section` | `4rem` | Section vertical padding (mobile) |
+| `py-section-lg` | `6rem` | Section vertical padding (desktop) |
+| Container | `max-w-6xl` (72rem) | Default page width |
+| Container narrow | `max-w-3xl` | Prose, page headers |
 
-## Motion
+Horizontal padding: `1.5rem` (`px-6`) on all containers.
 
-None in Phase 1. Phase 4 may add subtle Framer Motion: fade-up on scroll, hero stagger. Always respect `prefers-reduced-motion`.
+## Component usage
+
+### Layout
+
+- `Container` — wraps all page content; use `narrow` for prose blocks
+- `SiteShell` — root layout wrapper with skip link, header, footer
+- `Header` — wordmark `P. Valladares-Ruiz`, nav, CV button
+- `Footer` — full nav labels, ink background
+
+### Editorial
+
+- `Kicker` — small-caps section label above titles
+- `Rule` — thin divider; `variant="gold"` for page headers only
+- `PageHeader` — top-of-page title block with optional folio marker
+- `Section` — numbered sections; `variant="ink"` for dark bands
+- `FolioMarker` — marginal catalogue page labels
+- `Epigraph` — quoted text with gold left rule
+- `CatalogCaption` — image catalogue entries
+
+### Content
+
+- `ProjectCard` — flagship/applied project preview
+- `ThemeIndexItem` — numbered research theme row
+- `PublicationEntry` — hanging-indent bibliography citation
+- `NewsItem` — dated ledger-style news row
+- `BookCard` — cover placeholder + catalogue caption
+
+## Links and buttons
+
+- Text links: `.text-link` (oxblood, understated underline)
+- Primary CTA: `.btn.btn-primary`
+- Secondary CTA: `.btn.btn-outline`
+- Do not use gold buttons
 
 ## Accessibility
 
-- WCAG AA contrast minimum
-- Visible focus states
-- Skip link to main content
-- Semantic landmarks (`header`, `main`, `footer`, `nav`)
-- Meaningful link text (no "click here")
+- WCAG AA contrast on all text/background pairs
+- `:focus-visible` oxblood outline on all interactive elements
+- Skip link (`.skip-link`) as first focusable element
+- `aria-current="page"` on active nav links
+- `aria-expanded` on mobile menu toggle
+- Semantic landmarks: `header`, `nav`, `main`, `footer`, `section`
+- Meaningful link text; no "click here"
+- `prefers-reduced-motion` disables scroll smoothing and transitions
 
-## Do not
+## What not to do
 
-- Use gold as a primary accent
-- Add dark mode toggle in v1
-- Use stock academic clipart or generic university imagery
-- Overuse borders, shadows, or card grids
+- Generic faculty photo + bullet CV layout
+- Startup hero with gradient blobs
+- Corporate consulting sans-serif minimalism
+- WordPress sidebar widgets aesthetic
+- AI/tech branding (neon, circuit patterns, robot icons)
+- Excessive shadows, rounded pills, card grids
+- Dark mode toggle in v1
+- Gold as primary accent or button fill
+- Decorative animation before content is finalized
+
+## Internal preview
+
+Visit `/design-system` during development to review all tokens and components. This route is excluded from search indexing and not linked in navigation.

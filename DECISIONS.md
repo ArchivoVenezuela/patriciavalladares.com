@@ -150,3 +150,108 @@ Fraunces offers editorial warmth with optical-size variation suited to folio-sty
 ### Status
 
 Accepted
+
+---
+
+## 2026-07-05 — Phase 2 color palette refinement
+
+### Decision
+
+Retain the Phase 1 palette with two additions: `--color-ink-faint` for tertiary text and `--color-oxblood-hover` for interactive states. No new accent colors.
+
+### Why
+
+Keeps the system simple while supporting catalogue captions, dates, and accessible hover contrast without introducing decorative color proliferation.
+
+### Alternatives considered
+
+- Expanding to a 12-step neutral scale
+- Adding a second accent (teal, navy)
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Header wordmark and compact nav labels
+
+### Decision
+
+Use "P. Valladares-Ruiz" as the header wordmark. Desktop header may use optional `shortLabel` for long nav items (e.g. "Digital Scholarship"); full labels remain on pages, footer, and mobile nav.
+
+### Why
+
+Preserves approved page title "Digital Scholarship & Research Infrastructure" while keeping the header readable on laptop viewports. Does not change routes or information architecture.
+
+### Alternatives considered
+
+- Full labels in desktop header (crowded)
+- Abbreviating page titles themselves
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Native mobile nav without shadcn/ui
+
+### Decision
+
+Implement responsive navigation with a client-side toggle button and panel. Defer shadcn/ui Sheet component.
+
+### Why
+
+A simple accessible toggle meets Phase 2 needs without adding component library dependencies, configuration, or CSS variable overrides.
+
+### Alternatives considered
+
+- shadcn/ui Sheet
+- CSS-only details/summary (limited aria-expanded control)
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — No animations in Phase 2
+
+### Decision
+
+Do not install Framer Motion or add scroll animations during the design-system phase.
+
+### Why
+
+Motion is deferred until page composition (Phase 3+) so typography, color, and component rhythm are established first. Respects `prefers-reduced-motion` in CSS from the start.
+
+### Alternatives considered
+
+- Subtle fade-up on all sections now
+- CSS-only transitions on every component
+
+### Status
+
+Accepted
+
+---
+
+## 2026-07-05 — Fraunces + Work Sans confirmed
+
+### Decision
+
+Keep Fraunces (display) and Work Sans (body/UI) from Phase 1. No font change.
+
+### Why
+
+The pairing already supports the archival-editorial direction. Changing fonts mid-foundation would delay Phase 3 without clear benefit.
+
+### Alternatives considered
+
+- Cormorant Garamond + Work Sans (Vite prototype)
+- Libre Baskerville + Source Sans 3
+
+### Status
+
+Accepted

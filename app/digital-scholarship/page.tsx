@@ -1,3 +1,4 @@
+import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 
@@ -7,7 +8,7 @@ export const metadata = {
 
 export default function DigitalScholarshipPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <Container className="py-12 md:py-16">
       <PageHeader
         kicker="Digital Scholarship & Research Infrastructure"
         title="Digital Scholarship & Research Infrastructure"
@@ -20,6 +21,6 @@ export default function DigitalScholarshipPage() {
           infrastructure, not engineering expertise.
         </p>
       </Section>
-    </div>
+    </Container>
   );
 }

@@ -1,9 +1,10 @@
+import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 
 export default function HomePage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <Container className="py-12 md:py-16">
       <PageHeader
         kicker="Home"
         title="Patricia Valladares-Ruiz"
@@ -15,6 +16,6 @@ export default function HomePage() {
           featured projects, publications, news) will be built in Phase 2.
         </p>
       </Section>
-    </div>
+    </Container>
   );
 }

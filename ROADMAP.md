@@ -1,16 +1,25 @@
 # Roadmap
 
-## Phase 1 — Architecture & design foundation (current)
+## Phase 1 — Architecture & design foundation (complete)
 
 - [x] Next.js scaffold on local disk
-- [ ] Documentation (PROJECT, DECISIONS, ROADMAP, CONTENT, ARCHITECTURE, STYLEGUIDE)
-- [ ] Folder structure and placeholder routes
-- [ ] Typed content scaffolding
-- [ ] Design tokens and fonts
-- [ ] Layout and editorial primitives
-- [ ] Lint and build verification
+- [x] Documentation (PROJECT, DECISIONS, ROADMAP, CONTENT, ARCHITECTURE, STYLEGUIDE)
+- [x] Folder structure and placeholder routes
+- [x] Typed content scaffolding
+- [x] Design tokens and fonts
+- [x] Layout and editorial primitives
+- [x] Lint and build verification
 
-## Phase 2 — Homepage & core pages
+## Phase 2 — Design system (complete)
+
+- [x] Refined Tailwind tokens and global CSS
+- [x] Layout components (Container, Header, Footer, SiteShell)
+- [x] Editorial primitives (Kicker, Rule, PageHeader, Section, FolioMarker, Epigraph, CatalogCaption)
+- [x] Content components (ProjectCard, ThemeIndexItem, PublicationEntry, NewsItem, BookCard)
+- [x] Internal design-system preview page
+- [x] STYLEGUIDE.md and DECISIONS.md updates
+
+## Phase 3 — Homepage & core pages
 
 - [ ] Homepage: hero, research themes, current research questions, featured projects
 - [ ] Research Program page with Current Book Project feature

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { getProjectBySlug, projects } from "@/content/projects";
 
@@ -23,7 +24,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) notFound();
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <Container className="py-12 md:py-16">
       <PageHeader
         kicker={project.category}
         title={project.title}
@@ -33,6 +34,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <p className="mt-4 text-sm text-ink-muted">
         Full project page content pending (Phase 2).
       </p>
-    </div>
+    </Container>
   );
 }

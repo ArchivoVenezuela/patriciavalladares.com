@@ -1,3 +1,4 @@
+import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 import { courses, teachingStatement } from "@/content/teaching";
@@ -6,7 +7,7 @@ export const metadata = { title: "Teaching" };
 
 export default function TeachingPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <Container className="py-12 md:py-16">
       <PageHeader
         kicker="Teaching"
         title="Teaching"
@@ -25,6 +26,6 @@ export default function TeachingPage() {
           ))}
         </ul>
       </Section>
-    </div>
+    </Container>
   );
 }

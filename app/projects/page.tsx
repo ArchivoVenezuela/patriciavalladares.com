@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 import { appliedProjects, flagshipProjects } from "@/content/projects";
@@ -7,7 +8,7 @@ export const metadata = { title: "Projects" };
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <Container className="py-12 md:py-16">
       <PageHeader
         kicker="Projects"
         title="Projects"
@@ -43,6 +44,6 @@ export default function ProjectsPage() {
           ))}
         </ul>
       </Section>
-    </div>
+    </Container>
   );
 }

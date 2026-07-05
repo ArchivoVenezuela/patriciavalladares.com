@@ -7,13 +7,6 @@ interface KickerProps {
 
 export function Kicker({ children, className }: KickerProps) {
   return (
-    <p
-      className={cn(
-        "text-xs font-medium uppercase tracking-[0.12em] text-ink-muted",
-        className,
-      )}
-    >
-      {children}
-    </p>
+    <p className={cn("text-kicker", className)}>{children}</p>
   );
 }

@@ -2,15 +2,17 @@ import { cn } from "@/lib/utils";
 
 interface RuleProps {
   className?: string;
-  variant?: "default" | "gold";
+  variant?: "default" | "gold" | "strong";
 }
 
 export function Rule({ className, variant = "default" }: RuleProps) {
   return (
     <hr
       className={cn(
-        "border-0 h-px w-full",
-        variant === "gold" ? "bg-gold" : "bg-border",
+        "h-px w-full border-0",
+        variant === "gold" && "bg-gold",
+        variant === "strong" && "bg-border-strong",
+        variant === "default" && "bg-border",
         className,
       )}
       aria-hidden="true"

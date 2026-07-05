@@ -7,6 +7,7 @@ export type LocalizedString = string;
 
 export interface SiteConfig {
   name: string;
+  wordmark: string;
   title: string;
   description: string;
   url: string;
@@ -16,7 +17,10 @@ export interface SiteConfig {
 }
 
 export interface NavItem {
+  /** Full label — pages, footer, mobile nav */
   label: string;
+  /** Shorter label for desktop header when needed */
+  shortLabel?: string;
   href: string;
   external?: boolean;
 }

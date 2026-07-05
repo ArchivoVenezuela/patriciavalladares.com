@@ -1,3 +1,4 @@
+import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 import { bookProject } from "@/content/projects";
@@ -7,7 +8,7 @@ export const metadata = { title: "Research Program" };
 
 export default function ResearchPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <Container className="py-12 md:py-16">
       <PageHeader
         kicker="Research Program"
         title="Research Program"
@@ -29,6 +30,6 @@ export default function ResearchPage() {
           <p className="text-ink-muted">{bookProject.summary}</p>
         </Section>
       )}
-    </div>
+    </Container>
   );
 }

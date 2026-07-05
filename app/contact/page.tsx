@@ -1,3 +1,4 @@
+import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { siteConfig } from "@/content/site";
 
@@ -5,7 +6,7 @@ export const metadata = { title: "Contact" };
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <Container className="py-12 md:py-16">
       <PageHeader
         kicker="Contact"
         title="Contact"
@@ -41,6 +42,6 @@ export default function ContactPage() {
           </dd>
         </div>
       </dl>
-    </div>
+    </Container>
   );
 }
