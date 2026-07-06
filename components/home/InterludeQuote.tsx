@@ -1,16 +1,18 @@
-import { draftInterlude } from "@/content/homeDesign";
+import { TODO, draftInterlude } from "@/content/draft";
 import { HomeSection } from "@/components/ui/HomeSection";
-import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function InterludeQuote() {
+  if (draftInterlude === TODO) {
+    return null;
+  }
+
   return (
     <HomeSection sectionId="interludeA" variant="interlude" ariaLabelledBy="interlude-heading">
-      <Reveal className="mx-auto max-w-[20ch]">
-        <PlateKicker className="mb-[2.125rem]">Interlude</PlateKicker>
+      <Reveal className="mx-auto max-w-[52ch]">
         <p
           id="interlude-heading"
-          className="m-0 font-serif text-[clamp(1.75rem,4.6vw,4rem)] font-light italic leading-[1.16] tracking-[-0.01em] text-forest"
+          className="m-0 text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed text-ink-body"
         >
           {draftInterlude}
         </p>

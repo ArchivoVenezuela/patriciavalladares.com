@@ -10,6 +10,7 @@ import {
   featuredPublications,
   selectedArticles,
 } from "@/content/publications";
+import { draftSectionTitles, TODO } from "@/content/draft";
 
 export const metadata = { title: "Publications" };
 
@@ -17,13 +18,13 @@ export default function PublicationsPage() {
   return (
     <Container className="py-12 md:py-16">
       <PageHeader
-        kicker="Publications"
-        title="Publications"
-        description="Monographs and peer-reviewed scholarship on Latin American and Caribbean cultural production, migration, film, and diaspora studies."
+        kicker={draftSectionTitles.publications}
+        title={draftSectionTitles.publications}
+        description={TODO}
         folioLabel="Publications — 01"
       />
 
-      <Section kicker="Featured" title="Featured Publications" number="01">
+      <Section kicker={draftSectionTitles.publications} title={draftSectionTitles.publications} number="01">
         <div className="max-w-3xl space-y-4">
           {featuredPublications.map((pub) => (
             <PublicationEntry key={pub.id} publication={pub} />
@@ -31,7 +32,7 @@ export default function PublicationsPage() {
         </div>
       </Section>
 
-      <Section kicker="Monographs" title="Books" number="02">
+      <Section kicker="Books" title="Books" number="02">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {books.map((book) => (
             <BookCard key={book.id} book={book} />
@@ -39,7 +40,7 @@ export default function PublicationsPage() {
         </div>
       </Section>
 
-      <Section kicker="Articles" title="Selected Articles" number="03">
+      <Section kicker="Articles" title="Articles" number="03">
         <div className="max-w-3xl space-y-4">
           {selectedArticles.map((pub) => (
             <PublicationEntry key={pub.id} publication={pub} />
@@ -47,7 +48,7 @@ export default function PublicationsPage() {
         </div>
       </Section>
 
-      <Section kicker="Complete" title="Complete Publications" number="04">
+      <Section kicker={draftSectionTitles.publications} title={draftSectionTitles.publications} number="04">
         <PublicationsFilter publications={allPublications} />
       </Section>
     </Container>

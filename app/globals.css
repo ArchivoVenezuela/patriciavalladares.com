@@ -264,6 +264,14 @@ a { color: inherit; }
   text-wrap: balance;
 }
 
+.hero-name {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);

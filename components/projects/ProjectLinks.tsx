@@ -1,4 +1,5 @@
 import type { ProjectLink } from "@/lib/types";
+import { TODO } from "@/content/draft";
 
 interface ProjectLinksProps {
   links: ProjectLink[];
@@ -6,9 +7,7 @@ interface ProjectLinksProps {
 
 export function ProjectLinks({ links }: ProjectLinksProps) {
   if (links.length === 0) {
-    return (
-      <p className="text-sm text-ink-muted">External links pending.</p>
-    );
+    return <p className="text-sm text-ink-muted">{TODO}</p>;
   }
 
   return (

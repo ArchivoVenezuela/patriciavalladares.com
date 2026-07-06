@@ -3,6 +3,7 @@ import type { ProjectDetail } from "@/lib/types";
 import { courses } from "@/content/teaching";
 import { allPublications } from "@/content/publications";
 import { publicHumanitiesItems } from "@/content/publicHumanities";
+import { isPendingCopy } from "@/lib/utils";
 import { ProjectHero } from "./ProjectHero";
 import { ProjectLinks } from "./ProjectLinks";
 import { ProjectMetadata } from "./ProjectMetadata";
@@ -30,16 +31,20 @@ export function ProjectDetailTemplate({ project }: ProjectDetailTemplateProps) {
 
       <div className="grid gap-12 lg:grid-cols-[1fr_280px]">
         <div>
-          <ProjectSection title="Problem">
-            <p>{project.problem}</p>
-          </ProjectSection>
+          {!isPendingCopy(project.problem) && (
+            <ProjectSection title="Problem">
+              <p>{project.problem}</p>
+            </ProjectSection>
+          )}
 
-          <ProjectSection title="Why it matters">
-            <p>{project.whyItMatters}</p>
-          </ProjectSection>
+          {!isPendingCopy(project.whyItMatters) && (
+            <ProjectSection title="Context">
+              <p>{project.whyItMatters}</p>
+            </ProjectSection>
+          )}
 
           {project.researchQuestions.length > 0 && (
-            <ProjectSection title="Research questions" kicker="Inquiry">
+            <ProjectSection title="Research questions">
               <ul className="list-none space-y-4 pl-0">
                 {project.researchQuestions.map((q, i) => (
                   <li
@@ -53,30 +58,36 @@ export function ProjectDetailTemplate({ project }: ProjectDetailTemplateProps) {
             </ProjectSection>
           )}
 
-          <ProjectSection title="Methodology">
-            <p>{project.methodology}</p>
-          </ProjectSection>
+          {!isPendingCopy(project.methodology) && (
+            <ProjectSection title="Methods">
+              <p>{project.methodology}</p>
+            </ProjectSection>
+          )}
 
-          <ProjectSection title="Technologies" kicker="Tools">
-            <ul className="flex flex-wrap gap-2 list-none pl-0">
-              {project.technologies.map((tech) => (
-                <li key={tech}>
-                  <TechnologyBadge label={tech} />
-                </li>
-              ))}
-            </ul>
-          </ProjectSection>
+          {project.technologies.length > 0 && (
+            <ProjectSection title="Technologies">
+              <ul className="flex flex-wrap gap-2 list-none pl-0">
+                {project.technologies.map((tech) => (
+                  <li key={tech}>
+                    <TechnologyBadge label={tech} />
+                  </li>
+                ))}
+              </ul>
+            </ProjectSection>
+          )}
 
-          <ProjectSection title="Outcomes">
-            <ul className="list-disc pl-5 space-y-2">
-              {project.outcomes.map((outcome, i) => (
-                <li key={i}>{outcome}</li>
-              ))}
-            </ul>
-          </ProjectSection>
+          {project.outcomes.some((o) => !isPendingCopy(o)) && (
+            <ProjectSection title="Outcomes">
+              <ul className="list-disc pl-5 space-y-2">
+                {project.outcomes.map((outcome, i) => (
+                  <li key={i}>{outcome}</li>
+                ))}
+              </ul>
+            </ProjectSection>
+          )}
 
-          <ProjectSection title="Related publications">
-            {relatedPublications.length > 0 ? (
+          {relatedPublications.length > 0 && (
+            <ProjectSection title="Related publications">
               <ul className="space-y-2">
                 {relatedPublications.map((pub) => (
                   <li key={pub.id}>
@@ -85,38 +96,34 @@ export function ProjectDetailTemplate({ project }: ProjectDetailTemplateProps) {
                   </li>
                 ))}
               </ul>
-            ) : (
-              <p className="text-sm">Related publications pending.</p>
-            )}
-          </ProjectSection>
+            </ProjectSection>
+          )}
 
-          <ProjectSection title="Related teaching">
-            {relatedCourses.length > 0 ? (
+          {relatedCourses.length > 0 && (
+            <ProjectSection title="Related teaching">
               <ul className="space-y-2">
                 {relatedCourses.map((course) => (
                   <li key={course.id}>{course.title}</li>
                 ))}
               </ul>
-            ) : (
-              <p className="text-sm">Related teaching pending.</p>
-            )}
-          </ProjectSection>
+            </ProjectSection>
+          )}
 
-          <ProjectSection title="Related public humanities">
-            {relatedPublicHumanities.length > 0 ? (
+          {relatedPublicHumanities.length > 0 && (
+            <ProjectSection title="Related public humanities">
               <ul className="space-y-2">
                 {relatedPublicHumanities.map((item) => (
                   <li key={item.id}>{item.title}</li>
                 ))}
               </ul>
-            ) : (
-              <p className="text-sm">Related public humanities work pending.</p>
-            )}
-          </ProjectSection>
+            </ProjectSection>
+          )}
 
-          <ProjectSection title="External links">
-            <ProjectLinks links={project.links} />
-          </ProjectSection>
+          {project.links.length > 0 && (
+            <ProjectSection title="Links">
+              <ProjectLinks links={project.links} />
+            </ProjectSection>
+          )}
         </div>
 
         <div className="lg:sticky lg:top-24 lg:self-start">

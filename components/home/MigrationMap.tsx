@@ -6,6 +6,7 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { migrationSection } from "@/content/homeDesign";
 import { migrationCities, migrationFlowPaths } from "@/lib/home/migrationData";
 import { cn } from "@/lib/utils";
 
@@ -17,13 +18,14 @@ export function MigrationMap() {
     <HomeSection id="migration" sectionId="migration" variant="dark">
       <EditorialContainer>
         <div className="mb-[clamp(1.5rem,3vh,2.5rem)] flex flex-wrap items-baseline justify-between gap-4">
-          <div>
-            <PlateKicker tone="gold-light">Fig. 02 — Dispersal</PlateKicker>
+          <div className="max-w-[52ch]">
+            <PlateKicker tone="gold-light">{migrationSection.title}</PlateKicker>
             <SectionTitle className="font-light text-paper">
-              Memory travels
-              <br />
-              with its people.
+              {migrationSection.title}
             </SectionTitle>
+            <p className="mt-4 text-sm leading-relaxed text-cream-muted">
+              {migrationSection.description}
+            </p>
           </div>
           <div className="text-right" aria-live="polite">
             <div className="font-serif text-[clamp(1.25rem,2.4vw,1.875rem)] leading-tight text-gold-light">{active.name}</div>
@@ -73,8 +75,8 @@ export function MigrationMap() {
           </svg>
         </Reveal>
 
-        <p className="mt-[clamp(1rem,3vh,1.75rem)] max-w-[56ch] font-mono text-[10px] leading-[1.8] tracking-[0.12em] text-ink-faint">
-          Each line is a collection carried out of the country by hand, by phone, by memory — then described and reconnected in the archive. Hover a city.
+        <p className="mt-[clamp(1rem,3vh,1.75rem)] max-w-[56ch] text-sm leading-relaxed text-ink-faint">
+          {migrationSection.footer}
         </p>
       </EditorialContainer>
     </HomeSection>

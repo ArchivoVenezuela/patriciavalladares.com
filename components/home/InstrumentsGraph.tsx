@@ -5,7 +5,7 @@ import { EditorialContainer } from "@/components/design/EditorialContainer";
 import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { graphNodes, type GraphNodeKey } from "@/content/homeDesign";
+import { graphNodes, instrumentsGraphAside, instrumentsGraphHeading, type GraphNodeKey } from "@/content/homeDesign";
 import {
   GRAPH_NODE_COORDS,
   GRAPH_OUTER_EDGES,
@@ -34,15 +34,13 @@ export function InstrumentsGraph() {
       <EditorialContainer>
         <div className="mb-[clamp(1.75rem,4vh,3rem)] flex flex-wrap items-baseline justify-between gap-4">
           <div>
-            <PlateKicker tone="gold-light">Fig. 01 — The Ecosystem</PlateKicker>
+            <PlateKicker tone="gold-light">{instrumentsGraphHeading}</PlateKicker>
             <SectionTitle size="large" className="text-paper">
-              One question,
-              <br />
-              seven instruments.
+              {instrumentsGraphHeading}
             </SectionTitle>
           </div>
-          <p className="max-w-[30ch] font-mono text-[10.5px] leading-[1.9] tracking-[0.12em] text-[#8FA08E]">
-            Hover a node. Not separate projects — a single living infrastructure.
+          <p className="max-w-[40ch] text-sm leading-relaxed text-[#8FA08E]">
+            {instrumentsGraphAside}
           </p>
         </div>
 
@@ -138,7 +136,7 @@ function GraphNode({ id, active, onActivate, variant = "default" }: GraphNodePro
     center: [["CULTURAL", "274"], ["KNOWLEDGE", "291"]],
     archive: [["ARCHIVO", "107"], ["VENEZUELA", "119"]],
     studio: [["ARCHIVO", "177"], ["STUDIO", "189"]],
-    book: [["THE", "357"], ["BOOK", "369"]],
+    book: [["ARCHIVING", "357"], ["THE PRESENT", "369"]],
     ailab: [["AI", "487"], ["LAB", "499"]],
     cert: [["GRAD.", "487"], ["CERT.", "499"]],
     counter: [["COUNTER-", "357"], ["ARCHIVE", "369"]],
@@ -163,7 +161,7 @@ function GraphNode({ id, active, onActivate, variant = "default" }: GraphNodePro
       ))}
       {isCenter && (
         <text x={pos.x} y={309} textAnchor="middle" fill="var(--color-gold-light)" fontSize={9}>
-          the question
+          {graphNodes.center.index}
         </text>
       )}
     </g>

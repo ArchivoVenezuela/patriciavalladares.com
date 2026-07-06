@@ -4,15 +4,17 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { homePublications } from "@/content/homeDesign";
+import { draftSectionTitles, homePublications } from "@/content/homeDesign";
 import { cn } from "@/lib/utils";
 
 export function PublicationsStrip() {
   return (
     <HomeSection id="publications" sectionId="publications" variant="default" anchored className="border-b border-border">
       <EditorialContainer narrow>
-        <PlateKicker className="mb-[clamp(1.75rem,4vh,2.75rem)]">Pl. 03 — Selected writing</PlateKicker>
-        <SectionTitle id="publications-heading" className="sr-only">Selected writing</SectionTitle>
+        <PlateKicker className="mb-[clamp(1.75rem,4vh,2.75rem)]">{draftSectionTitles.publications}</PlateKicker>
+        <SectionTitle id="publications-heading" className="sr-only">
+          {draftSectionTitles.publications}
+        </SectionTitle>
         <Reveal>
           {homePublications.map((pub, i) => (
             <div

@@ -5,15 +5,15 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { instrumentIndex } from "@/content/homeDesign";
+import { draftSectionTitles, instrumentIndex } from "@/content/homeDesign";
 
 export function InstrumentsIndex() {
   return (
-    <HomeSection id="index" sectionId="index" variant="default" anchored className="border-b border-border">
+    <HomeSection id="projects" sectionId="projects" variant="default" anchored className="border-b border-border">
       <EditorialContainer>
         <div className="mb-[clamp(2rem,5vh,3.25rem)]">
-          <PlateKicker>Pl. 02 — Index of Instruments</PlateKicker>
-          <SectionTitle id="index-heading">Object labels</SectionTitle>
+          <PlateKicker>{draftSectionTitles.researchProjects}</PlateKicker>
+          <SectionTitle id="projects-heading">{draftSectionTitles.researchProjects}</SectionTitle>
         </div>
         <Reveal>
           {instrumentIndex.map((item, i) => (
@@ -33,7 +33,6 @@ export function InstrumentsIndex() {
               }
               subtitle={item.subtitle}
               description={item.description}
-              tags={item.tags}
             />
           ))}
         </Reveal>

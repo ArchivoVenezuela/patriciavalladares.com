@@ -6,7 +6,8 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { archiveLede, archiveSpecimens, archiveStats } from "@/content/homeDesign";
+import { archiveLede, archiveSpecimens, archiveStats, draftSectionTitles } from "@/content/homeDesign";
+import { TODO } from "@/content/draft";
 import { cn } from "@/lib/utils";
 
 export function ArchiveSection() {
@@ -34,7 +35,7 @@ export function ArchiveSection() {
       <EditorialContainer>
         <div className="mb-[clamp(2.25rem,5vh,3.75rem)] grid items-end gap-[clamp(1.5rem,4vw,4rem)] md:grid-cols-2">
           <div>
-            <PlateKicker>Pl. 01 — The Flagship Archive</PlateKicker>
+            <PlateKicker>{draftSectionTitles.researchProjects}</PlateKicker>
             <SectionTitle id="archive-heading" size="archive">
               Archivo Venezuela
             </SectionTitle>
@@ -61,7 +62,7 @@ export function ArchiveSection() {
         <Reveal className="grid items-start gap-[clamp(1.5rem,4vw,3.25rem)] lg:grid-cols-[minmax(0,1.4fr)_minmax(260px,1fr)]">
           <div>
             <p className="mb-4 font-mono text-[9.5px] uppercase tracking-[0.2em] text-gold">
-              The drawer — select a specimen
+              {TODO}
             </p>
             <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5" role="listbox" aria-label="Archive specimens">
               {archiveSpecimens.map((s, i) => (
@@ -83,13 +84,13 @@ export function ArchiveSection() {
               ))}
             </div>
             <p className="mt-4 font-mono text-[9.5px] leading-[1.7] tracking-[0.1em] text-ink-muted">
-              Five specimens. Periodicals · oral testimony · posters · photographs · born-digital records.
+              {archiveSpecimens[0]?.note}
             </p>
           </div>
 
           <article className="border border-ink bg-paper-light" aria-live="polite">
             <div className="bg-forest px-[1.125rem] py-2.5 font-mono text-[9px] uppercase tracking-[0.2em] text-paper">
-              Catalog record
+              {TODO}
             </div>
             <div className="px-5 py-5">
               <div className="mb-3 font-mono text-[11px] tracking-wide text-oxblood">{specimen.id}</div>

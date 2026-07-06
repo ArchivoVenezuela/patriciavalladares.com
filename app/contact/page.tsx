@@ -1,7 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
-import { contactContent } from "@/content/contact";
 import { cvNavItem, siteConfig, socialLinks } from "@/content/site";
+import { draftSectionTitles, TODO } from "@/content/draft";
 
 export const metadata = { title: "Contact" };
 
@@ -9,13 +9,13 @@ export default function ContactPage() {
   return (
     <Container className="py-12 md:py-16">
       <PageHeader
-        kicker="Contact"
-        title="Contact"
-        description={contactContent.intro}
+        kicker={draftSectionTitles.contact}
+        title={draftSectionTitles.contact}
+        description={TODO}
         folioLabel="Contact — 01"
       />
 
-      <dl className="grid gap-8 sm:grid-cols-2 max-w-3xl">
+      <dl className="grid max-w-3xl gap-8 sm:grid-cols-2">
         <div>
           <dt className="text-kicker">Affiliation</dt>
           <dd className="mt-2 text-ink">
@@ -56,23 +56,10 @@ export default function ContactPage() {
                   Archivo Venezuela
                 </a>
               </li>
-              <li>
-                <a href={socialLinks.googleScholar} className="text-link">
-                  Google Scholar (link pending)
-                </a>
-              </li>
-              <li>
-                <a href={socialLinks.orcid} className="text-link">
-                  ORCID (link pending)
-                </a>
-              </li>
             </ul>
           </dd>
         </div>
       </dl>
-      {contactContent.officeNote && (
-        <p className="mt-10 text-sm text-ink-muted">{contactContent.officeNote}</p>
-      )}
     </Container>
   );
 }

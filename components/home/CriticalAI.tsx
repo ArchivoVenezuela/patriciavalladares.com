@@ -5,30 +5,26 @@ import { EditorialContainer } from "@/components/design/EditorialContainer";
 import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { criticalAiDemo } from "@/content/homeDesign";
+import { criticalAiDemo, criticalAiSection } from "@/content/homeDesign";
 import { cn } from "@/lib/utils";
 
 type ReadingMode = "machine" | "community";
 
-const captions: Record<ReadingMode, string> = {
-  machine: "→  The machine sees measurements: a crowd, a street, a confidence score.",
-  community: "→  What the machine cannot see is precisely what the archive exists to keep.",
-};
-
 export function CriticalAI() {
   const [mode, setMode] = useState<ReadingMode>("machine");
   const demo = criticalAiDemo;
+  const section = criticalAiSection;
 
   return (
     <HomeSection id="ai" sectionId="ai" variant="light" anchored className="border-b border-border">
       <EditorialContainer>
         <div className="mb-[clamp(2rem,5vh,3.25rem)] max-w-[60ch]">
-          <PlateKicker>Fig. 03 — Critical AI</PlateKicker>
+          <PlateKicker>{section.title}</PlateKicker>
           <SectionTitle id="ai-heading" className="mb-4">
-            The same object, read two ways.
+            {section.title}
           </SectionTitle>
           <p className="m-0 text-[clamp(1rem,1.4vw,1.1875rem)] leading-snug text-ink-body">
-            A machine classifies what it can measure. A community knows what it means. The gap between them is where memory is lost.
+            {section.description}
           </p>
         </div>
 
@@ -48,7 +44,7 @@ export function CriticalAI() {
                 mode === m ? "bg-ink text-paper" : "bg-transparent text-ink",
               )}
             >
-              {m === "machine" ? "Machine reading" : "Community reading"}
+              {m === "machine" ? "Computational description" : "Humanistic description"}
             </button>
           ))}
         </div>
@@ -68,16 +64,17 @@ export function CriticalAI() {
               mode !== "machine" && "opacity-30",
             )}
           >
-            <div className="mb-4 flex justify-between font-mono text-[9px] uppercase tracking-[0.2em] text-ink-muted">
-              <span>Machine reading</span>
-              <span className="text-gold">conf. {demo.machineConfidence}</span>
+            <div className="mb-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-muted">
+              <span>Computational description</span>
             </div>
-            <div className="mb-[1.125rem] flex flex-wrap gap-2">
-              {demo.machineTags.map((tag) => (
-                <span key={tag} className="border border-border-strong px-2.5 py-1 font-mono text-[11px] text-ink-body">{tag}</span>
-              ))}
-            </div>
-            <p className="m-0 text-[15px] italic leading-snug text-ink-muted">{demo.machineNote}</p>
+            {demo.machineTags.length > 0 && (
+              <div className="mb-[1.125rem] flex flex-wrap gap-2">
+                {demo.machineTags.map((tag) => (
+                  <span key={tag} className="border border-border-strong px-2.5 py-1 font-mono text-[11px] text-ink-body">{tag}</span>
+                ))}
+              </div>
+            )}
+            <p className="m-0 text-[15px] leading-snug text-ink-muted">{section.machineReading}</p>
           </div>
 
           <div
@@ -87,14 +84,16 @@ export function CriticalAI() {
               mode !== "community" && "opacity-30",
             )}
           >
-            <div className="mb-4 font-mono text-[9px] uppercase tracking-[0.2em] text-gold-light">Community reading</div>
-            <p className="mb-4 font-serif text-[clamp(1.0625rem,1.6vw,1.3125rem)] leading-snug text-paper">{demo.communityLead}</p>
+            <div className="mb-4 font-mono text-[9px] uppercase tracking-[0.2em] text-gold-light">
+              Humanistic description
+            </div>
+            <p className="mb-4 font-serif text-[clamp(1.0625rem,1.6vw,1.3125rem)] leading-snug text-paper">{section.communityReading}</p>
             <p className="m-0 text-sm leading-relaxed text-cream-muted">{demo.communityNote}</p>
           </div>
         </div>
 
-        <p className="mt-[clamp(1.25rem,3vh,2rem)] font-mono text-[11px] tracking-[0.12em] text-oxblood" aria-live="polite">
-          {captions[mode]}
+        <p className="mt-[clamp(1.25rem,3vh,2rem)] text-sm leading-relaxed text-ink-muted" aria-live="polite">
+          {mode === "machine" ? section.captionMachine : section.captionCommunity}
         </p>
       </EditorialContainer>
     </HomeSection>

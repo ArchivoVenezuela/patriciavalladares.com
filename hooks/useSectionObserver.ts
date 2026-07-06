@@ -3,18 +3,18 @@
 import { useEffect, useState } from "react";
 
 const NAV_SECTION_IDS = new Set([
-  "instruments",
-  "archive",
-  "migration",
-  "ai",
+  "hero",
+  "projects",
+  "themes",
   "inquiry",
-  "index",
-  "about",
+  "archive",
+  "ai",
+  "publications",
   "contact",
 ]);
 
 export function useSectionObserver() {
-  const [active, setActive] = useState("instruments");
+  const [active, setActive] = useState("hero");
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("[data-section]");

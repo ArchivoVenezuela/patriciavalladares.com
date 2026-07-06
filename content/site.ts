@@ -1,11 +1,11 @@
 import type { NavItem, SiteConfig } from "@/lib/types";
+import { draftBiography } from "./draft";
 
 export const siteConfig: SiteConfig = {
   name: "Patricia Valladares-Ruiz",
   wordmark: "P. Valladares-Ruiz",
   title: "Patricia Valladares-Ruiz — Academic Research",
-  description:
-    "Interdisciplinary humanities scholar building multilingual knowledge infrastructures for archives, digital humanities, cultural memory, and public scholarship.",
+  description: draftBiography.short,
   url: "https://patriciavalladares.com",
   cvUrl: "/cv/Patricia_Valladares_CV_2025.pdf",
   email: "pat.valladares@uc.edu",
@@ -13,7 +13,8 @@ export const siteConfig: SiteConfig = {
   affiliation: "University of Cincinnati",
   department:
     "Department of Romance and Arabic Languages and Literatures",
-  titleLine: "Professor of Latin American and Caribbean Cultural Studies",
+  titleLine:
+    "Professor of Latin American and Caribbean Literature, Film, and Cultural Studies",
   phone: "(513) 432-6845",
 };
 

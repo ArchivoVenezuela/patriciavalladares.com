@@ -78,7 +78,7 @@ export function ProjectCard({
               isFlagship ? "text-link" : "text-ink-muted hover:text-oxblood",
             )}
           >
-            View {isFlagship ? "project" : "infrastructure"} →
+            View project →
           </Link>
         </div>
       </div>
