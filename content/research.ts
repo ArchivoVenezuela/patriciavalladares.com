@@ -1,19 +1,19 @@
 import type { ResearchProgramContent } from "@/lib/types";
-import { getDraftProject, draftResearchProgram } from "./draft";
+import { getProjectBySlug, getResearchOverview } from "@/lib/content";
 
-const bookDraft = getDraftProject("current-book-project");
+const overview = getResearchOverview();
+const bookProject = getProjectBySlug("current-book-project");
 
-/** Re-exports manuscript content for any legacy imports */
 export const researchProgram: ResearchProgramContent = {
-  positioningStatement: draftResearchProgram.paragraphs[0],
-  researchVision: draftResearchProgram.paragraphs[1],
+  positioningStatement: overview.paragraphs[0] ?? "",
+  researchVision: overview.paragraphs[1] ?? "",
   pullQuotes: [],
-  futureDirections: draftResearchProgram.paragraphs[2],
+  futureDirections: overview.paragraphs[2] ?? "",
   bookProject: {
-    title: bookDraft?.title ?? "Archiving the Present",
-    subtitle: bookDraft?.subtitle ?? "Monograph",
-    summary: bookDraft?.description ?? "",
-    status: "in-development",
-    slug: "current-book-project",
+    title: bookProject?.title ?? "Archiving the Present",
+    subtitle: bookProject?.subtitle ?? "Monograph",
+    summary: bookProject?.summary ?? "",
+    status: bookProject?.status ?? "in-development",
+    slug: bookProject?.slug ?? "current-book-project",
   },
 };

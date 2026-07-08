@@ -1,40 +1,42 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { MdxBody } from "@/components/mdx/MdxContent";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
 import { ResearchTheme } from "@/components/research/ResearchTheme";
 import {
-  draftProjects,
-  draftResearchProgram,
-  draftSectionTitles,
-  draftThemes,
-} from "@/content/draft";
+  getProjectBySlug,
+  getResearchOverview,
+  getResearchThemesContent,
+  sectionTitles,
+} from "@/lib/content";
 
 export const metadata = { title: "Research Program" };
 
-const bookDraft = draftProjects.find((p) => p.slug === "current-book-project");
+const overview = getResearchOverview();
+const themesContent = getResearchThemesContent();
+const bookDraft = getProjectBySlug("current-book-project");
 
-export default function ResearchPage() {
+export default async function ResearchPage() {
   return (
     <Container className="py-12 md:py-16">
       <PageHeader
-        kicker={draftSectionTitles.researchProgram}
-        title={draftSectionTitles.researchProgram}
-        description={draftResearchProgram.paragraphs[0]}
-        folioLabel="Research — 01"
+        kicker={overview.frontmatter.kicker ?? sectionTitles.researchProgram}
+        title={overview.frontmatter.title}
+        description={overview.paragraphs[0]}
+        folioLabel={overview.frontmatter.folioLabel ?? "Research — 01"}
       />
 
-      <Section kicker="Program" title={draftSectionTitles.researchProgram} number="01">
-        <div className="max-w-3xl space-y-6 leading-relaxed text-ink-muted">
-          {draftResearchProgram.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-          ))}
-        </div>
+      <Section kicker="Program" title={sectionTitles.researchProgram} number="01">
+        <MdxBody
+          body={overview.body}
+          className="max-w-3xl leading-relaxed text-ink-muted"
+        />
       </Section>
 
-      <Section kicker="Themes" title={draftSectionTitles.researchThemes} number="02">
+      <Section kicker="Themes" title={sectionTitles.researchThemes} number="02">
         <div className="space-y-2">
-          {draftThemes.map((theme, index) => (
+          {themesContent.themes.map((theme, index) => (
             <ResearchTheme
               key={theme.id}
               theme={{
@@ -54,7 +56,7 @@ export default function ResearchPage() {
             {bookDraft.subtitle}
           </p>
           <p className="mt-4 max-w-3xl leading-relaxed text-ink-muted">
-            {bookDraft.description}
+            {bookDraft.summary}
           </p>
           <p className="mt-6">
             <Link href={`/projects/${bookDraft.slug}`} className="text-link">

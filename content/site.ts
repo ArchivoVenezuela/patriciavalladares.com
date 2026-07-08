@@ -1,18 +1,18 @@
-import type { NavItem, SiteConfig } from "@/lib/types";
-import { draftBiography } from "./draft";
+import type { SiteConfig } from "@/lib/types";
+import { navigation } from "./navigation";
 
 export const siteConfig: SiteConfig = {
   name: "Patricia Valladares-Ruiz",
   wordmark: "P. Valladares-Ruiz",
   title: "Patricia Valladares-Ruiz — Academic Research",
-  description: draftBiography.short,
+  description:
+    "Patricia Valladares-Ruiz is Professor of Hispanic Studies at the University of Cincinnati, where she works at the intersection of Latin American and Caribbean studies, archives, migration, cultural memory, digital humanities, and critical AI.",
   url: "https://patriciavalladares.com",
   cvUrl: "/cv/Patricia_Valladares_CV_2025.pdf",
   email: "pat.valladares@uc.edu",
   locale: "en",
   affiliation: "University of Cincinnati",
-  department:
-    "Department of Romance and Arabic Languages and Literatures",
+  department: "Department of Romance and Arabic Languages and Literatures",
   titleLine:
     "Professor of Latin American and Caribbean Literature, Film, and Cultural Studies",
   phone: "(513) 432-6845",
@@ -25,19 +25,7 @@ export const socialLinks = {
   linkedin: "#",
 };
 
-export const navigation: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Research Program", href: "/research" },
-  { label: "Projects", href: "/projects" },
-  { label: "Digital Scholarship & Research Infrastructure", shortLabel: "Digital Scholarship", href: "/digital-scholarship" },
-  { label: "Publications", href: "/publications" },
-  { label: "Teaching", href: "/teaching" },
-  { label: "Public Humanities", href: "/public-humanities" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-export const cvNavItem: NavItem = {
+export const cvNavItem = {
   label: "CV",
   href: siteConfig.cvUrl,
   external: true,

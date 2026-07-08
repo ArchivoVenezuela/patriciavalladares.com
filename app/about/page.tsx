@@ -1,27 +1,28 @@
 import { Container } from "@/components/layout/Container";
+import { MdxBody } from "@/components/mdx/MdxContent";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { Section } from "@/components/editorial/Section";
-import { aboutContent } from "@/content/about";
-import { draftSectionTitles, TODO } from "@/content/draft";
+import { getBiographyContent, sectionTitles, TODO } from "@/lib/content";
+
+const biography = getBiographyContent();
 
 export const metadata = { title: "Biography" };
 
-export default function AboutPage() {
+export default async function AboutPage() {
   return (
     <Container className="py-12 md:py-16">
       <PageHeader
-        kicker={draftSectionTitles.biography}
-        title={draftSectionTitles.biography}
-        description={aboutContent.professionalIdentity}
-        folioLabel="Biography — 01"
+        kicker={biography.frontmatter.kicker ?? sectionTitles.biography}
+        title={biography.frontmatter.title}
+        description={biography.paragraphs[1]}
+        folioLabel={biography.frontmatter.folioLabel ?? "Biography — 01"}
       />
 
-      <Section kicker={draftSectionTitles.biography} title={draftSectionTitles.biography} number="01">
-        <div className="max-w-3xl space-y-6 leading-relaxed text-ink-muted">
-          {aboutContent.intellectualBiography.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-          ))}
-        </div>
+      <Section kicker={sectionTitles.biography} title={sectionTitles.biography} number="01">
+        <MdxBody
+          body={biography.body}
+          className="max-w-3xl leading-relaxed text-ink-muted"
+        />
       </Section>
 
       <Section kicker="Languages" title="Languages" number="02">

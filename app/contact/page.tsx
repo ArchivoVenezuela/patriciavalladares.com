@@ -1,7 +1,9 @@
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/editorial/PageHeader";
 import { cvNavItem, siteConfig, socialLinks } from "@/content/site";
-import { draftSectionTitles, TODO } from "@/content/draft";
+import { getContactContent } from "@/lib/content";
+
+const contact = getContactContent();
 
 export const metadata = { title: "Contact" };
 
@@ -9,10 +11,10 @@ export default function ContactPage() {
   return (
     <Container className="py-12 md:py-16">
       <PageHeader
-        kicker={draftSectionTitles.contact}
-        title={draftSectionTitles.contact}
-        description={TODO}
-        folioLabel="Contact — 01"
+        kicker={contact.frontmatter.kicker ?? contact.frontmatter.title}
+        title={contact.frontmatter.title}
+        description={contact.paragraphs[0]}
+        folioLabel={contact.frontmatter.folioLabel ?? "Contact — 01"}
       />
 
       <dl className="grid max-w-3xl gap-8 sm:grid-cols-2">

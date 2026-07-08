@@ -1,12 +1,14 @@
+import "server-only";
+
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { cache } from "react";
+import { TODO } from "./constants";
 
-export const CONTENT_ROOT = path.join(process.cwd(), "content");
+export const CONTENT_ROOT = path.join(process.cwd(), "manuscript");
 
-export const TODO =
-  "[TODO: Copy not provided in Texto para la web.md]" as const;
+export { TODO };
 
 export interface MdxDocument<TFrontmatter = Record<string, unknown>> {
   frontmatter: TFrontmatter;

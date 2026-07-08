@@ -5,15 +5,32 @@ import { EditorialContainer } from "@/components/design/EditorialContainer";
 import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { criticalAiDemo, criticalAiSection } from "@/content/homeDesign";
 import { cn } from "@/lib/utils";
 
 type ReadingMode = "machine" | "community";
 
-export function CriticalAI() {
+interface CriticalAIProps {
+  section: {
+    title: string;
+    description: string;
+    machineReading: string;
+    communityReading: string;
+    captionMachine: string;
+    captionCommunity: string;
+  };
+  demo: {
+    objectId: string;
+    objectLabel: string;
+    machineTags: string[];
+    machineConfidence: string;
+    machineNote: string;
+    communityLead: string;
+    communityNote: string;
+  };
+}
+
+export function CriticalAI({ section, demo }: CriticalAIProps) {
   const [mode, setMode] = useState<ReadingMode>("machine");
-  const demo = criticalAiDemo;
-  const section = criticalAiSection;
 
   return (
     <HomeSection id="ai" sectionId="ai" variant="light" anchored className="border-b border-border">

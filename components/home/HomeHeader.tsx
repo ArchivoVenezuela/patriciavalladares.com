@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { homeNavLinks } from "@/content/homeDesign";
+import { homeNavLinks } from "@/content/home-nav";
 import { useSectionObserver } from "@/hooks/useSectionObserver";
 import { cn } from "@/lib/utils";
 

@@ -5,9 +5,10 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { draftSectionTitles, draftThemes } from "@/content/draft";
+import { getResearchThemesContent, sectionTitles } from "@/lib/content";
 
 export function HomeResearchThemes() {
+  const { themes, title } = getResearchThemesContent();
   return (
     <HomeSection
       id="themes"
@@ -19,11 +20,11 @@ export function HomeResearchThemes() {
     >
       <EditorialContainer>
         <div className="mb-[clamp(2rem,5vh,3.25rem)]">
-          <PlateKicker>{draftSectionTitles.researchThemes}</PlateKicker>
-          <SectionTitle id="themes-heading">{draftSectionTitles.researchThemes}</SectionTitle>
+          <PlateKicker>{sectionTitles.researchThemes}</PlateKicker>
+          <SectionTitle id="themes-heading">{title}</SectionTitle>
         </div>
         <Reveal className="space-y-2">
-          {draftThemes.map((theme, index) => (
+          {themes.map((theme, index) => (
             <ThemeIndexItem
               key={theme.id}
               theme={{

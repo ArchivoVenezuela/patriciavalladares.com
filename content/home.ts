@@ -1,16 +1,25 @@
 import type { HomePageContent } from "@/lib/types";
-import { draftBiography, draftHero, draftMethods, draftSectionTitles } from "./draft";
+import {
+  getBiographyContent,
+  getHomeResearchProgram,
+  getResearchMethods,
+  sectionTitles,
+} from "@/lib/content";
+
+const methods = getResearchMethods();
+const biography = getBiographyContent();
+const program = getHomeResearchProgram();
 
 export const homeContent: HomePageContent = {
   hero: {
-    kicker: draftSectionTitles.researchProgram,
-    headline: draftHero.kicker,
-    statement: draftHero.lede,
+    kicker: sectionTitles.researchProgram,
+    headline: program.frontmatter.title,
+    statement: program.paragraphs[0] ?? "",
   },
   digitalScholarshipBand: {
-    title: draftMethods.title,
-    summary: `${draftMethods.intro} ${draftMethods.closing}`,
+    title: methods.frontmatter.title,
+    summary: `${methods.paragraphs[0] ?? ""} ${methods.paragraphs[1] ?? ""}`.trim(),
   },
-  teachingTeaser: draftSectionTitles.researchProgram,
-  publicHumanitiesTeaser: draftBiography.extended,
+  teachingTeaser: sectionTitles.researchProgram,
+  publicHumanitiesTeaser: biography.paragraphs[1] ?? "",
 };

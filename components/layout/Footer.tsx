@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { navigation, siteConfig } from "@/content/site";
+import { siteConfig } from "@/content/site";
+import { navigation } from "@/content/navigation";
 import { Container } from "./Container";
 
 export function Footer() {

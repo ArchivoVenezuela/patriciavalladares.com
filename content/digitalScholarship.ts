@@ -1,18 +1,20 @@
 import type { DigitalScholarshipContent } from "@/lib/types";
-import { TODO, draftMethods } from "./draft";
+import { getResearchMethods, TODO } from "@/lib/content";
+
+const methods = getResearchMethods();
 
 export const digitalScholarship: DigitalScholarshipContent = {
-  intro: draftMethods.intro,
+  intro: methods.paragraphs[0] ?? "",
   evolution: [
     {
       id: "methods",
-      label: draftMethods.title,
-      description: draftMethods.closing,
+      label: methods.frontmatter.title,
+      description: methods.paragraphs[1] ?? "",
     },
   ],
-  philosophy: draftMethods.closing,
+  philosophy: methods.paragraphs[1] ?? "",
   infrastructure: TODO,
-  digitalMethods: draftMethods.methods.join("; "),
+  digitalMethods: methods.frontmatter.methods.join("; "),
   ethicalAI: TODO,
   openScholarship: TODO,
   futureDirections: TODO,

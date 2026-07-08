@@ -1,17 +1,17 @@
 import type { PublicHumanitiesContent } from "@/lib/types";
-import { TODO, draftProjects, draftThemes } from "./draft";
+import { getProjectBySlug, getThemeById, TODO } from "@/lib/content";
 
-const archivo = draftProjects.find((p) => p.slug === "archivo-venezuela");
-const publicHumanitiesTheme = draftThemes.find((t) => t.id === "public-humanities");
+const archivo = getProjectBySlug("archivo-venezuela");
+const publicHumanitiesTheme = getThemeById("public-humanities");
 
 export const publicHumanitiesContent: PublicHumanitiesContent = {
   intro: publicHumanitiesTheme?.description ?? TODO,
-  statement: archivo?.description ?? TODO,
+  statement: archivo?.summary ?? TODO,
   items: [
     {
       id: "ph-archivo",
       title: archivo?.title ?? "Archivo Venezuela",
-      description: archivo?.description ?? TODO,
+      description: archivo?.summary ?? TODO,
     },
   ],
 };

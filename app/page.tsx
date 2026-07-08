@@ -8,6 +8,13 @@ import { HomeResearchThemes } from "@/components/home/HomeResearchThemes";
 import { InstrumentsIndex } from "@/components/home/InstrumentsIndex";
 import { Masthead } from "@/components/home/Masthead";
 import { PublicationsStrip } from "@/components/home/PublicationsStrip";
+import {
+  archiveLede,
+  archiveSpecimens,
+  archiveStats,
+  criticalAiDemo,
+  criticalAiSection,
+} from "@/content/homeDesign";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/content/site";
 
@@ -24,8 +31,12 @@ export default function HomePage() {
       <InstrumentsIndex />
       <HomeResearchThemes />
       <HomeResearchQuestions />
-      <ArchiveSection />
-      <CriticalAI />
+      <ArchiveSection
+        lede={archiveLede}
+        stats={archiveStats}
+        specimens={archiveSpecimens}
+      />
+      <CriticalAI section={criticalAiSection} demo={criticalAiDemo} />
       <PublicationsStrip />
       <CorrespondenceFooter />
     </div>

@@ -135,6 +135,21 @@ export interface ProjectDetail extends Project {
   relatedCourseIds: string[];
   relatedPublicHumanitiesIds: string[];
   links: ProjectLink[];
+  /** MDX body content when loaded from content/projects/*.mdx */
+  body?: string;
+  paragraphs?: string[];
+  homepageFeatured?: boolean;
+  homepageItalic?: boolean;
+  homepage?: {
+    stats?: { value: string; label: string; accent: "oxblood" | "forest" }[];
+    specimens?: {
+      year: string;
+      id: string;
+      title: string;
+      meta: [string, string][];
+      note: string;
+    }[];
+  };
 }
 
 export interface InfrastructureStage {

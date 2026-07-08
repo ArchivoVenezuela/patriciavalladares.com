@@ -1,10 +1,12 @@
 import type { AboutContent } from "@/lib/types";
-import { TODO, draftBiography } from "./draft";
+import { getBiographyContent, TODO } from "@/lib/content";
+
+const biography = getBiographyContent();
 
 export const aboutContent: AboutContent = {
-  positioningStatement: draftBiography.short,
-  professionalIdentity: draftBiography.extended,
-  intellectualBiography: [draftBiography.short, draftBiography.extended],
+  positioningStatement: biography.paragraphs[0] ?? "",
+  professionalIdentity: biography.paragraphs[1] ?? "",
+  intellectualBiography: biography.paragraphs,
   languages: {
     native: [],
     fluent: [],

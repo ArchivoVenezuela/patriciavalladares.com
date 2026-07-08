@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cvNavItem, navigation } from "@/content/site";
+import { cvNavItem } from "@/content/site";
+import { navigation } from "@/content/navigation";
 import { cn } from "@/lib/utils";
 
 function isActiveRoute(href: string, pathname: string): boolean {

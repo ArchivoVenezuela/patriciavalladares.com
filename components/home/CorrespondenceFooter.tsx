@@ -2,8 +2,9 @@ import Link from "next/link";
 import { EditorialContainer } from "@/components/design/EditorialContainer";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { draftSectionTitles, homeNavLinks } from "@/content/homeDesign";
+import { homeNavLinks } from "@/content/home-nav";
 import { siteConfig } from "@/content/site";
+import { sectionTitles } from "@/lib/content/constants";
 
 export function CorrespondenceFooter() {
   const year = new Date().getFullYear();
@@ -14,9 +15,9 @@ export function CorrespondenceFooter() {
       <EditorialContainer className="!px-0">
         <div className="grid items-start gap-[clamp(2rem,5vw,4.25rem)] [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))]">
           <div className="col-span-full max-w-[52ch]">
-            <PlateKicker tone="gold-light" className="mb-[1.375rem]">{draftSectionTitles.contact}</PlateKicker>
+            <PlateKicker tone="gold-light" className="mb-[1.375rem]">{sectionTitles.contact}</PlateKicker>
             <SectionTitle id="contact-heading" as="h2" className="font-light text-[clamp(2.125rem,5.5vw,4.75rem)] leading-none text-paper">
-              {draftSectionTitles.contact}
+              {sectionTitles.contact}
             </SectionTitle>
           </div>
 
@@ -47,7 +48,7 @@ export function CorrespondenceFooter() {
         </div>
 
         <div className="mt-[clamp(2.75rem,8vh,5.25rem)] flex flex-wrap justify-between gap-4 border-t border-cream/20 pt-6 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-          <span>{siteConfig.name} — {draftSectionTitles.researchProgram}</span>
+          <span>{siteConfig.name} — {sectionTitles.researchProgram}</span>
           <span>© {year}</span>
         </div>
       </EditorialContainer>

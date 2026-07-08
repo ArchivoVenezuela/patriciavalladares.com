@@ -1,6 +1,10 @@
 import type { ContactContent } from "@/lib/types";
-import { TODO } from "./draft";
+import { getContactContent } from "@/lib/content";
+
+const contact = getContactContent();
 
 export const contactContent: ContactContent = {
-  intro: TODO,
+  intro: contact.paragraphs[0] ?? contact.frontmatter.title,
 };
+
+export const contactDetails = contact.frontmatter;

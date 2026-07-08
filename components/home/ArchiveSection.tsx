@@ -6,19 +6,30 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { archiveLede, archiveSpecimens, archiveStats, draftSectionTitles } from "@/content/homeDesign";
-import { TODO } from "@/content/draft";
+import { sectionTitles, TODO } from "@/lib/content/constants";
 import { cn } from "@/lib/utils";
 
-export function ArchiveSection() {
+interface ArchiveSectionProps {
+  lede: string;
+  stats: { value: string; label: string; accent: "oxblood" | "forest" }[];
+  specimens: {
+    year: string;
+    id: string;
+    title: string;
+    meta: [string, string][];
+    note: string;
+  }[];
+}
+
+export function ArchiveSection({ lede, stats, specimens }: ArchiveSectionProps) {
   const [active, setActive] = useState(0);
-  const specimen = archiveSpecimens[active];
+  const specimen = specimens[active];
 
   const onSpecimenKeyDown = useCallback(
     (e: React.KeyboardEvent, index: number) => {
       if (e.key === "ArrowRight") {
         e.preventDefault();
-        setActive((i) => Math.min(i + 1, archiveSpecimens.length - 1));
+        setActive((i) => Math.min(i + 1, specimens.length - 1));
       } else if (e.key === "ArrowLeft") {
         e.preventDefault();
         setActive((i) => Math.max(i - 1, 0));
@@ -35,21 +46,21 @@ export function ArchiveSection() {
       <EditorialContainer>
         <div className="mb-[clamp(2.25rem,5vh,3.75rem)] grid items-end gap-[clamp(1.5rem,4vw,4rem)] md:grid-cols-2">
           <div>
-            <PlateKicker>{draftSectionTitles.researchProjects}</PlateKicker>
+            <PlateKicker>{sectionTitles.researchProjects}</PlateKicker>
             <SectionTitle id="archive-heading" size="archive">
               Archivo Venezuela
             </SectionTitle>
           </div>
           <p className="m-0 max-w-[40ch] text-[clamp(1rem,1.5vw,1.25rem)] leading-normal text-ink-body">
-            {archiveLede}
+            {lede}
           </p>
         </div>
 
         <div className="mb-[clamp(2rem,5vh,3.25rem)] grid border-b border-border border-t-2 border-t-ink [grid-template-columns:repeat(auto-fit,minmax(130px,1fr))]">
-          {archiveStats.map((stat, i) => (
+          {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={cn("px-4 py-[1.125rem]", i < archiveStats.length - 1 && "border-r border-border")}
+              className={cn("px-4 py-[1.125rem]", i < stats.length - 1 && "border-r border-border")}
             >
               <div className={cn("font-serif text-[clamp(1.75rem,3vw,2.5rem)] leading-none", stat.accent === "oxblood" ? "text-oxblood" : "text-forest")}>
                 {stat.value}
@@ -65,7 +76,7 @@ export function ArchiveSection() {
               {TODO}
             </p>
             <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5" role="listbox" aria-label="Archive specimens">
-              {archiveSpecimens.map((s, i) => (
+              {specimens.map((s, i) => (
                 <button
                   key={s.id}
                   type="button"
@@ -83,9 +94,7 @@ export function ArchiveSection() {
                 </button>
               ))}
             </div>
-            <p className="mt-4 font-mono text-[9.5px] leading-[1.7] tracking-[0.1em] text-ink-muted">
-              {archiveSpecimens[0]?.note}
-            </p>
+            <p className="mt-4 font-mono text-[9.5px] leading-[1.7] tracking-[0.1em] text-ink-muted">{specimens[0]?.note}</p>
           </div>
 
           <article className="border border-ink bg-paper-light" aria-live="polite">

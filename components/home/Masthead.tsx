@@ -1,8 +1,9 @@
 import { EditorialContainer } from "@/components/design/EditorialContainer";
-import { draftLandingHero } from "@/content/draft";
+import { MdxParagraphs } from "@/components/mdx/MdxContent";
+import { getLandingHero } from "@/lib/content";
 
 export function Masthead() {
-  const hero = draftLandingHero;
+  const hero = getLandingHero();
 
   return (
     <section
@@ -33,13 +34,11 @@ export function Masthead() {
             </div>
           </div>
 
-          <div className="max-w-[65ch] space-y-6 text-[1.0625rem] leading-[1.75] text-ink-body">
-            {hero.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)} className="m-0">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <MdxParagraphs
+            paragraphs={hero.paragraphs}
+            className="max-w-[65ch]"
+            paragraphClassName="text-[1.0625rem] leading-[1.75] text-ink-body"
+          />
         </div>
       </EditorialContainer>
     </section>

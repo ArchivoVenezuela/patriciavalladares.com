@@ -1,38 +1,30 @@
 import {
-  TODO,
-  draftBiography,
-  draftHero,
-  draftInterlude,
-  draftMethods,
-  draftProjects,
-  draftResearchProgram,
-  draftSectionTitles,
-  getDraftProject,
-  getDraftTheme,
-} from "./draft";
-import { books, featuredPublications } from "./publications";
+  getAllProjects,
+  getBiographyContent,
+  getHomeResearchProgram,
+  getLandingHero,
+  getProjectBySlug,
+  getPublicationsContent,
+  getThemeById,
+} from "@/lib/content";
+import { sectionTitles, TODO } from "@/lib/content/constants";
 
-export const homeNavLinks = [
-  { id: "projects", label: "Research Projects", href: "#projects" },
-  { id: "themes", label: "Research Themes", href: "#themes" },
-  { id: "inquiry", label: "Inquiry", href: "#inquiry" },
-  { id: "archive", label: "Archivo Venezuela", href: "#archive" },
-  { id: "ai", label: "Critical AI", href: "#ai" },
-  { id: "publications", label: "Publications", href: "#publications" },
-  { id: "contact", label: "Contact", href: "#contact" },
-] as const;
+const program = getHomeResearchProgram();
+const hero = getLandingHero();
+const publications = getPublicationsContent();
+const biography = getBiographyContent();
 
-export const instrumentsGraphHeading = draftSectionTitles.researchProjects;
-export const instrumentsGraphAside = draftResearchProgram.paragraphs[0];
+export const instrumentsGraphHeading = sectionTitles.researchProjects;
+export const instrumentsGraphAside = program.paragraphs[0] ?? "";
 
-const p = (slug: string) => getDraftProject(slug)?.description ?? TODO;
-const t = (id: string) => getDraftTheme(id)?.description ?? TODO;
+const p = (slug: string) => getProjectBySlug(slug)?.summary ?? TODO;
+const t = (id: string) => getThemeById(id)?.description ?? TODO;
 
 export const graphNodes = {
   center: {
-    index: draftSectionTitles.researchProgram,
-    title: draftHero.kicker,
-    text: draftHero.question,
+    index: sectionTitles.researchProgram,
+    title: sectionTitles.hero,
+    text: hero.paragraphs[0] ?? "",
   },
   archive: {
     index: "Archivo Venezuela",
@@ -73,9 +65,10 @@ export const graphNodes = {
 
 export type GraphNodeKey = keyof typeof graphNodes;
 
-export const archiveLede = p("archivo-venezuela");
+const archivoProject = getProjectBySlug("archivo-venezuela");
+export const archiveLede = archivoProject?.summary ?? TODO;
 
-export const archiveStats = [
+export const archiveStats = archivoProject?.homepage?.stats ?? [
   { value: "—", label: "Records", accent: "oxblood" as const },
   { value: "—", label: "Collections", accent: "forest" as const },
   { value: "—", label: "Continents", accent: "forest" as const },
@@ -83,7 +76,7 @@ export const archiveStats = [
   { value: "—", label: "Earliest · ongoing", accent: "oxblood" as const },
 ];
 
-export const archiveSpecimens = [
+export const archiveSpecimens = archivoProject?.homepage?.specimens ?? [
   {
     year: "—",
     id: "TODO",
@@ -96,19 +89,23 @@ export const archiveSpecimens = [
   },
 ];
 
-export const instrumentIndex = draftProjects.map((project, index) => ({
-  number: String(index + 1).padStart(2, "0"),
-  title: project.title,
-  subtitle: project.subtitle,
-  description: project.description,
-  featured: ["archivo-venezuela", "ai-lab-humanities"].includes(project.slug),
-  slug: project.slug,
-  italic: project.slug === "current-book-project",
-}));
+export const instrumentIndex = getAllProjects()
+  .filter((p) => !["maracas", "arepa", "avocado", "fieldscholar"].includes(p.slug))
+  .map((project, index) => ({
+    number: String(index + 1).padStart(2, "0"),
+    title: project.title,
+    subtitle: project.subtitle,
+    description: project.summary,
+    featured: project.homepageFeatured ?? false,
+    slug: project.slug,
+    italic: project.homepageItalic ?? false,
+  }));
 
 export const programTimeline = [
   { year: "—", title: TODO, note: TODO, featured: false },
 ];
+
+const { books, articles } = publications.frontmatter;
 
 export const homePublications = [
   ...books.slice(0, 2).map((b) => ({
@@ -117,8 +114,8 @@ export const homePublications = [
     type: "Book" as const,
     featured: b.featured ?? false,
   })),
-  ...featuredPublications
-    .filter((pub) => pub.type !== "book")
+  ...articles
+    .filter((pub) => pub.featured && pub.type !== "book")
     .slice(0, 2)
     .map((pub) => ({
       year: pub.year,
@@ -129,20 +126,20 @@ export const homePublications = [
 ];
 
 export const biographyPanels = [
-  { label: draftSectionTitles.biography, text: draftBiography.short },
-  { label: draftSectionTitles.biography, text: draftBiography.extended },
+  { label: sectionTitles.biography, text: biography.paragraphs[0] ?? "" },
+  { label: sectionTitles.biography, text: biography.paragraphs[1] ?? "" },
 ];
 
 export const aboutClosing = "";
 
 export const migrationSection = {
-  title: getDraftTheme("migration")?.title ?? "Migration",
+  title: getThemeById("migration")?.title ?? "Migration",
   description: t("migration"),
   footer: TODO,
 };
 
 export const criticalAiSection = {
-  title: getDraftTheme("critical-ai")?.title ?? "Critical AI",
+  title: getThemeById("critical-ai")?.title ?? "Critical AI",
   description: t("critical-ai"),
   machineReading: TODO,
   communityReading: TODO,
@@ -161,9 +158,7 @@ export const criticalAiDemo = {
 };
 
 export {
-  draftHero,
-  draftInterlude,
-  draftBiography,
-  draftSectionTitles,
-  draftMethods,
+  sectionTitles as draftSectionTitles,
+  TODO as draftInterlude,
+  TODO,
 };

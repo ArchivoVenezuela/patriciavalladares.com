@@ -4,10 +4,11 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { draftResearchQuestions, draftSectionTitles } from "@/content/draft";
+import { getResearchQuestionsContent, sectionTitles } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 export function HomeResearchQuestions() {
+  const { questions } = getResearchQuestionsContent();
   return (
     <HomeSection
       id="inquiry"
@@ -19,14 +20,14 @@ export function HomeResearchQuestions() {
     >
       <EditorialContainer>
         <div className="mb-[clamp(2rem,5vh,3.25rem)]">
-          <PlateKicker>{draftSectionTitles.researchProgram}</PlateKicker>
+          <PlateKicker>{sectionTitles.researchProgram}</PlateKicker>
           <SectionTitle id="inquiry-heading">
             Current Research Questions
           </SectionTitle>
         </div>
         <Reveal>
           <ol className="m-0 list-none border-t-2 border-t-ink p-0">
-            {draftResearchQuestions.map((question, index) => (
+            {questions.map((question, index) => (
               <li
                 key={question}
                 className={cn(
