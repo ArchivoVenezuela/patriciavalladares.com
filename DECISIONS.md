@@ -1,5 +1,48 @@
 # Design & Architecture Decisions
 
+## 2026-07-26 — Manuscript as prose authority; TypeScript as structure authority
+
+### Decision
+
+Establish a single editorial architecture:
+
+1. **`manuscript/`** is the authority for substantial website prose (hero, research narrative, project narratives, publications records, biography, teaching, contact-page copy).
+2. **TypeScript content modules** (`content/*.ts`, `lib/content/constants.ts`) are the authority for structure and metadata (navigation, site identity, slugs/tiers/filters, section labels, SEO defaults).
+3. **`lib/content/loader.ts`** reads only from `manuscript/` (`CONTENT_ROOT`).
+4. Retain thin **compatibility bridges** under `content/*.ts` where existing pages still import them; new code should prefer `@/lib/content` directly.
+5. Remove verified unused duplicate MDX under `content/**/*.mdx` and unused zero-import stubs (`content/contact.ts`, `content/research.ts`, `content/digitalScholarship.ts`, `content/research-program-narrative.md`).
+6. Remove unused manuscript twins that duplicated canonical paths (`manuscript/home/methods.mdx`, `home/biography.mdx`, `home/contact.mdx`).
+7. Keep identity fields (name, title line, affiliation, email, phone, CV, domain) in `content/site.ts`; keep contact-page prose in `manuscript/contact/contact.mdx`.
+8. Canonical professional title is **“Professor of Hispanic Studies”** across `siteConfig.titleLine` and hero MDX; research specializations remain in biography prose (owner-approved 2026-07-26).
+9. Teaching remains in `manuscript/teaching/overview.mdx` with a short neutral placeholder; the `/teaching` route is kept but hidden from primary navigation until approved course/mentorship copy exists.
+
+### Why
+
+The site had parallel trees (`manuscript/` and `content/**/*.mdx`) plus legacy TypeScript prose, creating ambiguous sources of truth. Consolidation preserves the approved visual system and scholarly language while making future edits maintainable.
+
+### Alternatives considered
+
+- Immediate deletion of all `content/*.ts` bridges (rejected — would require a broad import refactor in this phase)
+- Inventing teaching/contact prose to eliminate TODOs (rejected — violates content authority)
+- Auto-choosing one professional title string (rejected — factual conflict needs owner approval)
+
+### Status
+
+Accepted
+
+### Files removed in this phase
+
+- Entire unused `content/**/*.mdx` mirror tree
+- `content/contact.ts`, `content/research.ts`, `content/digitalScholarship.ts`
+- `content/research-program-narrative.md`
+- `manuscript/home/methods.mdx`, `manuscript/home/biography.mdx`, `manuscript/home/contact.mdx`
+
+### Files retained as bridges
+
+- `content/draft.ts`, `homeDesign.ts`, `projects.ts`, `publications.ts`, `themes.ts`, `teaching.ts`, `publicHumanities.ts`, `about.ts`, `home.ts`
+
+---
+
 ## 2026-07-05 — Static Next.js site
 
 ### Decision

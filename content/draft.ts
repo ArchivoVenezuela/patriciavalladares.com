@@ -1,6 +1,6 @@
 /**
- * @deprecated Import from @/lib/content instead.
- * Thin compatibility layer — editorial copy lives in manuscript MDX files.
+ * Compatibility bridge — import from @/lib/content for new code.
+ * Editorial copy is loaded from manuscript/ via lib/content loaders.
  */
 import {
   getAllProjects,
@@ -41,14 +41,6 @@ export const draftLandingHero = {
   institution: hero.institution,
   figureLabel: hero.figureLabel,
   paragraphs: hero.paragraphs,
-};
-
-export const draftHero = {
-  kicker: sectionTitles.hero,
-  question:
-    "How is cultural knowledge preserved when institutions collapse, communities migrate, while political power, and digital technologies increasingly mediate what is remembered and how?",
-  lede:
-    "This question brings together my work across digital humanities, Latin American and Caribbean studies, archival studies, cultural memory, migration, and critical approaches to digital humanities and artificial intelligence. My research explores the relationships between them through a set of interconnected projects, publications, digital infrastructures, and collaborative initiatives.",
 };
 
 export const draftResearchQuestions = getResearchQuestionsContent().questions;

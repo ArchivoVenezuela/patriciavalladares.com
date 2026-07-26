@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { cache } from "react";
 import { TODO } from "./constants";
 
+/** Canonical editorial root — substantial prose lives under manuscript/ only. */
 export const CONTENT_ROOT = path.join(process.cwd(), "manuscript");
 
 export { TODO };

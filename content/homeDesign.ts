@@ -1,3 +1,7 @@
+/**
+ * Compatibility bridge — assembles homepage section data from manuscript/
+ * via lib/content. Do not store substantial prose in this file.
+ */
 import {
   getAllProjects,
   getBiographyContent,

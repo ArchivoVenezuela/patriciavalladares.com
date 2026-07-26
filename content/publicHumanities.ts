@@ -1,3 +1,6 @@
+/**
+ * Compatibility bridge — derives public-humanities copy from manuscript themes/projects.
+ */
 import type { PublicHumanitiesContent } from "@/lib/types";
 import { getProjectBySlug, getThemeById, TODO } from "@/lib/content";
 

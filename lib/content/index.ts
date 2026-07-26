@@ -60,14 +60,11 @@ export interface MethodsFrontmatter extends SectionFrontmatter {
 
 export type BiographyFrontmatter = SectionFrontmatter;
 
-export interface ContactFrontmatter extends SectionFrontmatter {
-  email: string;
-  phone?: string;
-  affiliation: string;
-  department: string;
-  titleLine: string;
-  cvUrl: string;
-  externalLinks?: { label: string; url: string }[];
+/** Page chrome only. Identity (email, affiliation, etc.) lives in content/site.ts. */
+export type ContactFrontmatter = SectionFrontmatter;
+
+export interface TeachingFrontmatter extends SectionFrontmatter {
+  mentorshipTitle?: string;
 }
 
 export interface PublicationsFrontmatter extends SectionFrontmatter {
@@ -126,6 +123,20 @@ export function getBiographyContent() {
 
 export function getContactContent() {
   return loadMdx<ContactFrontmatter>("contact/contact.mdx");
+}
+
+export function getTeachingContent() {
+  const doc = loadMdx<TeachingFrontmatter>("teaching/overview.mdx");
+  return {
+    title: doc.frontmatter.title,
+    kicker: doc.frontmatter.kicker ?? doc.frontmatter.title,
+    folioLabel: doc.frontmatter.folioLabel,
+    mentorshipTitle: doc.frontmatter.mentorshipTitle ?? "Graduate mentorship",
+    statement: doc.paragraphs[0] ?? TODO,
+    mentorshipStatement: doc.paragraphs[1] ?? doc.paragraphs[0] ?? TODO,
+    body: doc.body,
+    paragraphs: doc.paragraphs,
+  };
 }
 
 export function getPublicationsContent() {

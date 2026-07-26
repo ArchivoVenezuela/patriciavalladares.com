@@ -1,9 +1,15 @@
+/**
+ * Compatibility bridge — teaching prose lives in manuscript/teaching/overview.mdx.
+ * Mentorship metrics and course lists remain structured here until approved data exists.
+ */
 import type { TeachingContent } from "@/lib/types";
-import { TODO } from "./draft";
+import { getTeachingContent, TODO } from "@/lib/content";
+
+const teaching = getTeachingContent();
 
 export const teachingContent: TeachingContent = {
-  statement: TODO,
-  mentorshipStatement: TODO,
+  statement: teaching.statement,
+  mentorshipStatement: teaching.mentorshipStatement,
   mentorship: {
     dissertationsDirected: "—",
     dissertationCommittees: "—",
@@ -15,3 +21,5 @@ export const teachingContent: TeachingContent = {
 
 export const teachingStatement = teachingContent.statement;
 export const courses = teachingContent.courses;
+
+export { TODO };

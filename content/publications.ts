@@ -1,3 +1,6 @@
+/**
+ * Compatibility bridge — publication records live in manuscript/publications/overview.mdx.
+ */
 import type { Book, Publication } from "@/lib/types";
 import { getPublicationsContent } from "@/lib/content";
 

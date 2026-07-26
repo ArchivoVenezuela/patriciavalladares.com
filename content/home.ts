@@ -1,3 +1,7 @@
+/**
+ * Compatibility bridge — homepage prose lives under manuscript/home/.
+ * Currently consumed only by unused alternate homepage components.
+ */
 import type { HomePageContent } from "@/lib/types";
 import {
   getBiographyContent,

@@ -1,3 +1,7 @@
+/**
+ * Compatibility bridge — biography prose lives in manuscript/biography/biography.mdx.
+ * Currently consumed only by unused alternate homepage components.
+ */
 import type { AboutContent } from "@/lib/types";
 import { getBiographyContent, TODO } from "@/lib/content";
 

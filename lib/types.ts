@@ -135,7 +135,7 @@ export interface ProjectDetail extends Project {
   relatedCourseIds: string[];
   relatedPublicHumanitiesIds: string[];
   links: ProjectLink[];
-  /** MDX body content when loaded from content/projects/*.mdx */
+  /** MDX body content when loaded from manuscript/projects/*.mdx */
   body?: string;
   paragraphs?: string[];
   homepageFeatured?: boolean;

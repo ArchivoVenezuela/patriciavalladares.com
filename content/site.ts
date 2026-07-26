@@ -1,3 +1,13 @@
+/**
+ * Structural site identity and metadata — not manuscript prose.
+ *
+ * Canonical for: name, wordmark, title line, affiliation, department,
+ * email, phone, domain, CV URL, social/profile links, SEO defaults.
+ *
+ * Substantial biography and contact-page prose live under manuscript/.
+ * Canonical professional title: “Professor of Hispanic Studies”.
+ * Research specializations belong in biography prose, not in titleLine.
+ */
 import type { SiteConfig } from "@/lib/types";
 import { navigation } from "./navigation";
 
@@ -13,8 +23,7 @@ export const siteConfig: SiteConfig = {
   locale: "en",
   affiliation: "University of Cincinnati",
   department: "Department of Romance and Arabic Languages and Literatures",
-  titleLine:
-    "Professor of Latin American and Caribbean Literature, Film, and Cultural Studies",
+  titleLine: "Professor of Hispanic Studies",
   phone: "(513) 432-6845",
 };
 

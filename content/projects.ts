@@ -1,3 +1,7 @@
+/**
+ * Compatibility bridge — project narratives live in manuscript/projects/*.mdx.
+ * Tool stubs (MARACAS, AREPA, AVOCADO) are defined in lib/content until MDX exists.
+ */
 import type { ProjectDetail } from "@/lib/types";
 import { getAllProjects, getProjectBySlug, TODO } from "@/lib/content";
 

@@ -1,4 +1,7 @@
+/**
+ * Structural placeholder — no approved news manuscript yet.
+ * Reserved for a future manuscript/news source when content exists.
+ */
 import type { NewsItem } from "@/lib/types";
 
-/** Not in Texto para la web.md — reserved for future manuscript revision */
 export const newsItems: NewsItem[] = [];

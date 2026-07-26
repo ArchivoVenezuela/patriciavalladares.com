@@ -11,7 +11,7 @@ export const navigation: NavItem[] = [
     href: "/digital-scholarship",
   },
   { label: "Publications", href: "/publications" },
-  { label: "Teaching", href: "/teaching" },
+  // Teaching route retained (/teaching); hidden from nav until approved course/mentorship copy is ready.
   { label: "Public Humanities", href: "/public-humanities" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

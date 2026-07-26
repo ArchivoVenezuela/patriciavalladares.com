@@ -1,3 +1,6 @@
+/**
+ * Compatibility bridge — themes and questions live in manuscript/home/*.mdx.
+ */
 import type { ResearchQuestion, ResearchTheme } from "@/lib/types";
 import {
   getResearchQuestionsContent,

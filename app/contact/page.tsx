@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/editorial/PageHeader";
 import { cvNavItem, siteConfig, socialLinks } from "@/content/site";
 import { getContactContent } from "@/lib/content";
 
+/** Prose from manuscript/contact; identity fields from content/site.ts. */
 const contact = getContactContent();
 
 export const metadata = { title: "Contact" };
