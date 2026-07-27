@@ -1,0 +1,7 @@
+fragment BiographyParts on Biography {
+  __typename
+  title
+  kicker
+  folioLabel
+  body
+}

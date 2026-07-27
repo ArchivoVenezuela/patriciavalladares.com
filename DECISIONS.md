@@ -1,5 +1,29 @@
 # Design & Architecture Decisions
 
+## 2026-07-26 — TinaCMS Stage 1 spike (Biography only)
+
+### Decision
+
+Evaluate **TinaCMS 3.x** as the browser-based visual editor for manuscript MDX, starting with a spike limited to `manuscript/biography/biography.mdx` (`/about`).
+
+Rules for the spike:
+
+1. `manuscript/` remains the canonical prose store — Tina edits files in place.
+2. No database content store; no parallel content tree; no sample blog collection.
+3. Layout, routes, and structural configuration (`content/*.ts`) remain code-owned.
+4. No page-builder blocks; rich-text toolbar is constrained.
+5. Full Stage 1 (home/research/contact/teaching) and Stage 2 (projects/publications) wait for spike approval.
+
+### Why
+
+The site already uses Git-backed MDX. TinaCMS provides App Router–compatible visual editing without abandoning the editorial architecture established in `docs/CONTENT_ARCHITECTURE.md`.
+
+### Status
+
+Accepted as an evaluation spike on `feat/tinacms-stage-1-spike` (not yet merged).
+
+---
+
 ## 2026-07-26 — Manuscript as prose authority; TypeScript as structure authority
 
 ### Decision

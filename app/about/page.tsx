@@ -1,37 +1,26 @@
-import { Container } from "@/components/layout/Container";
-import { MdxBody } from "@/components/mdx/MdxContent";
-import { PageHeader } from "@/components/editorial/PageHeader";
-import { Section } from "@/components/editorial/Section";
-import { getBiographyContent, sectionTitles, TODO } from "@/lib/content";
+import type { Metadata } from "next";
+import { AboutPageClient } from "./AboutPageClient";
+import { client } from "@/tina/__generated__/client";
 
-const biography = getBiographyContent();
+export const metadata: Metadata = { title: "Biography" };
 
-export const metadata = { title: "Biography" };
-
+/**
+ * About page — Stage 1 Tina spike.
+ *
+ * Public/production: Tina client reads the same manuscript MDX file.
+ * Edit mode: AboutPageClient hydrates via useTina for visual editing.
+ * Canonical file remains manuscript/biography/biography.mdx.
+ */
 export default async function AboutPage() {
+  const result = await client.queries.biography({
+    relativePath: "biography.mdx",
+  });
+
   return (
-    <Container className="py-12 md:py-16">
-      <PageHeader
-        kicker={biography.frontmatter.kicker ?? sectionTitles.biography}
-        title={biography.frontmatter.title}
-        description={biography.paragraphs[1]}
-        folioLabel={biography.frontmatter.folioLabel ?? "Biography — 01"}
-      />
-
-      <Section kicker={sectionTitles.biography} title={sectionTitles.biography} number="01">
-        <MdxBody
-          body={biography.body}
-          className="max-w-3xl leading-relaxed text-ink-muted"
-        />
-      </Section>
-
-      <Section kicker="Languages" title="Languages" number="02">
-        <p className="max-w-3xl text-sm text-ink-muted">{TODO}</p>
-      </Section>
-
-      <Section kicker="Education" title="Education" number="03">
-        <p className="max-w-3xl text-sm text-ink-muted">{TODO}</p>
-      </Section>
-    </Container>
+    <AboutPageClient
+      query={result.query}
+      variables={result.variables}
+      data={result.data}
+    />
   );
 }

@@ -32,6 +32,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# Tina local cache / SQLite (generated at runtime; keep config + lock committed)
+.tina/
+tina/__generated__/.cache/
 
 # vercel
 .vercel
