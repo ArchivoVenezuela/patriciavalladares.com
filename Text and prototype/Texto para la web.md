@@ -143,7 +143,7 @@ Methodological choices depend on the research question rather than on any single
 
 **06\. Biography**
 
-Patricia Valladares-Ruiz is Professor of Hispanic Studies at the University of Cincinnati, where she works at the intersection of Latin American and Caribbean studies, archives, migration, cultural memory, digital humanities, and critical AI.
+Patricia Valladares-Ruiz is Professor of Latin American and Caribbean Literature and Film at the University of Cincinnati, where she works at the intersection of Latin American and Caribbean studies, archives, migration, cultural memory, digital humanities, and critical AI.
 
 Her research combines scholarship, digital infrastructure, archival practice, and public humanities to examine how cultural knowledge is preserved, transformed, and made accessible in periods of political, social, and technological change.
 

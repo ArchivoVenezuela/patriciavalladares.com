@@ -5,7 +5,8 @@
  * email, phone, domain, CV URL, social/profile links, SEO defaults.
  *
  * Substantial biography and contact-page prose live under manuscript/.
- * Canonical professional title: “Professor of Hispanic Studies”.
+ * Canonical professional title:
+ * “Professor of Latin American and Caribbean Literature and Film”.
  * Research specializations belong in biography prose, not in titleLine.
  */
 import type { SiteConfig } from "@/lib/types";
@@ -16,14 +17,14 @@ export const siteConfig: SiteConfig = {
   wordmark: "P. Valladares-Ruiz",
   title: "Patricia Valladares-Ruiz — Academic Research",
   description:
-    "Patricia Valladares-Ruiz is Professor of Hispanic Studies at the University of Cincinnati, where she works at the intersection of Latin American and Caribbean studies, archives, migration, cultural memory, digital humanities, and critical AI.",
+    "Patricia Valladares-Ruiz is Professor of Latin American and Caribbean Literature and Film at the University of Cincinnati, where she works at the intersection of Latin American and Caribbean studies, archives, migration, cultural memory, digital humanities, and critical AI.",
   url: "https://patriciavalladares.com",
   cvUrl: "/cv/Patricia_Valladares_CV_2025.pdf",
   email: "pat.valladares@uc.edu",
   locale: "en",
   affiliation: "University of Cincinnati",
   department: "Department of Romance and Arabic Languages and Literatures",
-  titleLine: "Professor of Hispanic Studies",
+  titleLine: "Professor of Latin American and Caribbean Literature and Film",
   phone: "(513) 432-6845",
 };
 

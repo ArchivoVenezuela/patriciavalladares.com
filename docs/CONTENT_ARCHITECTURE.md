@@ -134,7 +134,7 @@ When unsure, leave the file and document it here.
 10. **News** — no manuscript source; `content/news.ts` empty.
 11. **Social profile URLs** — Google Scholar / ORCID / LinkedIn still `#` in `site.ts`.
 
-**Resolved:** Canonical professional title is “Professor of Hispanic Studies” (`siteConfig.titleLine`, hero MDX). Research specializations remain in biography prose.
+**Resolved:** Canonical professional title is “Professor of Latin American and Caribbean Literature and Film” (`siteConfig.titleLine`, SEO description, hero MDX, biography). Research specializations remain in biography prose.
 
 ---
 

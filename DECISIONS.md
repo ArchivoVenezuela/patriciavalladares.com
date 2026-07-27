@@ -13,7 +13,7 @@ Establish a single editorial architecture:
 5. Remove verified unused duplicate MDX under `content/**/*.mdx` and unused zero-import stubs (`content/contact.ts`, `content/research.ts`, `content/digitalScholarship.ts`, `content/research-program-narrative.md`).
 6. Remove unused manuscript twins that duplicated canonical paths (`manuscript/home/methods.mdx`, `home/biography.mdx`, `home/contact.mdx`).
 7. Keep identity fields (name, title line, affiliation, email, phone, CV, domain) in `content/site.ts`; keep contact-page prose in `manuscript/contact/contact.mdx`.
-8. Canonical professional title is **“Professor of Hispanic Studies”** across `siteConfig.titleLine` and hero MDX; research specializations remain in biography prose (owner-approved 2026-07-26).
+8. Canonical professional title is **“Professor of Latin American and Caribbean Literature and Film”** across `siteConfig.titleLine`, SEO description, hero MDX, and biography; research specializations remain in biography prose (owner-approved 2026-07-26).
 9. Teaching remains in `manuscript/teaching/overview.mdx` with a short neutral placeholder; the `/teaching` route is kept but hidden from primary navigation until approved course/mentorship copy exists.
 
 ### Why
