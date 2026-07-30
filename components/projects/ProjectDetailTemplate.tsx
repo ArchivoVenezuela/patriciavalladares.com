@@ -1,8 +1,10 @@
 import Link from "next/link";
-import type { ProjectDetail } from "@/lib/types";
-import { courses } from "@/content/teaching";
-import { allPublications } from "@/content/publications";
-import { publicHumanitiesItems } from "@/content/publicHumanities";
+import type {
+  Course,
+  ProjectDetail,
+  Publication,
+  PublicHumanitiesItem,
+} from "@/lib/types";
 import { isPendingCopy } from "@/lib/utils";
 import { ProjectHero } from "./ProjectHero";
 import { ProjectLinks } from "./ProjectLinks";
@@ -12,22 +14,27 @@ import { TechnologyBadge } from "./TechnologyBadge";
 
 interface ProjectDetailTemplateProps {
   project: ProjectDetail;
+  relatedPublications?: Publication[];
+  relatedCourses?: Course[];
+  relatedPublicHumanities?: PublicHumanitiesItem[];
+  /** Optional Tina contextual-editing field paths for the hero block */
+  heroTinaFields?: {
+    title?: string;
+    subtitle?: string;
+    summary?: string;
+  };
 }
 
-export function ProjectDetailTemplate({ project }: ProjectDetailTemplateProps) {
-  const relatedPublications = allPublications.filter((p) =>
-    project.relatedPublicationIds.includes(p.id),
-  );
-  const relatedCourses = courses.filter((c) =>
-    project.relatedCourseIds.includes(c.id),
-  );
-  const relatedPublicHumanities = publicHumanitiesItems.filter((p) =>
-    project.relatedPublicHumanitiesIds.includes(p.id),
-  );
-
+export function ProjectDetailTemplate({
+  project,
+  relatedPublications = [],
+  relatedCourses = [],
+  relatedPublicHumanities = [],
+  heroTinaFields,
+}: ProjectDetailTemplateProps) {
   return (
     <article>
-      <ProjectHero project={project} />
+      <ProjectHero project={project} tinaFields={heroTinaFields} />
 
       <div className="grid gap-12 lg:grid-cols-[1fr_280px]">
         <div>

@@ -56,10 +56,46 @@ type Query {
   document(collection: String, relativePath: String): DocumentNode!
   biography(relativePath: String): Biography!
   biographyConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: BiographyFilter): BiographyConnection!
+  homeHero(relativePath: String): HomeHero!
+  homeHeroConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomeHeroFilter): HomeHeroConnection!
+  homeThemes(relativePath: String): HomeThemes!
+  homeThemesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomeThemesFilter): HomeThemesConnection!
+  homeQuestions(relativePath: String): HomeQuestions!
+  homeQuestionsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomeQuestionsFilter): HomeQuestionsConnection!
+  homeProgram(relativePath: String): HomeProgram!
+  homeProgramConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomeProgramFilter): HomeProgramConnection!
+  homeProjectsOverview(relativePath: String): HomeProjectsOverview!
+  homeProjectsOverviewConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomeProjectsOverviewFilter): HomeProjectsOverviewConnection!
+  researchOverview(relativePath: String): ResearchOverview!
+  researchOverviewConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ResearchOverviewFilter): ResearchOverviewConnection!
+  researchMethods(relativePath: String): ResearchMethods!
+  researchMethodsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ResearchMethodsFilter): ResearchMethodsConnection!
+  project(relativePath: String): Project!
+  projectConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ProjectFilter): ProjectConnection!
+  publications(relativePath: String): Publications!
+  publicationsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PublicationsFilter): PublicationsConnection!
+  publicHumanities(relativePath: String): PublicHumanities!
+  publicHumanitiesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PublicHumanitiesFilter): PublicHumanitiesConnection!
+  teaching(relativePath: String): Teaching!
+  teachingConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: TeachingFilter): TeachingConnection!
+  contact(relativePath: String): Contact!
+  contactConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ContactFilter): ContactConnection!
 }
 
 input DocumentFilter {
   biography: BiographyFilter
+  homeHero: HomeHeroFilter
+  homeThemes: HomeThemesFilter
+  homeQuestions: HomeQuestionsFilter
+  homeProgram: HomeProgramFilter
+  homeProjectsOverview: HomeProjectsOverviewFilter
+  researchOverview: ResearchOverviewFilter
+  researchMethods: ResearchMethodsFilter
+  project: ProjectFilter
+  publications: PublicationsFilter
+  publicHumanities: PublicHumanitiesFilter
+  teaching: TeachingFilter
+  contact: ContactFilter
 }
 
 type DocumentConnectionEdges {
@@ -85,12 +121,16 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Biography | Folder
+union DocumentNode = Biography | HomeHero | HomeThemes | HomeQuestions | HomeProgram | HomeProjectsOverview | ResearchOverview | ResearchMethods | Project | Publications | PublicHumanities | Teaching | Contact | Folder
 
 type Biography implements Node & Document {
   title: String!
   kicker: String!
   folioLabel: String!
+  languagesTitle: String!
+  languagesBody: String!
+  educationTitle: String!
+  educationBody: String!
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -114,6 +154,10 @@ input BiographyFilter {
   title: StringFilter
   kicker: StringFilter
   folioLabel: StringFilter
+  languagesTitle: StringFilter
+  languagesBody: StringFilter
+  educationTitle: StringFilter
+  educationBody: StringFilter
   body: RichTextFilter
 }
 
@@ -128,6 +172,595 @@ type BiographyConnection implements Connection {
   edges: [BiographyConnectionEdges]
 }
 
+type HomeHero implements Node & Document {
+  label: String!
+  name: String!
+  titleLine: String!
+  institution: String!
+  figureLabel: String!
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input HomeHeroFilter {
+  label: StringFilter
+  name: StringFilter
+  titleLine: StringFilter
+  institution: StringFilter
+  figureLabel: StringFilter
+  body: RichTextFilter
+}
+
+type HomeHeroConnectionEdges {
+  cursor: String!
+  node: HomeHero
+}
+
+type HomeHeroConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [HomeHeroConnectionEdges]
+}
+
+type HomeThemesThemes {
+  id: String!
+  title: String!
+  description: String!
+}
+
+type HomeThemesCriticalAi {
+  machineReading: String!
+  communityReading: String!
+  captionMachine: String!
+  captionCommunity: String!
+  objectId: String!
+  objectLabel: String!
+  machineTags: [String]
+  machineConfidence: String!
+  machineNote: String!
+  communityLead: String!
+  communityNote: String!
+}
+
+type HomeThemes implements Node & Document {
+  title: String!
+  kicker: String!
+  themes: [HomeThemesThemes]
+  criticalAi: HomeThemesCriticalAi
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input HomeThemesThemesFilter {
+  id: StringFilter
+  title: StringFilter
+  description: StringFilter
+}
+
+input HomeThemesCriticalAiFilter {
+  machineReading: StringFilter
+  communityReading: StringFilter
+  captionMachine: StringFilter
+  captionCommunity: StringFilter
+  objectId: StringFilter
+  objectLabel: StringFilter
+  machineTags: StringFilter
+  machineConfidence: StringFilter
+  machineNote: StringFilter
+  communityLead: StringFilter
+  communityNote: StringFilter
+}
+
+input HomeThemesFilter {
+  title: StringFilter
+  kicker: StringFilter
+  themes: HomeThemesThemesFilter
+  criticalAi: HomeThemesCriticalAiFilter
+  body: RichTextFilter
+}
+
+type HomeThemesConnectionEdges {
+  cursor: String!
+  node: HomeThemes
+}
+
+type HomeThemesConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [HomeThemesConnectionEdges]
+}
+
+type HomeQuestions implements Node & Document {
+  title: String!
+  kicker: String!
+  questions: [String]
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input HomeQuestionsFilter {
+  title: StringFilter
+  kicker: StringFilter
+  questions: StringFilter
+  body: RichTextFilter
+}
+
+type HomeQuestionsConnectionEdges {
+  cursor: String!
+  node: HomeQuestions
+}
+
+type HomeQuestionsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [HomeQuestionsConnectionEdges]
+}
+
+type HomeProgram implements Node & Document {
+  title: String!
+  kicker: String!
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input HomeProgramFilter {
+  title: StringFilter
+  kicker: StringFilter
+  body: RichTextFilter
+}
+
+type HomeProgramConnectionEdges {
+  cursor: String!
+  node: HomeProgram
+}
+
+type HomeProgramConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [HomeProgramConnectionEdges]
+}
+
+type HomeProjectsOverview implements Node & Document {
+  title: String!
+  kicker: String!
+  folioLabel: String
+  toolsSectionTitle: String!
+  toolsIntro: String!
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input HomeProjectsOverviewFilter {
+  title: StringFilter
+  kicker: StringFilter
+  folioLabel: StringFilter
+  toolsSectionTitle: StringFilter
+  toolsIntro: StringFilter
+  body: RichTextFilter
+}
+
+type HomeProjectsOverviewConnectionEdges {
+  cursor: String!
+  node: HomeProjectsOverview
+}
+
+type HomeProjectsOverviewConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [HomeProjectsOverviewConnectionEdges]
+}
+
+type ResearchOverview implements Node & Document {
+  title: String!
+  kicker: String!
+  folioLabel: String
+  programSectionTitle: String!
+  themesSectionTitle: String!
+  monographSectionKicker: String!
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input ResearchOverviewFilter {
+  title: StringFilter
+  kicker: StringFilter
+  folioLabel: StringFilter
+  programSectionTitle: StringFilter
+  themesSectionTitle: StringFilter
+  monographSectionKicker: StringFilter
+  body: RichTextFilter
+}
+
+type ResearchOverviewConnectionEdges {
+  cursor: String!
+  node: ResearchOverview
+}
+
+type ResearchOverviewConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ResearchOverviewConnectionEdges]
+}
+
+type ResearchMethods implements Node & Document {
+  title: String!
+  kicker: String!
+  folioLabel: String
+  methods: [String]
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input ResearchMethodsFilter {
+  title: StringFilter
+  kicker: StringFilter
+  folioLabel: StringFilter
+  methods: StringFilter
+  body: RichTextFilter
+}
+
+type ResearchMethodsConnectionEdges {
+  cursor: String!
+  node: ResearchMethods
+}
+
+type ResearchMethodsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ResearchMethodsConnectionEdges]
+}
+
+type ProjectLinks {
+  label: String!
+  url: String!
+  external: Boolean
+}
+
+type ProjectHomepageStats {
+  value: String!
+  label: String!
+  accent: String!
+}
+
+type ProjectHomepageSpecimensMeta {
+  label: String!
+  value: String!
+}
+
+type ProjectHomepageSpecimens {
+  year: String!
+  id: String!
+  title: String!
+  meta: [ProjectHomepageSpecimensMeta]
+  note: String!
+}
+
+type ProjectHomepage {
+  specimensLabel: String
+  specimenCardLabel: String
+  stats: [ProjectHomepageStats]
+  specimens: [ProjectHomepageSpecimens]
+}
+
+type Project implements Node & Document {
+  slug: String!
+  title: String!
+  subtitle: String!
+  tier: String!
+  status: String!
+  featured: Boolean
+  homepageFeatured: Boolean
+  homepageItalic: Boolean
+  links: [ProjectLinks]
+  homepage: ProjectHomepage
+  summary: String
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
+}
+
+input ProjectLinksFilter {
+  label: StringFilter
+  url: StringFilter
+  external: BooleanFilter
+}
+
+input ProjectHomepageStatsFilter {
+  value: StringFilter
+  label: StringFilter
+  accent: StringFilter
+}
+
+input ProjectHomepageSpecimensMetaFilter {
+  label: StringFilter
+  value: StringFilter
+}
+
+input ProjectHomepageSpecimensFilter {
+  year: StringFilter
+  id: StringFilter
+  title: StringFilter
+  meta: ProjectHomepageSpecimensMetaFilter
+  note: StringFilter
+}
+
+input ProjectHomepageFilter {
+  specimensLabel: StringFilter
+  specimenCardLabel: StringFilter
+  stats: ProjectHomepageStatsFilter
+  specimens: ProjectHomepageSpecimensFilter
+}
+
+input ProjectFilter {
+  slug: StringFilter
+  title: StringFilter
+  subtitle: StringFilter
+  tier: StringFilter
+  status: StringFilter
+  featured: BooleanFilter
+  homepageFeatured: BooleanFilter
+  homepageItalic: BooleanFilter
+  links: ProjectLinksFilter
+  homepage: ProjectHomepageFilter
+  summary: StringFilter
+  body: RichTextFilter
+}
+
+type ProjectConnectionEdges {
+  cursor: String!
+  node: Project
+}
+
+type ProjectConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ProjectConnectionEdges]
+}
+
+type PublicationsBooks {
+  id: String!
+  title: String!
+  subtitle: String
+  venue: String
+  publisher: String
+  year: String!
+  type: String
+  featured: Boolean
+  description: String
+  coverImage: String
+}
+
+type PublicationsArticles {
+  id: String!
+  title: String!
+  venue: String!
+  volume: String
+  pages: String
+  year: String!
+  type: String
+  topic: String
+  featured: Boolean
+}
+
+type Publications implements Node & Document {
+  title: String!
+  kicker: String!
+  folioLabel: String
+  intro: String
+  booksSectionTitle: String!
+  articlesSectionTitle: String!
+  filterSectionTitle: String!
+  books: [PublicationsBooks]
+  articles: [PublicationsArticles]
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input PublicationsBooksFilter {
+  id: StringFilter
+  title: StringFilter
+  subtitle: StringFilter
+  venue: StringFilter
+  publisher: StringFilter
+  year: StringFilter
+  type: StringFilter
+  featured: BooleanFilter
+  description: StringFilter
+  coverImage: StringFilter
+}
+
+input PublicationsArticlesFilter {
+  id: StringFilter
+  title: StringFilter
+  venue: StringFilter
+  volume: StringFilter
+  pages: StringFilter
+  year: StringFilter
+  type: StringFilter
+  topic: StringFilter
+  featured: BooleanFilter
+}
+
+input PublicationsFilter {
+  title: StringFilter
+  kicker: StringFilter
+  folioLabel: StringFilter
+  intro: StringFilter
+  booksSectionTitle: StringFilter
+  articlesSectionTitle: StringFilter
+  filterSectionTitle: StringFilter
+  books: PublicationsBooksFilter
+  articles: PublicationsArticlesFilter
+  body: RichTextFilter
+}
+
+type PublicationsConnectionEdges {
+  cursor: String!
+  node: Publications
+}
+
+type PublicationsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [PublicationsConnectionEdges]
+}
+
+type PublicHumanities implements Node & Document {
+  title: String!
+  kicker: String!
+  folioLabel: String
+  projectsSectionTitle: String!
+  featuredProjectSlug: String!
+  introThemeId: String!
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input PublicHumanitiesFilter {
+  title: StringFilter
+  kicker: StringFilter
+  folioLabel: StringFilter
+  projectsSectionTitle: StringFilter
+  featuredProjectSlug: StringFilter
+  introThemeId: StringFilter
+  body: RichTextFilter
+}
+
+type PublicHumanitiesConnectionEdges {
+  cursor: String!
+  node: PublicHumanities
+}
+
+type PublicHumanitiesConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [PublicHumanitiesConnectionEdges]
+}
+
+type TeachingCourses {
+  id: String!
+  title: String!
+  code: String
+  semester: String
+  description: String
+}
+
+type Teaching implements Node & Document {
+  title: String!
+  kicker: String!
+  folioLabel: String
+  mentorshipTitle: String
+  courses: [TeachingCourses]
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input TeachingCoursesFilter {
+  id: StringFilter
+  title: StringFilter
+  code: StringFilter
+  semester: StringFilter
+  description: StringFilter
+}
+
+input TeachingFilter {
+  title: StringFilter
+  kicker: StringFilter
+  folioLabel: StringFilter
+  mentorshipTitle: StringFilter
+  courses: TeachingCoursesFilter
+  body: RichTextFilter
+}
+
+type TeachingConnectionEdges {
+  cursor: String!
+  node: Teaching
+}
+
+type TeachingConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [TeachingConnectionEdges]
+}
+
+type ContactExternalLinks {
+  label: String!
+  url: String!
+}
+
+type Contact implements Node & Document {
+  title: String!
+  kicker: String!
+  folioLabel: String
+  affiliationLabel: String!
+  emailLabel: String!
+  phoneLabel: String!
+  cvLabel: String!
+  cvButtonLabel: String!
+  linksLabel: String!
+  externalLinks: [ContactExternalLinks]
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input ContactExternalLinksFilter {
+  label: StringFilter
+  url: StringFilter
+}
+
+input ContactFilter {
+  title: StringFilter
+  kicker: StringFilter
+  folioLabel: StringFilter
+  affiliationLabel: StringFilter
+  emailLabel: StringFilter
+  phoneLabel: StringFilter
+  cvLabel: StringFilter
+  cvButtonLabel: StringFilter
+  linksLabel: StringFilter
+  externalLinks: ContactExternalLinksFilter
+  body: RichTextFilter
+}
+
+type ContactConnectionEdges {
+  cursor: String!
+  node: Contact
+}
+
+type ContactConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ContactConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -136,21 +769,281 @@ type Mutation {
   createFolder(collection: String, relativePath: String!): DocumentNode!
   updateBiography(relativePath: String!, params: BiographyMutation!): Biography!
   createBiography(relativePath: String!, params: BiographyMutation!): Biography!
+  updateHomeHero(relativePath: String!, params: HomeHeroMutation!): HomeHero!
+  createHomeHero(relativePath: String!, params: HomeHeroMutation!): HomeHero!
+  updateHomeThemes(relativePath: String!, params: HomeThemesMutation!): HomeThemes!
+  createHomeThemes(relativePath: String!, params: HomeThemesMutation!): HomeThemes!
+  updateHomeQuestions(relativePath: String!, params: HomeQuestionsMutation!): HomeQuestions!
+  createHomeQuestions(relativePath: String!, params: HomeQuestionsMutation!): HomeQuestions!
+  updateHomeProgram(relativePath: String!, params: HomeProgramMutation!): HomeProgram!
+  createHomeProgram(relativePath: String!, params: HomeProgramMutation!): HomeProgram!
+  updateHomeProjectsOverview(relativePath: String!, params: HomeProjectsOverviewMutation!): HomeProjectsOverview!
+  createHomeProjectsOverview(relativePath: String!, params: HomeProjectsOverviewMutation!): HomeProjectsOverview!
+  updateResearchOverview(relativePath: String!, params: ResearchOverviewMutation!): ResearchOverview!
+  createResearchOverview(relativePath: String!, params: ResearchOverviewMutation!): ResearchOverview!
+  updateResearchMethods(relativePath: String!, params: ResearchMethodsMutation!): ResearchMethods!
+  createResearchMethods(relativePath: String!, params: ResearchMethodsMutation!): ResearchMethods!
+  updateProject(relativePath: String!, params: ProjectMutation!): Project!
+  createProject(relativePath: String!, params: ProjectMutation!): Project!
+  updatePublications(relativePath: String!, params: PublicationsMutation!): Publications!
+  createPublications(relativePath: String!, params: PublicationsMutation!): Publications!
+  updatePublicHumanities(relativePath: String!, params: PublicHumanitiesMutation!): PublicHumanities!
+  createPublicHumanities(relativePath: String!, params: PublicHumanitiesMutation!): PublicHumanities!
+  updateTeaching(relativePath: String!, params: TeachingMutation!): Teaching!
+  createTeaching(relativePath: String!, params: TeachingMutation!): Teaching!
+  updateContact(relativePath: String!, params: ContactMutation!): Contact!
+  createContact(relativePath: String!, params: ContactMutation!): Contact!
 }
 
 input DocumentUpdateMutation {
   biography: BiographyMutation
+  homeHero: HomeHeroMutation
+  homeThemes: HomeThemesMutation
+  homeQuestions: HomeQuestionsMutation
+  homeProgram: HomeProgramMutation
+  homeProjectsOverview: HomeProjectsOverviewMutation
+  researchOverview: ResearchOverviewMutation
+  researchMethods: ResearchMethodsMutation
+  project: ProjectMutation
+  publications: PublicationsMutation
+  publicHumanities: PublicHumanitiesMutation
+  teaching: TeachingMutation
+  contact: ContactMutation
   relativePath: String
 }
 
 input DocumentMutation {
   biography: BiographyMutation
+  homeHero: HomeHeroMutation
+  homeThemes: HomeThemesMutation
+  homeQuestions: HomeQuestionsMutation
+  homeProgram: HomeProgramMutation
+  homeProjectsOverview: HomeProjectsOverviewMutation
+  researchOverview: ResearchOverviewMutation
+  researchMethods: ResearchMethodsMutation
+  project: ProjectMutation
+  publications: PublicationsMutation
+  publicHumanities: PublicHumanitiesMutation
+  teaching: TeachingMutation
+  contact: ContactMutation
 }
 
 input BiographyMutation {
   title: String
   kicker: String
   folioLabel: String
+  languagesTitle: String
+  languagesBody: String
+  educationTitle: String
+  educationBody: String
+  body: JSON
+}
+
+input HomeHeroMutation {
+  label: String
+  name: String
+  titleLine: String
+  institution: String
+  figureLabel: String
+  body: JSON
+}
+
+input HomeThemesThemesMutation {
+  id: String
+  title: String
+  description: String
+}
+
+input HomeThemesCriticalAiMutation {
+  machineReading: String
+  communityReading: String
+  captionMachine: String
+  captionCommunity: String
+  objectId: String
+  objectLabel: String
+  machineTags: [String]
+  machineConfidence: String
+  machineNote: String
+  communityLead: String
+  communityNote: String
+}
+
+input HomeThemesMutation {
+  title: String
+  kicker: String
+  themes: [HomeThemesThemesMutation]
+  criticalAi: HomeThemesCriticalAiMutation
+  body: JSON
+}
+
+input HomeQuestionsMutation {
+  title: String
+  kicker: String
+  questions: [String]
+  body: JSON
+}
+
+input HomeProgramMutation {
+  title: String
+  kicker: String
+  body: JSON
+}
+
+input HomeProjectsOverviewMutation {
+  title: String
+  kicker: String
+  folioLabel: String
+  toolsSectionTitle: String
+  toolsIntro: String
+  body: JSON
+}
+
+input ResearchOverviewMutation {
+  title: String
+  kicker: String
+  folioLabel: String
+  programSectionTitle: String
+  themesSectionTitle: String
+  monographSectionKicker: String
+  body: JSON
+}
+
+input ResearchMethodsMutation {
+  title: String
+  kicker: String
+  folioLabel: String
+  methods: [String]
+  body: JSON
+}
+
+input ProjectLinksMutation {
+  label: String
+  url: String
+  external: Boolean
+}
+
+input ProjectHomepageStatsMutation {
+  value: String
+  label: String
+  accent: String
+}
+
+input ProjectHomepageSpecimensMetaMutation {
+  label: String
+  value: String
+}
+
+input ProjectHomepageSpecimensMutation {
+  year: String
+  id: String
+  title: String
+  meta: [ProjectHomepageSpecimensMetaMutation]
+  note: String
+}
+
+input ProjectHomepageMutation {
+  specimensLabel: String
+  specimenCardLabel: String
+  stats: [ProjectHomepageStatsMutation]
+  specimens: [ProjectHomepageSpecimensMutation]
+}
+
+input ProjectMutation {
+  slug: String
+  title: String
+  subtitle: String
+  tier: String
+  status: String
+  featured: Boolean
+  homepageFeatured: Boolean
+  homepageItalic: Boolean
+  links: [ProjectLinksMutation]
+  homepage: ProjectHomepageMutation
+  summary: String
+  body: JSON
+}
+
+input PublicationsBooksMutation {
+  id: String
+  title: String
+  subtitle: String
+  venue: String
+  publisher: String
+  year: String
+  type: String
+  featured: Boolean
+  description: String
+  coverImage: String
+}
+
+input PublicationsArticlesMutation {
+  id: String
+  title: String
+  venue: String
+  volume: String
+  pages: String
+  year: String
+  type: String
+  topic: String
+  featured: Boolean
+}
+
+input PublicationsMutation {
+  title: String
+  kicker: String
+  folioLabel: String
+  intro: String
+  booksSectionTitle: String
+  articlesSectionTitle: String
+  filterSectionTitle: String
+  books: [PublicationsBooksMutation]
+  articles: [PublicationsArticlesMutation]
+  body: JSON
+}
+
+input PublicHumanitiesMutation {
+  title: String
+  kicker: String
+  folioLabel: String
+  projectsSectionTitle: String
+  featuredProjectSlug: String
+  introThemeId: String
+  body: JSON
+}
+
+input TeachingCoursesMutation {
+  id: String
+  title: String
+  code: String
+  semester: String
+  description: String
+}
+
+input TeachingMutation {
+  title: String
+  kicker: String
+  folioLabel: String
+  mentorshipTitle: String
+  courses: [TeachingCoursesMutation]
+  body: JSON
+}
+
+input ContactExternalLinksMutation {
+  label: String
+  url: String
+}
+
+input ContactMutation {
+  title: String
+  kicker: String
+  folioLabel: String
+  affiliationLabel: String
+  emailLabel: String
+  phoneLabel: String
+  cvLabel: String
+  cvButtonLabel: String
+  linksLabel: String
+  externalLinks: [ContactExternalLinksMutation]
   body: JSON
 }
 

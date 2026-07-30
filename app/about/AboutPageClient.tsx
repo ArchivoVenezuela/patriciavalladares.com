@@ -7,7 +7,6 @@ import { FolioMarker } from "@/components/editorial/FolioMarker";
 import { Kicker } from "@/components/editorial/Kicker";
 import { Rule } from "@/components/editorial/Rule";
 import { Section } from "@/components/editorial/Section";
-import { sectionTitles, TODO } from "@/lib/content/constants";
 import { extractParagraphTexts } from "@/lib/tina/richText";
 import type { BiographyQuery } from "@/tina/__generated__/types";
 
@@ -30,7 +29,7 @@ export function AboutPageClient(props: AboutPageClientProps) {
 
   const doc = data.biography;
   const paragraphs = extractParagraphTexts(doc.body);
-  const description = paragraphs[1];
+  const description = paragraphs[1] ?? paragraphs[0];
 
   return (
     <Container className="py-12 md:py-16">
@@ -57,7 +56,7 @@ export function AboutPageClient(props: AboutPageClientProps) {
         <Rule className="mt-8" variant="gold" />
       </header>
 
-      <Section kicker={sectionTitles.biography} title={sectionTitles.biography} number="01">
+      <Section kicker={doc.kicker} title={doc.title} number="01">
         <div
           className="max-w-3xl space-y-6 leading-relaxed text-ink-muted [&_a]:text-link [&_p]:m-0 [&_p]:leading-relaxed"
           data-tina-field={tinaField(doc, "body")}
@@ -66,12 +65,30 @@ export function AboutPageClient(props: AboutPageClientProps) {
         </div>
       </Section>
 
-      <Section kicker="Languages" title="Languages" number="02">
-        <p className="max-w-3xl text-sm text-ink-muted">{TODO}</p>
+      <Section
+        kicker={doc.languagesTitle}
+        title={doc.languagesTitle}
+        number="02"
+      >
+        <p
+          className="max-w-3xl text-sm text-ink-muted"
+          data-tina-field={tinaField(doc, "languagesBody")}
+        >
+          {doc.languagesBody}
+        </p>
       </Section>
 
-      <Section kicker="Education" title="Education" number="03">
-        <p className="max-w-3xl text-sm text-ink-muted">{TODO}</p>
+      <Section
+        kicker={doc.educationTitle}
+        title={doc.educationTitle}
+        number="03"
+      >
+        <p
+          className="max-w-3xl text-sm text-ink-muted"
+          data-tina-field={tinaField(doc, "educationBody")}
+        >
+          {doc.educationBody}
+        </p>
       </Section>
     </Container>
   );

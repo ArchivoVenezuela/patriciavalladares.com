@@ -6,22 +6,49 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { sectionTitles, TODO } from "@/lib/content/constants";
 import { cn } from "@/lib/utils";
 
+type SpecimenMeta = { label: string; value: string } | [string, string];
+
 interface ArchiveSectionProps {
+  kicker: string;
+  title: string;
   lede: string;
+  specimensLabel: string;
+  specimenCardLabel: string;
   stats: { value: string; label: string; accent: "oxblood" | "forest" }[];
   specimens: {
     year: string;
     id: string;
     title: string;
-    meta: [string, string][];
+    meta: SpecimenMeta[];
     note: string;
   }[];
+  tinaFields?: {
+    kicker?: string;
+    title?: string;
+    lede?: string;
+  };
 }
 
-export function ArchiveSection({ lede, stats, specimens }: ArchiveSectionProps) {
+function metaLabel(meta: SpecimenMeta): string {
+  return Array.isArray(meta) ? meta[0] : meta.label;
+}
+
+function metaValue(meta: SpecimenMeta): string {
+  return Array.isArray(meta) ? meta[1] : meta.value;
+}
+
+export function ArchiveSection({
+  kicker,
+  title,
+  lede,
+  specimensLabel,
+  specimenCardLabel,
+  stats,
+  specimens,
+  tinaFields,
+}: ArchiveSectionProps) {
   const [active, setActive] = useState(0);
   const specimen = specimens[active];
 
@@ -38,7 +65,7 @@ export function ArchiveSection({ lede, stats, specimens }: ArchiveSectionProps) 
         setActive(index);
       }
     },
-    [],
+    [specimens.length],
   );
 
   return (
@@ -46,12 +73,19 @@ export function ArchiveSection({ lede, stats, specimens }: ArchiveSectionProps) 
       <EditorialContainer>
         <div className="mb-[clamp(2.25rem,5vh,3.75rem)] grid items-end gap-[clamp(1.5rem,4vw,4rem)] md:grid-cols-2">
           <div>
-            <PlateKicker>{sectionTitles.researchProjects}</PlateKicker>
-            <SectionTitle id="archive-heading" size="archive">
-              Archivo Venezuela
-            </SectionTitle>
+            <div data-tina-field={tinaFields?.kicker}>
+              <PlateKicker>{kicker}</PlateKicker>
+            </div>
+            <div data-tina-field={tinaFields?.title}>
+              <SectionTitle id="archive-heading" size="archive">
+                {title}
+              </SectionTitle>
+            </div>
           </div>
-          <p className="m-0 max-w-[40ch] text-[clamp(1rem,1.5vw,1.25rem)] leading-normal text-ink-body">
+          <p
+            className="m-0 max-w-[40ch] text-[clamp(1rem,1.5vw,1.25rem)] leading-normal text-ink-body"
+            data-tina-field={tinaFields?.lede}
+          >
             {lede}
           </p>
         </div>
@@ -73,7 +107,7 @@ export function ArchiveSection({ lede, stats, specimens }: ArchiveSectionProps) 
         <Reveal className="grid items-start gap-[clamp(1.5rem,4vw,3.25rem)] lg:grid-cols-[minmax(0,1.4fr)_minmax(260px,1fr)]">
           <div>
             <p className="mb-4 font-mono text-[9.5px] uppercase tracking-[0.2em] text-gold">
-              {TODO}
+              {specimensLabel}
             </p>
             <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5" role="listbox" aria-label="Archive specimens">
               {specimens.map((s, i) => (
@@ -99,16 +133,16 @@ export function ArchiveSection({ lede, stats, specimens }: ArchiveSectionProps) 
 
           <article className="border border-ink bg-paper-light" aria-live="polite">
             <div className="bg-forest px-[1.125rem] py-2.5 font-mono text-[9px] uppercase tracking-[0.2em] text-paper">
-              {TODO}
+              {specimenCardLabel}
             </div>
             <div className="px-5 py-5">
               <div className="mb-3 font-mono text-[11px] tracking-wide text-oxblood">{specimen.id}</div>
               <h3 className="mb-4 font-serif text-[22px] font-normal italic leading-tight text-ink">{specimen.title}</h3>
               <dl className="border-t border-border pt-3 font-mono text-[11px] leading-8 text-ink-body">
-                {specimen.meta.map(([label, value]) => (
-                  <div key={label}>
-                    <dt className="inline text-gold">{label}&nbsp;&nbsp;&nbsp;&nbsp;</dt>
-                    <dd className="inline">{value}</dd>
+                {specimen.meta.map((meta) => (
+                  <div key={metaLabel(meta)}>
+                    <dt className="inline text-gold">{metaLabel(meta)}&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+                    <dd className="inline">{metaValue(meta)}</dd>
                   </div>
                 ))}
               </dl>

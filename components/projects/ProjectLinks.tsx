@@ -1,5 +1,5 @@
 import type { ProjectLink } from "@/lib/types";
-import { TODO } from "@/content/draft";
+import { TODO } from "@/lib/content/constants";
 
 interface ProjectLinksProps {
   links: ProjectLink[];

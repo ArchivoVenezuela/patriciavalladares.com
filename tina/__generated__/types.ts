@@ -84,6 +84,30 @@ export type Query = {
   document: DocumentNode;
   biography: Biography;
   biographyConnection: BiographyConnection;
+  homeHero: HomeHero;
+  homeHeroConnection: HomeHeroConnection;
+  homeThemes: HomeThemes;
+  homeThemesConnection: HomeThemesConnection;
+  homeQuestions: HomeQuestions;
+  homeQuestionsConnection: HomeQuestionsConnection;
+  homeProgram: HomeProgram;
+  homeProgramConnection: HomeProgramConnection;
+  homeProjectsOverview: HomeProjectsOverview;
+  homeProjectsOverviewConnection: HomeProjectsOverviewConnection;
+  researchOverview: ResearchOverview;
+  researchOverviewConnection: ResearchOverviewConnection;
+  researchMethods: ResearchMethods;
+  researchMethodsConnection: ResearchMethodsConnection;
+  project: Project;
+  projectConnection: ProjectConnection;
+  publications: Publications;
+  publicationsConnection: PublicationsConnection;
+  publicHumanities: PublicHumanities;
+  publicHumanitiesConnection: PublicHumanitiesConnection;
+  teaching: Teaching;
+  teachingConnection: TeachingConnection;
+  contact: Contact;
+  contactConnection: ContactConnection;
 };
 
 
@@ -122,8 +146,200 @@ export type QueryBiographyConnectionArgs = {
   filter?: InputMaybe<BiographyFilter>;
 };
 
+
+export type QueryHomeHeroArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryHomeHeroConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeHeroFilter>;
+};
+
+
+export type QueryHomeThemesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryHomeThemesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeThemesFilter>;
+};
+
+
+export type QueryHomeQuestionsArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryHomeQuestionsConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeQuestionsFilter>;
+};
+
+
+export type QueryHomeProgramArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryHomeProgramConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeProgramFilter>;
+};
+
+
+export type QueryHomeProjectsOverviewArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryHomeProjectsOverviewConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeProjectsOverviewFilter>;
+};
+
+
+export type QueryResearchOverviewArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryResearchOverviewConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ResearchOverviewFilter>;
+};
+
+
+export type QueryResearchMethodsArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryResearchMethodsConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ResearchMethodsFilter>;
+};
+
+
+export type QueryProjectArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryProjectConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ProjectFilter>;
+};
+
+
+export type QueryPublicationsArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryPublicationsConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PublicationsFilter>;
+};
+
+
+export type QueryPublicHumanitiesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryPublicHumanitiesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PublicHumanitiesFilter>;
+};
+
+
+export type QueryTeachingArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryTeachingConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<TeachingFilter>;
+};
+
+
+export type QueryContactArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryContactConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ContactFilter>;
+};
+
 export type DocumentFilter = {
   biography?: InputMaybe<BiographyFilter>;
+  homeHero?: InputMaybe<HomeHeroFilter>;
+  homeThemes?: InputMaybe<HomeThemesFilter>;
+  homeQuestions?: InputMaybe<HomeQuestionsFilter>;
+  homeProgram?: InputMaybe<HomeProgramFilter>;
+  homeProjectsOverview?: InputMaybe<HomeProjectsOverviewFilter>;
+  researchOverview?: InputMaybe<ResearchOverviewFilter>;
+  researchMethods?: InputMaybe<ResearchMethodsFilter>;
+  project?: InputMaybe<ProjectFilter>;
+  publications?: InputMaybe<PublicationsFilter>;
+  publicHumanities?: InputMaybe<PublicHumanitiesFilter>;
+  teaching?: InputMaybe<TeachingFilter>;
+  contact?: InputMaybe<ContactFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -163,13 +379,17 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Biography | Folder;
+export type DocumentNode = Biography | HomeHero | HomeThemes | HomeQuestions | HomeProgram | HomeProjectsOverview | ResearchOverview | ResearchMethods | Project | Publications | PublicHumanities | Teaching | Contact | Folder;
 
 export type Biography = Node & Document & {
   __typename?: 'Biography';
   title: Scalars['String']['output'];
   kicker: Scalars['String']['output'];
   folioLabel: Scalars['String']['output'];
+  languagesTitle: Scalars['String']['output'];
+  languagesBody: Scalars['String']['output'];
+  educationTitle: Scalars['String']['output'];
+  educationBody: Scalars['String']['output'];
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -193,6 +413,10 @@ export type BiographyFilter = {
   title?: InputMaybe<StringFilter>;
   kicker?: InputMaybe<StringFilter>;
   folioLabel?: InputMaybe<StringFilter>;
+  languagesTitle?: InputMaybe<StringFilter>;
+  languagesBody?: InputMaybe<StringFilter>;
+  educationTitle?: InputMaybe<StringFilter>;
+  educationBody?: InputMaybe<StringFilter>;
   body?: InputMaybe<RichTextFilter>;
 };
 
@@ -209,6 +433,642 @@ export type BiographyConnection = Connection & {
   edges?: Maybe<Array<Maybe<BiographyConnectionEdges>>>;
 };
 
+export type HomeHero = Node & Document & {
+  __typename?: 'HomeHero';
+  label: Scalars['String']['output'];
+  name: Scalars['String']['output'];
+  titleLine: Scalars['String']['output'];
+  institution: Scalars['String']['output'];
+  figureLabel: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type HomeHeroFilter = {
+  label?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringFilter>;
+  titleLine?: InputMaybe<StringFilter>;
+  institution?: InputMaybe<StringFilter>;
+  figureLabel?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type HomeHeroConnectionEdges = {
+  __typename?: 'HomeHeroConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<HomeHero>;
+};
+
+export type HomeHeroConnection = Connection & {
+  __typename?: 'HomeHeroConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<HomeHeroConnectionEdges>>>;
+};
+
+export type HomeThemesThemes = {
+  __typename?: 'HomeThemesThemes';
+  id: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+};
+
+export type HomeThemesCriticalAi = {
+  __typename?: 'HomeThemesCriticalAi';
+  machineReading: Scalars['String']['output'];
+  communityReading: Scalars['String']['output'];
+  captionMachine: Scalars['String']['output'];
+  captionCommunity: Scalars['String']['output'];
+  objectId: Scalars['String']['output'];
+  objectLabel: Scalars['String']['output'];
+  machineTags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  machineConfidence: Scalars['String']['output'];
+  machineNote: Scalars['String']['output'];
+  communityLead: Scalars['String']['output'];
+  communityNote: Scalars['String']['output'];
+};
+
+export type HomeThemes = Node & Document & {
+  __typename?: 'HomeThemes';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  themes?: Maybe<Array<Maybe<HomeThemesThemes>>>;
+  criticalAi?: Maybe<HomeThemesCriticalAi>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type HomeThemesThemesFilter = {
+  id?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type HomeThemesCriticalAiFilter = {
+  machineReading?: InputMaybe<StringFilter>;
+  communityReading?: InputMaybe<StringFilter>;
+  captionMachine?: InputMaybe<StringFilter>;
+  captionCommunity?: InputMaybe<StringFilter>;
+  objectId?: InputMaybe<StringFilter>;
+  objectLabel?: InputMaybe<StringFilter>;
+  machineTags?: InputMaybe<StringFilter>;
+  machineConfidence?: InputMaybe<StringFilter>;
+  machineNote?: InputMaybe<StringFilter>;
+  communityLead?: InputMaybe<StringFilter>;
+  communityNote?: InputMaybe<StringFilter>;
+};
+
+export type HomeThemesFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  themes?: InputMaybe<HomeThemesThemesFilter>;
+  criticalAi?: InputMaybe<HomeThemesCriticalAiFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type HomeThemesConnectionEdges = {
+  __typename?: 'HomeThemesConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<HomeThemes>;
+};
+
+export type HomeThemesConnection = Connection & {
+  __typename?: 'HomeThemesConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<HomeThemesConnectionEdges>>>;
+};
+
+export type HomeQuestions = Node & Document & {
+  __typename?: 'HomeQuestions';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  questions?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type HomeQuestionsFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  questions?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type HomeQuestionsConnectionEdges = {
+  __typename?: 'HomeQuestionsConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<HomeQuestions>;
+};
+
+export type HomeQuestionsConnection = Connection & {
+  __typename?: 'HomeQuestionsConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<HomeQuestionsConnectionEdges>>>;
+};
+
+export type HomeProgram = Node & Document & {
+  __typename?: 'HomeProgram';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type HomeProgramFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type HomeProgramConnectionEdges = {
+  __typename?: 'HomeProgramConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<HomeProgram>;
+};
+
+export type HomeProgramConnection = Connection & {
+  __typename?: 'HomeProgramConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<HomeProgramConnectionEdges>>>;
+};
+
+export type HomeProjectsOverview = Node & Document & {
+  __typename?: 'HomeProjectsOverview';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  folioLabel?: Maybe<Scalars['String']['output']>;
+  toolsSectionTitle: Scalars['String']['output'];
+  toolsIntro: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type HomeProjectsOverviewFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  folioLabel?: InputMaybe<StringFilter>;
+  toolsSectionTitle?: InputMaybe<StringFilter>;
+  toolsIntro?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type HomeProjectsOverviewConnectionEdges = {
+  __typename?: 'HomeProjectsOverviewConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<HomeProjectsOverview>;
+};
+
+export type HomeProjectsOverviewConnection = Connection & {
+  __typename?: 'HomeProjectsOverviewConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<HomeProjectsOverviewConnectionEdges>>>;
+};
+
+export type ResearchOverview = Node & Document & {
+  __typename?: 'ResearchOverview';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  folioLabel?: Maybe<Scalars['String']['output']>;
+  programSectionTitle: Scalars['String']['output'];
+  themesSectionTitle: Scalars['String']['output'];
+  monographSectionKicker: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ResearchOverviewFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  folioLabel?: InputMaybe<StringFilter>;
+  programSectionTitle?: InputMaybe<StringFilter>;
+  themesSectionTitle?: InputMaybe<StringFilter>;
+  monographSectionKicker?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ResearchOverviewConnectionEdges = {
+  __typename?: 'ResearchOverviewConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<ResearchOverview>;
+};
+
+export type ResearchOverviewConnection = Connection & {
+  __typename?: 'ResearchOverviewConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ResearchOverviewConnectionEdges>>>;
+};
+
+export type ResearchMethods = Node & Document & {
+  __typename?: 'ResearchMethods';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  folioLabel?: Maybe<Scalars['String']['output']>;
+  methods?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ResearchMethodsFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  folioLabel?: InputMaybe<StringFilter>;
+  methods?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ResearchMethodsConnectionEdges = {
+  __typename?: 'ResearchMethodsConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<ResearchMethods>;
+};
+
+export type ResearchMethodsConnection = Connection & {
+  __typename?: 'ResearchMethodsConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ResearchMethodsConnectionEdges>>>;
+};
+
+export type ProjectLinks = {
+  __typename?: 'ProjectLinks';
+  label: Scalars['String']['output'];
+  url: Scalars['String']['output'];
+  external?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type ProjectHomepageStats = {
+  __typename?: 'ProjectHomepageStats';
+  value: Scalars['String']['output'];
+  label: Scalars['String']['output'];
+  accent: Scalars['String']['output'];
+};
+
+export type ProjectHomepageSpecimensMeta = {
+  __typename?: 'ProjectHomepageSpecimensMeta';
+  label: Scalars['String']['output'];
+  value: Scalars['String']['output'];
+};
+
+export type ProjectHomepageSpecimens = {
+  __typename?: 'ProjectHomepageSpecimens';
+  year: Scalars['String']['output'];
+  id: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  meta?: Maybe<Array<Maybe<ProjectHomepageSpecimensMeta>>>;
+  note: Scalars['String']['output'];
+};
+
+export type ProjectHomepage = {
+  __typename?: 'ProjectHomepage';
+  specimensLabel?: Maybe<Scalars['String']['output']>;
+  specimenCardLabel?: Maybe<Scalars['String']['output']>;
+  stats?: Maybe<Array<Maybe<ProjectHomepageStats>>>;
+  specimens?: Maybe<Array<Maybe<ProjectHomepageSpecimens>>>;
+};
+
+export type Project = Node & Document & {
+  __typename?: 'Project';
+  slug: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  tier: Scalars['String']['output'];
+  status: Scalars['String']['output'];
+  featured?: Maybe<Scalars['Boolean']['output']>;
+  homepageFeatured?: Maybe<Scalars['Boolean']['output']>;
+  homepageItalic?: Maybe<Scalars['Boolean']['output']>;
+  links?: Maybe<Array<Maybe<ProjectLinks>>>;
+  homepage?: Maybe<ProjectHomepage>;
+  summary?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type BooleanFilter = {
+  eq?: InputMaybe<Scalars['Boolean']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ProjectLinksFilter = {
+  label?: InputMaybe<StringFilter>;
+  url?: InputMaybe<StringFilter>;
+  external?: InputMaybe<BooleanFilter>;
+};
+
+export type ProjectHomepageStatsFilter = {
+  value?: InputMaybe<StringFilter>;
+  label?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type ProjectHomepageSpecimensMetaFilter = {
+  label?: InputMaybe<StringFilter>;
+  value?: InputMaybe<StringFilter>;
+};
+
+export type ProjectHomepageSpecimensFilter = {
+  year?: InputMaybe<StringFilter>;
+  id?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  meta?: InputMaybe<ProjectHomepageSpecimensMetaFilter>;
+  note?: InputMaybe<StringFilter>;
+};
+
+export type ProjectHomepageFilter = {
+  specimensLabel?: InputMaybe<StringFilter>;
+  specimenCardLabel?: InputMaybe<StringFilter>;
+  stats?: InputMaybe<ProjectHomepageStatsFilter>;
+  specimens?: InputMaybe<ProjectHomepageSpecimensFilter>;
+};
+
+export type ProjectFilter = {
+  slug?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  tier?: InputMaybe<StringFilter>;
+  status?: InputMaybe<StringFilter>;
+  featured?: InputMaybe<BooleanFilter>;
+  homepageFeatured?: InputMaybe<BooleanFilter>;
+  homepageItalic?: InputMaybe<BooleanFilter>;
+  links?: InputMaybe<ProjectLinksFilter>;
+  homepage?: InputMaybe<ProjectHomepageFilter>;
+  summary?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ProjectConnectionEdges = {
+  __typename?: 'ProjectConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Project>;
+};
+
+export type ProjectConnection = Connection & {
+  __typename?: 'ProjectConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ProjectConnectionEdges>>>;
+};
+
+export type PublicationsBooks = {
+  __typename?: 'PublicationsBooks';
+  id: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  subtitle?: Maybe<Scalars['String']['output']>;
+  venue?: Maybe<Scalars['String']['output']>;
+  publisher?: Maybe<Scalars['String']['output']>;
+  year: Scalars['String']['output'];
+  type?: Maybe<Scalars['String']['output']>;
+  featured?: Maybe<Scalars['Boolean']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  coverImage?: Maybe<Scalars['String']['output']>;
+};
+
+export type PublicationsArticles = {
+  __typename?: 'PublicationsArticles';
+  id: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  venue: Scalars['String']['output'];
+  volume?: Maybe<Scalars['String']['output']>;
+  pages?: Maybe<Scalars['String']['output']>;
+  year: Scalars['String']['output'];
+  type?: Maybe<Scalars['String']['output']>;
+  topic?: Maybe<Scalars['String']['output']>;
+  featured?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type Publications = Node & Document & {
+  __typename?: 'Publications';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  folioLabel?: Maybe<Scalars['String']['output']>;
+  intro?: Maybe<Scalars['String']['output']>;
+  booksSectionTitle: Scalars['String']['output'];
+  articlesSectionTitle: Scalars['String']['output'];
+  filterSectionTitle: Scalars['String']['output'];
+  books?: Maybe<Array<Maybe<PublicationsBooks>>>;
+  articles?: Maybe<Array<Maybe<PublicationsArticles>>>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type PublicationsBooksFilter = {
+  id?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  venue?: InputMaybe<StringFilter>;
+  publisher?: InputMaybe<StringFilter>;
+  year?: InputMaybe<StringFilter>;
+  type?: InputMaybe<StringFilter>;
+  featured?: InputMaybe<BooleanFilter>;
+  description?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<StringFilter>;
+};
+
+export type PublicationsArticlesFilter = {
+  id?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  venue?: InputMaybe<StringFilter>;
+  volume?: InputMaybe<StringFilter>;
+  pages?: InputMaybe<StringFilter>;
+  year?: InputMaybe<StringFilter>;
+  type?: InputMaybe<StringFilter>;
+  topic?: InputMaybe<StringFilter>;
+  featured?: InputMaybe<BooleanFilter>;
+};
+
+export type PublicationsFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  folioLabel?: InputMaybe<StringFilter>;
+  intro?: InputMaybe<StringFilter>;
+  booksSectionTitle?: InputMaybe<StringFilter>;
+  articlesSectionTitle?: InputMaybe<StringFilter>;
+  filterSectionTitle?: InputMaybe<StringFilter>;
+  books?: InputMaybe<PublicationsBooksFilter>;
+  articles?: InputMaybe<PublicationsArticlesFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type PublicationsConnectionEdges = {
+  __typename?: 'PublicationsConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Publications>;
+};
+
+export type PublicationsConnection = Connection & {
+  __typename?: 'PublicationsConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<PublicationsConnectionEdges>>>;
+};
+
+export type PublicHumanities = Node & Document & {
+  __typename?: 'PublicHumanities';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  folioLabel?: Maybe<Scalars['String']['output']>;
+  projectsSectionTitle: Scalars['String']['output'];
+  featuredProjectSlug: Scalars['String']['output'];
+  introThemeId: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type PublicHumanitiesFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  folioLabel?: InputMaybe<StringFilter>;
+  projectsSectionTitle?: InputMaybe<StringFilter>;
+  featuredProjectSlug?: InputMaybe<StringFilter>;
+  introThemeId?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type PublicHumanitiesConnectionEdges = {
+  __typename?: 'PublicHumanitiesConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<PublicHumanities>;
+};
+
+export type PublicHumanitiesConnection = Connection & {
+  __typename?: 'PublicHumanitiesConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<PublicHumanitiesConnectionEdges>>>;
+};
+
+export type TeachingCourses = {
+  __typename?: 'TeachingCourses';
+  id: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  code?: Maybe<Scalars['String']['output']>;
+  semester?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+};
+
+export type Teaching = Node & Document & {
+  __typename?: 'Teaching';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  folioLabel?: Maybe<Scalars['String']['output']>;
+  mentorshipTitle?: Maybe<Scalars['String']['output']>;
+  courses?: Maybe<Array<Maybe<TeachingCourses>>>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type TeachingCoursesFilter = {
+  id?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  code?: InputMaybe<StringFilter>;
+  semester?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type TeachingFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  folioLabel?: InputMaybe<StringFilter>;
+  mentorshipTitle?: InputMaybe<StringFilter>;
+  courses?: InputMaybe<TeachingCoursesFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type TeachingConnectionEdges = {
+  __typename?: 'TeachingConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Teaching>;
+};
+
+export type TeachingConnection = Connection & {
+  __typename?: 'TeachingConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<TeachingConnectionEdges>>>;
+};
+
+export type ContactExternalLinks = {
+  __typename?: 'ContactExternalLinks';
+  label: Scalars['String']['output'];
+  url: Scalars['String']['output'];
+};
+
+export type Contact = Node & Document & {
+  __typename?: 'Contact';
+  title: Scalars['String']['output'];
+  kicker: Scalars['String']['output'];
+  folioLabel?: Maybe<Scalars['String']['output']>;
+  affiliationLabel: Scalars['String']['output'];
+  emailLabel: Scalars['String']['output'];
+  phoneLabel: Scalars['String']['output'];
+  cvLabel: Scalars['String']['output'];
+  cvButtonLabel: Scalars['String']['output'];
+  linksLabel: Scalars['String']['output'];
+  externalLinks?: Maybe<Array<Maybe<ContactExternalLinks>>>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ContactExternalLinksFilter = {
+  label?: InputMaybe<StringFilter>;
+  url?: InputMaybe<StringFilter>;
+};
+
+export type ContactFilter = {
+  title?: InputMaybe<StringFilter>;
+  kicker?: InputMaybe<StringFilter>;
+  folioLabel?: InputMaybe<StringFilter>;
+  affiliationLabel?: InputMaybe<StringFilter>;
+  emailLabel?: InputMaybe<StringFilter>;
+  phoneLabel?: InputMaybe<StringFilter>;
+  cvLabel?: InputMaybe<StringFilter>;
+  cvButtonLabel?: InputMaybe<StringFilter>;
+  linksLabel?: InputMaybe<StringFilter>;
+  externalLinks?: InputMaybe<ContactExternalLinksFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ContactConnectionEdges = {
+  __typename?: 'ContactConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Contact>;
+};
+
+export type ContactConnection = Connection & {
+  __typename?: 'ContactConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ContactConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -218,6 +1078,30 @@ export type Mutation = {
   createFolder: DocumentNode;
   updateBiography: Biography;
   createBiography: Biography;
+  updateHomeHero: HomeHero;
+  createHomeHero: HomeHero;
+  updateHomeThemes: HomeThemes;
+  createHomeThemes: HomeThemes;
+  updateHomeQuestions: HomeQuestions;
+  createHomeQuestions: HomeQuestions;
+  updateHomeProgram: HomeProgram;
+  createHomeProgram: HomeProgram;
+  updateHomeProjectsOverview: HomeProjectsOverview;
+  createHomeProjectsOverview: HomeProjectsOverview;
+  updateResearchOverview: ResearchOverview;
+  createResearchOverview: ResearchOverview;
+  updateResearchMethods: ResearchMethods;
+  createResearchMethods: ResearchMethods;
+  updateProject: Project;
+  createProject: Project;
+  updatePublications: Publications;
+  createPublications: Publications;
+  updatePublicHumanities: PublicHumanities;
+  createPublicHumanities: PublicHumanities;
+  updateTeaching: Teaching;
+  createTeaching: Teaching;
+  updateContact: Contact;
+  createContact: Contact;
 };
 
 
@@ -265,30 +1149,434 @@ export type MutationCreateBiographyArgs = {
   params: BiographyMutation;
 };
 
+
+export type MutationUpdateHomeHeroArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeHeroMutation;
+};
+
+
+export type MutationCreateHomeHeroArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeHeroMutation;
+};
+
+
+export type MutationUpdateHomeThemesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeThemesMutation;
+};
+
+
+export type MutationCreateHomeThemesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeThemesMutation;
+};
+
+
+export type MutationUpdateHomeQuestionsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeQuestionsMutation;
+};
+
+
+export type MutationCreateHomeQuestionsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeQuestionsMutation;
+};
+
+
+export type MutationUpdateHomeProgramArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeProgramMutation;
+};
+
+
+export type MutationCreateHomeProgramArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeProgramMutation;
+};
+
+
+export type MutationUpdateHomeProjectsOverviewArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeProjectsOverviewMutation;
+};
+
+
+export type MutationCreateHomeProjectsOverviewArgs = {
+  relativePath: Scalars['String']['input'];
+  params: HomeProjectsOverviewMutation;
+};
+
+
+export type MutationUpdateResearchOverviewArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ResearchOverviewMutation;
+};
+
+
+export type MutationCreateResearchOverviewArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ResearchOverviewMutation;
+};
+
+
+export type MutationUpdateResearchMethodsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ResearchMethodsMutation;
+};
+
+
+export type MutationCreateResearchMethodsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ResearchMethodsMutation;
+};
+
+
+export type MutationUpdateProjectArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ProjectMutation;
+};
+
+
+export type MutationCreateProjectArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ProjectMutation;
+};
+
+
+export type MutationUpdatePublicationsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PublicationsMutation;
+};
+
+
+export type MutationCreatePublicationsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PublicationsMutation;
+};
+
+
+export type MutationUpdatePublicHumanitiesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PublicHumanitiesMutation;
+};
+
+
+export type MutationCreatePublicHumanitiesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PublicHumanitiesMutation;
+};
+
+
+export type MutationUpdateTeachingArgs = {
+  relativePath: Scalars['String']['input'];
+  params: TeachingMutation;
+};
+
+
+export type MutationCreateTeachingArgs = {
+  relativePath: Scalars['String']['input'];
+  params: TeachingMutation;
+};
+
+
+export type MutationUpdateContactArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ContactMutation;
+};
+
+
+export type MutationCreateContactArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ContactMutation;
+};
+
 export type DocumentUpdateMutation = {
   biography?: InputMaybe<BiographyMutation>;
+  homeHero?: InputMaybe<HomeHeroMutation>;
+  homeThemes?: InputMaybe<HomeThemesMutation>;
+  homeQuestions?: InputMaybe<HomeQuestionsMutation>;
+  homeProgram?: InputMaybe<HomeProgramMutation>;
+  homeProjectsOverview?: InputMaybe<HomeProjectsOverviewMutation>;
+  researchOverview?: InputMaybe<ResearchOverviewMutation>;
+  researchMethods?: InputMaybe<ResearchMethodsMutation>;
+  project?: InputMaybe<ProjectMutation>;
+  publications?: InputMaybe<PublicationsMutation>;
+  publicHumanities?: InputMaybe<PublicHumanitiesMutation>;
+  teaching?: InputMaybe<TeachingMutation>;
+  contact?: InputMaybe<ContactMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
   biography?: InputMaybe<BiographyMutation>;
+  homeHero?: InputMaybe<HomeHeroMutation>;
+  homeThemes?: InputMaybe<HomeThemesMutation>;
+  homeQuestions?: InputMaybe<HomeQuestionsMutation>;
+  homeProgram?: InputMaybe<HomeProgramMutation>;
+  homeProjectsOverview?: InputMaybe<HomeProjectsOverviewMutation>;
+  researchOverview?: InputMaybe<ResearchOverviewMutation>;
+  researchMethods?: InputMaybe<ResearchMethodsMutation>;
+  project?: InputMaybe<ProjectMutation>;
+  publications?: InputMaybe<PublicationsMutation>;
+  publicHumanities?: InputMaybe<PublicHumanitiesMutation>;
+  teaching?: InputMaybe<TeachingMutation>;
+  contact?: InputMaybe<ContactMutation>;
 };
 
 export type BiographyMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   kicker?: InputMaybe<Scalars['String']['input']>;
   folioLabel?: InputMaybe<Scalars['String']['input']>;
+  languagesTitle?: InputMaybe<Scalars['String']['input']>;
+  languagesBody?: InputMaybe<Scalars['String']['input']>;
+  educationTitle?: InputMaybe<Scalars['String']['input']>;
+  educationBody?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type BiographyPartsFragment = { __typename: 'Biography', title: string, kicker: string, folioLabel: string, body?: any | null };
+export type HomeHeroMutation = {
+  label?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  titleLine?: InputMaybe<Scalars['String']['input']>;
+  institution?: InputMaybe<Scalars['String']['input']>;
+  figureLabel?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type HomeThemesThemesMutation = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeThemesCriticalAiMutation = {
+  machineReading?: InputMaybe<Scalars['String']['input']>;
+  communityReading?: InputMaybe<Scalars['String']['input']>;
+  captionMachine?: InputMaybe<Scalars['String']['input']>;
+  captionCommunity?: InputMaybe<Scalars['String']['input']>;
+  objectId?: InputMaybe<Scalars['String']['input']>;
+  objectLabel?: InputMaybe<Scalars['String']['input']>;
+  machineTags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  machineConfidence?: InputMaybe<Scalars['String']['input']>;
+  machineNote?: InputMaybe<Scalars['String']['input']>;
+  communityLead?: InputMaybe<Scalars['String']['input']>;
+  communityNote?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeThemesMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  themes?: InputMaybe<Array<InputMaybe<HomeThemesThemesMutation>>>;
+  criticalAi?: InputMaybe<HomeThemesCriticalAiMutation>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type HomeQuestionsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  questions?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type HomeProgramMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type HomeProjectsOverviewMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  folioLabel?: InputMaybe<Scalars['String']['input']>;
+  toolsSectionTitle?: InputMaybe<Scalars['String']['input']>;
+  toolsIntro?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ResearchOverviewMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  folioLabel?: InputMaybe<Scalars['String']['input']>;
+  programSectionTitle?: InputMaybe<Scalars['String']['input']>;
+  themesSectionTitle?: InputMaybe<Scalars['String']['input']>;
+  monographSectionKicker?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ResearchMethodsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  folioLabel?: InputMaybe<Scalars['String']['input']>;
+  methods?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ProjectLinksMutation = {
+  label?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  external?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ProjectHomepageStatsMutation = {
+  value?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ProjectHomepageSpecimensMetaMutation = {
+  label?: InputMaybe<Scalars['String']['input']>;
+  value?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ProjectHomepageSpecimensMutation = {
+  year?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  meta?: InputMaybe<Array<InputMaybe<ProjectHomepageSpecimensMetaMutation>>>;
+  note?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ProjectHomepageMutation = {
+  specimensLabel?: InputMaybe<Scalars['String']['input']>;
+  specimenCardLabel?: InputMaybe<Scalars['String']['input']>;
+  stats?: InputMaybe<Array<InputMaybe<ProjectHomepageStatsMutation>>>;
+  specimens?: InputMaybe<Array<InputMaybe<ProjectHomepageSpecimensMutation>>>;
+};
+
+export type ProjectMutation = {
+  slug?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  tier?: InputMaybe<Scalars['String']['input']>;
+  status?: InputMaybe<Scalars['String']['input']>;
+  featured?: InputMaybe<Scalars['Boolean']['input']>;
+  homepageFeatured?: InputMaybe<Scalars['Boolean']['input']>;
+  homepageItalic?: InputMaybe<Scalars['Boolean']['input']>;
+  links?: InputMaybe<Array<InputMaybe<ProjectLinksMutation>>>;
+  homepage?: InputMaybe<ProjectHomepageMutation>;
+  summary?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type PublicationsBooksMutation = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  venue?: InputMaybe<Scalars['String']['input']>;
+  publisher?: InputMaybe<Scalars['String']['input']>;
+  year?: InputMaybe<Scalars['String']['input']>;
+  type?: InputMaybe<Scalars['String']['input']>;
+  featured?: InputMaybe<Scalars['Boolean']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PublicationsArticlesMutation = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  venue?: InputMaybe<Scalars['String']['input']>;
+  volume?: InputMaybe<Scalars['String']['input']>;
+  pages?: InputMaybe<Scalars['String']['input']>;
+  year?: InputMaybe<Scalars['String']['input']>;
+  type?: InputMaybe<Scalars['String']['input']>;
+  topic?: InputMaybe<Scalars['String']['input']>;
+  featured?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type PublicationsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  folioLabel?: InputMaybe<Scalars['String']['input']>;
+  intro?: InputMaybe<Scalars['String']['input']>;
+  booksSectionTitle?: InputMaybe<Scalars['String']['input']>;
+  articlesSectionTitle?: InputMaybe<Scalars['String']['input']>;
+  filterSectionTitle?: InputMaybe<Scalars['String']['input']>;
+  books?: InputMaybe<Array<InputMaybe<PublicationsBooksMutation>>>;
+  articles?: InputMaybe<Array<InputMaybe<PublicationsArticlesMutation>>>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type PublicHumanitiesMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  folioLabel?: InputMaybe<Scalars['String']['input']>;
+  projectsSectionTitle?: InputMaybe<Scalars['String']['input']>;
+  featuredProjectSlug?: InputMaybe<Scalars['String']['input']>;
+  introThemeId?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type TeachingCoursesMutation = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  code?: InputMaybe<Scalars['String']['input']>;
+  semester?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type TeachingMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  folioLabel?: InputMaybe<Scalars['String']['input']>;
+  mentorshipTitle?: InputMaybe<Scalars['String']['input']>;
+  courses?: InputMaybe<Array<InputMaybe<TeachingCoursesMutation>>>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ContactExternalLinksMutation = {
+  label?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ContactMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  folioLabel?: InputMaybe<Scalars['String']['input']>;
+  affiliationLabel?: InputMaybe<Scalars['String']['input']>;
+  emailLabel?: InputMaybe<Scalars['String']['input']>;
+  phoneLabel?: InputMaybe<Scalars['String']['input']>;
+  cvLabel?: InputMaybe<Scalars['String']['input']>;
+  cvButtonLabel?: InputMaybe<Scalars['String']['input']>;
+  linksLabel?: InputMaybe<Scalars['String']['input']>;
+  externalLinks?: InputMaybe<Array<InputMaybe<ContactExternalLinksMutation>>>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type BiographyPartsFragment = { __typename: 'Biography', title: string, kicker: string, folioLabel: string, languagesTitle: string, languagesBody: string, educationTitle: string, educationBody: string, body?: any | null };
+
+export type HomeHeroPartsFragment = { __typename: 'HomeHero', label: string, name: string, titleLine: string, institution: string, figureLabel: string, body?: any | null };
+
+export type HomeThemesPartsFragment = { __typename: 'HomeThemes', title: string, kicker: string, body?: any | null, themes?: Array<{ __typename: 'HomeThemesThemes', id: string, title: string, description: string } | null> | null, criticalAi?: { __typename: 'HomeThemesCriticalAi', machineReading: string, communityReading: string, captionMachine: string, captionCommunity: string, objectId: string, objectLabel: string, machineTags?: Array<string | null> | null, machineConfidence: string, machineNote: string, communityLead: string, communityNote: string } | null };
+
+export type HomeQuestionsPartsFragment = { __typename: 'HomeQuestions', title: string, kicker: string, questions?: Array<string | null> | null, body?: any | null };
+
+export type HomeProgramPartsFragment = { __typename: 'HomeProgram', title: string, kicker: string, body?: any | null };
+
+export type HomeProjectsOverviewPartsFragment = { __typename: 'HomeProjectsOverview', title: string, kicker: string, folioLabel?: string | null, toolsSectionTitle: string, toolsIntro: string, body?: any | null };
+
+export type ResearchOverviewPartsFragment = { __typename: 'ResearchOverview', title: string, kicker: string, folioLabel?: string | null, programSectionTitle: string, themesSectionTitle: string, monographSectionKicker: string, body?: any | null };
+
+export type ResearchMethodsPartsFragment = { __typename: 'ResearchMethods', title: string, kicker: string, folioLabel?: string | null, methods?: Array<string | null> | null, body?: any | null };
+
+export type ProjectPartsFragment = { __typename: 'Project', slug: string, title: string, subtitle: string, tier: string, status: string, featured?: boolean | null, homepageFeatured?: boolean | null, homepageItalic?: boolean | null, summary?: string | null, body?: any | null, links?: Array<{ __typename: 'ProjectLinks', label: string, url: string, external?: boolean | null } | null> | null, homepage?: { __typename: 'ProjectHomepage', specimensLabel?: string | null, specimenCardLabel?: string | null, stats?: Array<{ __typename: 'ProjectHomepageStats', value: string, label: string, accent: string } | null> | null, specimens?: Array<{ __typename: 'ProjectHomepageSpecimens', year: string, id: string, title: string, note: string, meta?: Array<{ __typename: 'ProjectHomepageSpecimensMeta', label: string, value: string } | null> | null } | null> | null } | null };
+
+export type PublicationsPartsFragment = { __typename: 'Publications', title: string, kicker: string, folioLabel?: string | null, intro?: string | null, booksSectionTitle: string, articlesSectionTitle: string, filterSectionTitle: string, body?: any | null, books?: Array<{ __typename: 'PublicationsBooks', id: string, title: string, subtitle?: string | null, venue?: string | null, publisher?: string | null, year: string, type?: string | null, featured?: boolean | null, description?: string | null, coverImage?: string | null } | null> | null, articles?: Array<{ __typename: 'PublicationsArticles', id: string, title: string, venue: string, volume?: string | null, pages?: string | null, year: string, type?: string | null, topic?: string | null, featured?: boolean | null } | null> | null };
+
+export type PublicHumanitiesPartsFragment = { __typename: 'PublicHumanities', title: string, kicker: string, folioLabel?: string | null, projectsSectionTitle: string, featuredProjectSlug: string, introThemeId: string, body?: any | null };
+
+export type TeachingPartsFragment = { __typename: 'Teaching', title: string, kicker: string, folioLabel?: string | null, mentorshipTitle?: string | null, body?: any | null, courses?: Array<{ __typename: 'TeachingCourses', id: string, title: string, code?: string | null, semester?: string | null, description?: string | null } | null> | null };
+
+export type ContactPartsFragment = { __typename: 'Contact', title: string, kicker: string, folioLabel?: string | null, affiliationLabel: string, emailLabel: string, phoneLabel: string, cvLabel: string, cvButtonLabel: string, linksLabel: string, body?: any | null, externalLinks?: Array<{ __typename: 'ContactExternalLinks', label: string, url: string } | null> | null };
 
 export type BiographyQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type BiographyQuery = { __typename?: 'Query', biography: { __typename: 'Biography', id: string, title: string, kicker: string, folioLabel: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type BiographyQuery = { __typename?: 'Query', biography: { __typename: 'Biography', id: string, title: string, kicker: string, folioLabel: string, languagesTitle: string, languagesBody: string, educationTitle: string, educationBody: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type BiographyConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -300,7 +1588,235 @@ export type BiographyConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BiographyConnectionQuery = { __typename?: 'Query', biographyConnection: { __typename?: 'BiographyConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BiographyConnectionEdges', cursor: string, node?: { __typename: 'Biography', id: string, title: string, kicker: string, folioLabel: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type BiographyConnectionQuery = { __typename?: 'Query', biographyConnection: { __typename?: 'BiographyConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BiographyConnectionEdges', cursor: string, node?: { __typename: 'Biography', id: string, title: string, kicker: string, folioLabel: string, languagesTitle: string, languagesBody: string, educationTitle: string, educationBody: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type HomeHeroQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type HomeHeroQuery = { __typename?: 'Query', homeHero: { __typename: 'HomeHero', id: string, label: string, name: string, titleLine: string, institution: string, figureLabel: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type HomeHeroConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeHeroFilter>;
+}>;
+
+
+export type HomeHeroConnectionQuery = { __typename?: 'Query', homeHeroConnection: { __typename?: 'HomeHeroConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeHeroConnectionEdges', cursor: string, node?: { __typename: 'HomeHero', id: string, label: string, name: string, titleLine: string, institution: string, figureLabel: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type HomeThemesQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type HomeThemesQuery = { __typename?: 'Query', homeThemes: { __typename: 'HomeThemes', id: string, title: string, kicker: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, themes?: Array<{ __typename: 'HomeThemesThemes', id: string, title: string, description: string } | null> | null, criticalAi?: { __typename: 'HomeThemesCriticalAi', machineReading: string, communityReading: string, captionMachine: string, captionCommunity: string, objectId: string, objectLabel: string, machineTags?: Array<string | null> | null, machineConfidence: string, machineNote: string, communityLead: string, communityNote: string } | null } };
+
+export type HomeThemesConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeThemesFilter>;
+}>;
+
+
+export type HomeThemesConnectionQuery = { __typename?: 'Query', homeThemesConnection: { __typename?: 'HomeThemesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeThemesConnectionEdges', cursor: string, node?: { __typename: 'HomeThemes', id: string, title: string, kicker: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, themes?: Array<{ __typename: 'HomeThemesThemes', id: string, title: string, description: string } | null> | null, criticalAi?: { __typename: 'HomeThemesCriticalAi', machineReading: string, communityReading: string, captionMachine: string, captionCommunity: string, objectId: string, objectLabel: string, machineTags?: Array<string | null> | null, machineConfidence: string, machineNote: string, communityLead: string, communityNote: string } | null } | null } | null> | null } };
+
+export type HomeQuestionsQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type HomeQuestionsQuery = { __typename?: 'Query', homeQuestions: { __typename: 'HomeQuestions', id: string, title: string, kicker: string, questions?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type HomeQuestionsConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeQuestionsFilter>;
+}>;
+
+
+export type HomeQuestionsConnectionQuery = { __typename?: 'Query', homeQuestionsConnection: { __typename?: 'HomeQuestionsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeQuestionsConnectionEdges', cursor: string, node?: { __typename: 'HomeQuestions', id: string, title: string, kicker: string, questions?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type HomeProgramQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type HomeProgramQuery = { __typename?: 'Query', homeProgram: { __typename: 'HomeProgram', id: string, title: string, kicker: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type HomeProgramConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeProgramFilter>;
+}>;
+
+
+export type HomeProgramConnectionQuery = { __typename?: 'Query', homeProgramConnection: { __typename?: 'HomeProgramConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeProgramConnectionEdges', cursor: string, node?: { __typename: 'HomeProgram', id: string, title: string, kicker: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type HomeProjectsOverviewQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type HomeProjectsOverviewQuery = { __typename?: 'Query', homeProjectsOverview: { __typename: 'HomeProjectsOverview', id: string, title: string, kicker: string, folioLabel?: string | null, toolsSectionTitle: string, toolsIntro: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type HomeProjectsOverviewConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<HomeProjectsOverviewFilter>;
+}>;
+
+
+export type HomeProjectsOverviewConnectionQuery = { __typename?: 'Query', homeProjectsOverviewConnection: { __typename?: 'HomeProjectsOverviewConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeProjectsOverviewConnectionEdges', cursor: string, node?: { __typename: 'HomeProjectsOverview', id: string, title: string, kicker: string, folioLabel?: string | null, toolsSectionTitle: string, toolsIntro: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ResearchOverviewQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ResearchOverviewQuery = { __typename?: 'Query', researchOverview: { __typename: 'ResearchOverview', id: string, title: string, kicker: string, folioLabel?: string | null, programSectionTitle: string, themesSectionTitle: string, monographSectionKicker: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ResearchOverviewConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ResearchOverviewFilter>;
+}>;
+
+
+export type ResearchOverviewConnectionQuery = { __typename?: 'Query', researchOverviewConnection: { __typename?: 'ResearchOverviewConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ResearchOverviewConnectionEdges', cursor: string, node?: { __typename: 'ResearchOverview', id: string, title: string, kicker: string, folioLabel?: string | null, programSectionTitle: string, themesSectionTitle: string, monographSectionKicker: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ResearchMethodsQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ResearchMethodsQuery = { __typename?: 'Query', researchMethods: { __typename: 'ResearchMethods', id: string, title: string, kicker: string, folioLabel?: string | null, methods?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ResearchMethodsConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ResearchMethodsFilter>;
+}>;
+
+
+export type ResearchMethodsConnectionQuery = { __typename?: 'Query', researchMethodsConnection: { __typename?: 'ResearchMethodsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ResearchMethodsConnectionEdges', cursor: string, node?: { __typename: 'ResearchMethods', id: string, title: string, kicker: string, folioLabel?: string | null, methods?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ProjectQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ProjectQuery = { __typename?: 'Query', project: { __typename: 'Project', id: string, slug: string, title: string, subtitle: string, tier: string, status: string, featured?: boolean | null, homepageFeatured?: boolean | null, homepageItalic?: boolean | null, summary?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, links?: Array<{ __typename: 'ProjectLinks', label: string, url: string, external?: boolean | null } | null> | null, homepage?: { __typename: 'ProjectHomepage', specimensLabel?: string | null, specimenCardLabel?: string | null, stats?: Array<{ __typename: 'ProjectHomepageStats', value: string, label: string, accent: string } | null> | null, specimens?: Array<{ __typename: 'ProjectHomepageSpecimens', year: string, id: string, title: string, note: string, meta?: Array<{ __typename: 'ProjectHomepageSpecimensMeta', label: string, value: string } | null> | null } | null> | null } | null } };
+
+export type ProjectConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ProjectFilter>;
+}>;
+
+
+export type ProjectConnectionQuery = { __typename?: 'Query', projectConnection: { __typename?: 'ProjectConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ProjectConnectionEdges', cursor: string, node?: { __typename: 'Project', id: string, slug: string, title: string, subtitle: string, tier: string, status: string, featured?: boolean | null, homepageFeatured?: boolean | null, homepageItalic?: boolean | null, summary?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, links?: Array<{ __typename: 'ProjectLinks', label: string, url: string, external?: boolean | null } | null> | null, homepage?: { __typename: 'ProjectHomepage', specimensLabel?: string | null, specimenCardLabel?: string | null, stats?: Array<{ __typename: 'ProjectHomepageStats', value: string, label: string, accent: string } | null> | null, specimens?: Array<{ __typename: 'ProjectHomepageSpecimens', year: string, id: string, title: string, note: string, meta?: Array<{ __typename: 'ProjectHomepageSpecimensMeta', label: string, value: string } | null> | null } | null> | null } | null } | null } | null> | null } };
+
+export type PublicationsQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type PublicationsQuery = { __typename?: 'Query', publications: { __typename: 'Publications', id: string, title: string, kicker: string, folioLabel?: string | null, intro?: string | null, booksSectionTitle: string, articlesSectionTitle: string, filterSectionTitle: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, books?: Array<{ __typename: 'PublicationsBooks', id: string, title: string, subtitle?: string | null, venue?: string | null, publisher?: string | null, year: string, type?: string | null, featured?: boolean | null, description?: string | null, coverImage?: string | null } | null> | null, articles?: Array<{ __typename: 'PublicationsArticles', id: string, title: string, venue: string, volume?: string | null, pages?: string | null, year: string, type?: string | null, topic?: string | null, featured?: boolean | null } | null> | null } };
+
+export type PublicationsConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PublicationsFilter>;
+}>;
+
+
+export type PublicationsConnectionQuery = { __typename?: 'Query', publicationsConnection: { __typename?: 'PublicationsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PublicationsConnectionEdges', cursor: string, node?: { __typename: 'Publications', id: string, title: string, kicker: string, folioLabel?: string | null, intro?: string | null, booksSectionTitle: string, articlesSectionTitle: string, filterSectionTitle: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, books?: Array<{ __typename: 'PublicationsBooks', id: string, title: string, subtitle?: string | null, venue?: string | null, publisher?: string | null, year: string, type?: string | null, featured?: boolean | null, description?: string | null, coverImage?: string | null } | null> | null, articles?: Array<{ __typename: 'PublicationsArticles', id: string, title: string, venue: string, volume?: string | null, pages?: string | null, year: string, type?: string | null, topic?: string | null, featured?: boolean | null } | null> | null } | null } | null> | null } };
+
+export type PublicHumanitiesQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type PublicHumanitiesQuery = { __typename?: 'Query', publicHumanities: { __typename: 'PublicHumanities', id: string, title: string, kicker: string, folioLabel?: string | null, projectsSectionTitle: string, featuredProjectSlug: string, introThemeId: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type PublicHumanitiesConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PublicHumanitiesFilter>;
+}>;
+
+
+export type PublicHumanitiesConnectionQuery = { __typename?: 'Query', publicHumanitiesConnection: { __typename?: 'PublicHumanitiesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PublicHumanitiesConnectionEdges', cursor: string, node?: { __typename: 'PublicHumanities', id: string, title: string, kicker: string, folioLabel?: string | null, projectsSectionTitle: string, featuredProjectSlug: string, introThemeId: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type TeachingQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type TeachingQuery = { __typename?: 'Query', teaching: { __typename: 'Teaching', id: string, title: string, kicker: string, folioLabel?: string | null, mentorshipTitle?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, courses?: Array<{ __typename: 'TeachingCourses', id: string, title: string, code?: string | null, semester?: string | null, description?: string | null } | null> | null } };
+
+export type TeachingConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<TeachingFilter>;
+}>;
+
+
+export type TeachingConnectionQuery = { __typename?: 'Query', teachingConnection: { __typename?: 'TeachingConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'TeachingConnectionEdges', cursor: string, node?: { __typename: 'Teaching', id: string, title: string, kicker: string, folioLabel?: string | null, mentorshipTitle?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, courses?: Array<{ __typename: 'TeachingCourses', id: string, title: string, code?: string | null, semester?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+
+export type ContactQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ContactQuery = { __typename?: 'Query', contact: { __typename: 'Contact', id: string, title: string, kicker: string, folioLabel?: string | null, affiliationLabel: string, emailLabel: string, phoneLabel: string, cvLabel: string, cvButtonLabel: string, linksLabel: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, externalLinks?: Array<{ __typename: 'ContactExternalLinks', label: string, url: string } | null> | null } };
+
+export type ContactConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ContactFilter>;
+}>;
+
+
+export type ContactConnectionQuery = { __typename?: 'Query', contactConnection: { __typename?: 'ContactConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ContactConnectionEdges', cursor: string, node?: { __typename: 'Contact', id: string, title: string, kicker: string, folioLabel?: string | null, affiliationLabel: string, emailLabel: string, phoneLabel: string, cvLabel: string, cvButtonLabel: string, linksLabel: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, externalLinks?: Array<{ __typename: 'ContactExternalLinks', label: string, url: string } | null> | null } | null } | null> | null } };
 
 export const BiographyPartsFragmentDoc = gql`
     fragment BiographyParts on Biography {
@@ -308,6 +1824,231 @@ export const BiographyPartsFragmentDoc = gql`
   title
   kicker
   folioLabel
+  languagesTitle
+  languagesBody
+  educationTitle
+  educationBody
+  body
+}
+    `;
+export const HomeHeroPartsFragmentDoc = gql`
+    fragment HomeHeroParts on HomeHero {
+  __typename
+  label
+  name
+  titleLine
+  institution
+  figureLabel
+  body
+}
+    `;
+export const HomeThemesPartsFragmentDoc = gql`
+    fragment HomeThemesParts on HomeThemes {
+  __typename
+  title
+  kicker
+  themes {
+    __typename
+    id
+    title
+    description
+  }
+  criticalAi {
+    __typename
+    machineReading
+    communityReading
+    captionMachine
+    captionCommunity
+    objectId
+    objectLabel
+    machineTags
+    machineConfidence
+    machineNote
+    communityLead
+    communityNote
+  }
+  body
+}
+    `;
+export const HomeQuestionsPartsFragmentDoc = gql`
+    fragment HomeQuestionsParts on HomeQuestions {
+  __typename
+  title
+  kicker
+  questions
+  body
+}
+    `;
+export const HomeProgramPartsFragmentDoc = gql`
+    fragment HomeProgramParts on HomeProgram {
+  __typename
+  title
+  kicker
+  body
+}
+    `;
+export const HomeProjectsOverviewPartsFragmentDoc = gql`
+    fragment HomeProjectsOverviewParts on HomeProjectsOverview {
+  __typename
+  title
+  kicker
+  folioLabel
+  toolsSectionTitle
+  toolsIntro
+  body
+}
+    `;
+export const ResearchOverviewPartsFragmentDoc = gql`
+    fragment ResearchOverviewParts on ResearchOverview {
+  __typename
+  title
+  kicker
+  folioLabel
+  programSectionTitle
+  themesSectionTitle
+  monographSectionKicker
+  body
+}
+    `;
+export const ResearchMethodsPartsFragmentDoc = gql`
+    fragment ResearchMethodsParts on ResearchMethods {
+  __typename
+  title
+  kicker
+  folioLabel
+  methods
+  body
+}
+    `;
+export const ProjectPartsFragmentDoc = gql`
+    fragment ProjectParts on Project {
+  __typename
+  slug
+  title
+  subtitle
+  tier
+  status
+  featured
+  homepageFeatured
+  homepageItalic
+  links {
+    __typename
+    label
+    url
+    external
+  }
+  homepage {
+    __typename
+    specimensLabel
+    specimenCardLabel
+    stats {
+      __typename
+      value
+      label
+      accent
+    }
+    specimens {
+      __typename
+      year
+      id
+      title
+      meta {
+        __typename
+        label
+        value
+      }
+      note
+    }
+  }
+  summary
+  body
+}
+    `;
+export const PublicationsPartsFragmentDoc = gql`
+    fragment PublicationsParts on Publications {
+  __typename
+  title
+  kicker
+  folioLabel
+  intro
+  booksSectionTitle
+  articlesSectionTitle
+  filterSectionTitle
+  books {
+    __typename
+    id
+    title
+    subtitle
+    venue
+    publisher
+    year
+    type
+    featured
+    description
+    coverImage
+  }
+  articles {
+    __typename
+    id
+    title
+    venue
+    volume
+    pages
+    year
+    type
+    topic
+    featured
+  }
+  body
+}
+    `;
+export const PublicHumanitiesPartsFragmentDoc = gql`
+    fragment PublicHumanitiesParts on PublicHumanities {
+  __typename
+  title
+  kicker
+  folioLabel
+  projectsSectionTitle
+  featuredProjectSlug
+  introThemeId
+  body
+}
+    `;
+export const TeachingPartsFragmentDoc = gql`
+    fragment TeachingParts on Teaching {
+  __typename
+  title
+  kicker
+  folioLabel
+  mentorshipTitle
+  courses {
+    __typename
+    id
+    title
+    code
+    semester
+    description
+  }
+  body
+}
+    `;
+export const ContactPartsFragmentDoc = gql`
+    fragment ContactParts on Contact {
+  __typename
+  title
+  kicker
+  folioLabel
+  affiliationLabel
+  emailLabel
+  phoneLabel
+  cvLabel
+  cvButtonLabel
+  linksLabel
+  externalLinks {
+    __typename
+    label
+    url
+  }
   body
 }
     `;
@@ -368,6 +2109,690 @@ export const BiographyConnectionDocument = gql`
   }
 }
     ${BiographyPartsFragmentDoc}`;
+export const HomeHeroDocument = gql`
+    query homeHero($relativePath: String!) {
+  homeHero(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...HomeHeroParts
+  }
+}
+    ${HomeHeroPartsFragmentDoc}`;
+export const HomeHeroConnectionDocument = gql`
+    query homeHeroConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: HomeHeroFilter) {
+  homeHeroConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...HomeHeroParts
+      }
+    }
+  }
+}
+    ${HomeHeroPartsFragmentDoc}`;
+export const HomeThemesDocument = gql`
+    query homeThemes($relativePath: String!) {
+  homeThemes(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...HomeThemesParts
+  }
+}
+    ${HomeThemesPartsFragmentDoc}`;
+export const HomeThemesConnectionDocument = gql`
+    query homeThemesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: HomeThemesFilter) {
+  homeThemesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...HomeThemesParts
+      }
+    }
+  }
+}
+    ${HomeThemesPartsFragmentDoc}`;
+export const HomeQuestionsDocument = gql`
+    query homeQuestions($relativePath: String!) {
+  homeQuestions(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...HomeQuestionsParts
+  }
+}
+    ${HomeQuestionsPartsFragmentDoc}`;
+export const HomeQuestionsConnectionDocument = gql`
+    query homeQuestionsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: HomeQuestionsFilter) {
+  homeQuestionsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...HomeQuestionsParts
+      }
+    }
+  }
+}
+    ${HomeQuestionsPartsFragmentDoc}`;
+export const HomeProgramDocument = gql`
+    query homeProgram($relativePath: String!) {
+  homeProgram(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...HomeProgramParts
+  }
+}
+    ${HomeProgramPartsFragmentDoc}`;
+export const HomeProgramConnectionDocument = gql`
+    query homeProgramConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: HomeProgramFilter) {
+  homeProgramConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...HomeProgramParts
+      }
+    }
+  }
+}
+    ${HomeProgramPartsFragmentDoc}`;
+export const HomeProjectsOverviewDocument = gql`
+    query homeProjectsOverview($relativePath: String!) {
+  homeProjectsOverview(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...HomeProjectsOverviewParts
+  }
+}
+    ${HomeProjectsOverviewPartsFragmentDoc}`;
+export const HomeProjectsOverviewConnectionDocument = gql`
+    query homeProjectsOverviewConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: HomeProjectsOverviewFilter) {
+  homeProjectsOverviewConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...HomeProjectsOverviewParts
+      }
+    }
+  }
+}
+    ${HomeProjectsOverviewPartsFragmentDoc}`;
+export const ResearchOverviewDocument = gql`
+    query researchOverview($relativePath: String!) {
+  researchOverview(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ResearchOverviewParts
+  }
+}
+    ${ResearchOverviewPartsFragmentDoc}`;
+export const ResearchOverviewConnectionDocument = gql`
+    query researchOverviewConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ResearchOverviewFilter) {
+  researchOverviewConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ResearchOverviewParts
+      }
+    }
+  }
+}
+    ${ResearchOverviewPartsFragmentDoc}`;
+export const ResearchMethodsDocument = gql`
+    query researchMethods($relativePath: String!) {
+  researchMethods(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ResearchMethodsParts
+  }
+}
+    ${ResearchMethodsPartsFragmentDoc}`;
+export const ResearchMethodsConnectionDocument = gql`
+    query researchMethodsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ResearchMethodsFilter) {
+  researchMethodsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ResearchMethodsParts
+      }
+    }
+  }
+}
+    ${ResearchMethodsPartsFragmentDoc}`;
+export const ProjectDocument = gql`
+    query project($relativePath: String!) {
+  project(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ProjectParts
+  }
+}
+    ${ProjectPartsFragmentDoc}`;
+export const ProjectConnectionDocument = gql`
+    query projectConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ProjectFilter) {
+  projectConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ProjectParts
+      }
+    }
+  }
+}
+    ${ProjectPartsFragmentDoc}`;
+export const PublicationsDocument = gql`
+    query publications($relativePath: String!) {
+  publications(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PublicationsParts
+  }
+}
+    ${PublicationsPartsFragmentDoc}`;
+export const PublicationsConnectionDocument = gql`
+    query publicationsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PublicationsFilter) {
+  publicationsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PublicationsParts
+      }
+    }
+  }
+}
+    ${PublicationsPartsFragmentDoc}`;
+export const PublicHumanitiesDocument = gql`
+    query publicHumanities($relativePath: String!) {
+  publicHumanities(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PublicHumanitiesParts
+  }
+}
+    ${PublicHumanitiesPartsFragmentDoc}`;
+export const PublicHumanitiesConnectionDocument = gql`
+    query publicHumanitiesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PublicHumanitiesFilter) {
+  publicHumanitiesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PublicHumanitiesParts
+      }
+    }
+  }
+}
+    ${PublicHumanitiesPartsFragmentDoc}`;
+export const TeachingDocument = gql`
+    query teaching($relativePath: String!) {
+  teaching(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...TeachingParts
+  }
+}
+    ${TeachingPartsFragmentDoc}`;
+export const TeachingConnectionDocument = gql`
+    query teachingConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: TeachingFilter) {
+  teachingConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...TeachingParts
+      }
+    }
+  }
+}
+    ${TeachingPartsFragmentDoc}`;
+export const ContactDocument = gql`
+    query contact($relativePath: String!) {
+  contact(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ContactParts
+  }
+}
+    ${ContactPartsFragmentDoc}`;
+export const ContactConnectionDocument = gql`
+    query contactConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ContactFilter) {
+  contactConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ContactParts
+      }
+    }
+  }
+}
+    ${ContactPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -376,6 +2801,78 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     biographyConnection(variables?: BiographyConnectionQueryVariables, options?: C): Promise<{data: BiographyConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BiographyConnectionQueryVariables, query: string}> {
         return requester<{data: BiographyConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BiographyConnectionQueryVariables, query: string}, BiographyConnectionQueryVariables>(BiographyConnectionDocument, variables, options);
+      },
+    homeHero(variables: HomeHeroQueryVariables, options?: C): Promise<{data: HomeHeroQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeHeroQueryVariables, query: string}> {
+        return requester<{data: HomeHeroQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeHeroQueryVariables, query: string}, HomeHeroQueryVariables>(HomeHeroDocument, variables, options);
+      },
+    homeHeroConnection(variables?: HomeHeroConnectionQueryVariables, options?: C): Promise<{data: HomeHeroConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeHeroConnectionQueryVariables, query: string}> {
+        return requester<{data: HomeHeroConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeHeroConnectionQueryVariables, query: string}, HomeHeroConnectionQueryVariables>(HomeHeroConnectionDocument, variables, options);
+      },
+    homeThemes(variables: HomeThemesQueryVariables, options?: C): Promise<{data: HomeThemesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeThemesQueryVariables, query: string}> {
+        return requester<{data: HomeThemesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeThemesQueryVariables, query: string}, HomeThemesQueryVariables>(HomeThemesDocument, variables, options);
+      },
+    homeThemesConnection(variables?: HomeThemesConnectionQueryVariables, options?: C): Promise<{data: HomeThemesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeThemesConnectionQueryVariables, query: string}> {
+        return requester<{data: HomeThemesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeThemesConnectionQueryVariables, query: string}, HomeThemesConnectionQueryVariables>(HomeThemesConnectionDocument, variables, options);
+      },
+    homeQuestions(variables: HomeQuestionsQueryVariables, options?: C): Promise<{data: HomeQuestionsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeQuestionsQueryVariables, query: string}> {
+        return requester<{data: HomeQuestionsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeQuestionsQueryVariables, query: string}, HomeQuestionsQueryVariables>(HomeQuestionsDocument, variables, options);
+      },
+    homeQuestionsConnection(variables?: HomeQuestionsConnectionQueryVariables, options?: C): Promise<{data: HomeQuestionsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeQuestionsConnectionQueryVariables, query: string}> {
+        return requester<{data: HomeQuestionsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeQuestionsConnectionQueryVariables, query: string}, HomeQuestionsConnectionQueryVariables>(HomeQuestionsConnectionDocument, variables, options);
+      },
+    homeProgram(variables: HomeProgramQueryVariables, options?: C): Promise<{data: HomeProgramQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProgramQueryVariables, query: string}> {
+        return requester<{data: HomeProgramQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProgramQueryVariables, query: string}, HomeProgramQueryVariables>(HomeProgramDocument, variables, options);
+      },
+    homeProgramConnection(variables?: HomeProgramConnectionQueryVariables, options?: C): Promise<{data: HomeProgramConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProgramConnectionQueryVariables, query: string}> {
+        return requester<{data: HomeProgramConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProgramConnectionQueryVariables, query: string}, HomeProgramConnectionQueryVariables>(HomeProgramConnectionDocument, variables, options);
+      },
+    homeProjectsOverview(variables: HomeProjectsOverviewQueryVariables, options?: C): Promise<{data: HomeProjectsOverviewQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProjectsOverviewQueryVariables, query: string}> {
+        return requester<{data: HomeProjectsOverviewQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProjectsOverviewQueryVariables, query: string}, HomeProjectsOverviewQueryVariables>(HomeProjectsOverviewDocument, variables, options);
+      },
+    homeProjectsOverviewConnection(variables?: HomeProjectsOverviewConnectionQueryVariables, options?: C): Promise<{data: HomeProjectsOverviewConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProjectsOverviewConnectionQueryVariables, query: string}> {
+        return requester<{data: HomeProjectsOverviewConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeProjectsOverviewConnectionQueryVariables, query: string}, HomeProjectsOverviewConnectionQueryVariables>(HomeProjectsOverviewConnectionDocument, variables, options);
+      },
+    researchOverview(variables: ResearchOverviewQueryVariables, options?: C): Promise<{data: ResearchOverviewQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchOverviewQueryVariables, query: string}> {
+        return requester<{data: ResearchOverviewQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchOverviewQueryVariables, query: string}, ResearchOverviewQueryVariables>(ResearchOverviewDocument, variables, options);
+      },
+    researchOverviewConnection(variables?: ResearchOverviewConnectionQueryVariables, options?: C): Promise<{data: ResearchOverviewConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchOverviewConnectionQueryVariables, query: string}> {
+        return requester<{data: ResearchOverviewConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchOverviewConnectionQueryVariables, query: string}, ResearchOverviewConnectionQueryVariables>(ResearchOverviewConnectionDocument, variables, options);
+      },
+    researchMethods(variables: ResearchMethodsQueryVariables, options?: C): Promise<{data: ResearchMethodsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchMethodsQueryVariables, query: string}> {
+        return requester<{data: ResearchMethodsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchMethodsQueryVariables, query: string}, ResearchMethodsQueryVariables>(ResearchMethodsDocument, variables, options);
+      },
+    researchMethodsConnection(variables?: ResearchMethodsConnectionQueryVariables, options?: C): Promise<{data: ResearchMethodsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchMethodsConnectionQueryVariables, query: string}> {
+        return requester<{data: ResearchMethodsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResearchMethodsConnectionQueryVariables, query: string}, ResearchMethodsConnectionQueryVariables>(ResearchMethodsConnectionDocument, variables, options);
+      },
+    project(variables: ProjectQueryVariables, options?: C): Promise<{data: ProjectQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProjectQueryVariables, query: string}> {
+        return requester<{data: ProjectQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProjectQueryVariables, query: string}, ProjectQueryVariables>(ProjectDocument, variables, options);
+      },
+    projectConnection(variables?: ProjectConnectionQueryVariables, options?: C): Promise<{data: ProjectConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProjectConnectionQueryVariables, query: string}> {
+        return requester<{data: ProjectConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProjectConnectionQueryVariables, query: string}, ProjectConnectionQueryVariables>(ProjectConnectionDocument, variables, options);
+      },
+    publications(variables: PublicationsQueryVariables, options?: C): Promise<{data: PublicationsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicationsQueryVariables, query: string}> {
+        return requester<{data: PublicationsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicationsQueryVariables, query: string}, PublicationsQueryVariables>(PublicationsDocument, variables, options);
+      },
+    publicationsConnection(variables?: PublicationsConnectionQueryVariables, options?: C): Promise<{data: PublicationsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicationsConnectionQueryVariables, query: string}> {
+        return requester<{data: PublicationsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicationsConnectionQueryVariables, query: string}, PublicationsConnectionQueryVariables>(PublicationsConnectionDocument, variables, options);
+      },
+    publicHumanities(variables: PublicHumanitiesQueryVariables, options?: C): Promise<{data: PublicHumanitiesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicHumanitiesQueryVariables, query: string}> {
+        return requester<{data: PublicHumanitiesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicHumanitiesQueryVariables, query: string}, PublicHumanitiesQueryVariables>(PublicHumanitiesDocument, variables, options);
+      },
+    publicHumanitiesConnection(variables?: PublicHumanitiesConnectionQueryVariables, options?: C): Promise<{data: PublicHumanitiesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicHumanitiesConnectionQueryVariables, query: string}> {
+        return requester<{data: PublicHumanitiesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PublicHumanitiesConnectionQueryVariables, query: string}, PublicHumanitiesConnectionQueryVariables>(PublicHumanitiesConnectionDocument, variables, options);
+      },
+    teaching(variables: TeachingQueryVariables, options?: C): Promise<{data: TeachingQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: TeachingQueryVariables, query: string}> {
+        return requester<{data: TeachingQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: TeachingQueryVariables, query: string}, TeachingQueryVariables>(TeachingDocument, variables, options);
+      },
+    teachingConnection(variables?: TeachingConnectionQueryVariables, options?: C): Promise<{data: TeachingConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: TeachingConnectionQueryVariables, query: string}> {
+        return requester<{data: TeachingConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: TeachingConnectionQueryVariables, query: string}, TeachingConnectionQueryVariables>(TeachingConnectionDocument, variables, options);
+      },
+    contact(variables: ContactQueryVariables, options?: C): Promise<{data: ContactQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactQueryVariables, query: string}> {
+        return requester<{data: ContactQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactQueryVariables, query: string}, ContactQueryVariables>(ContactDocument, variables, options);
+      },
+    contactConnection(variables?: ContactConnectionQueryVariables, options?: C): Promise<{data: ContactConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactConnectionQueryVariables, query: string}> {
+        return requester<{data: ContactConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactConnectionQueryVariables, query: string}, ContactConnectionQueryVariables>(ContactConnectionDocument, variables, options);
       }
     };
   }

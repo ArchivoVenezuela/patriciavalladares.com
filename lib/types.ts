@@ -141,12 +141,15 @@ export interface ProjectDetail extends Project {
   homepageFeatured?: boolean;
   homepageItalic?: boolean;
   homepage?: {
+    specimensLabel?: string;
+    specimenCardLabel?: string;
     stats?: { value: string; label: string; accent: "oxblood" | "forest" }[];
     specimens?: {
       year: string;
       id: string;
       title: string;
-      meta: [string, string][];
+      /** Prefer {label,value}; legacy tuple pairs still accepted. */
+      meta: ({ label: string; value: string } | [string, string])[];
       note: string;
     }[];
   };

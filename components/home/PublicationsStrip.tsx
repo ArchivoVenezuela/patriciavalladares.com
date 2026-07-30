@@ -4,25 +4,36 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { draftSectionTitles, homePublications } from "@/content/homeDesign";
 import { cn } from "@/lib/utils";
 
-export function PublicationsStrip() {
+export interface HomePublicationItem {
+  year: string;
+  title: string;
+  type: string;
+  featured: boolean;
+}
+
+interface PublicationsStripProps {
+  title: string;
+  publications: HomePublicationItem[];
+}
+
+export function PublicationsStrip({ title, publications }: PublicationsStripProps) {
   return (
     <HomeSection id="publications" sectionId="publications" variant="default" anchored className="border-b border-border">
       <EditorialContainer narrow>
-        <PlateKicker className="mb-[clamp(1.75rem,4vh,2.75rem)]">{draftSectionTitles.publications}</PlateKicker>
+        <PlateKicker className="mb-[clamp(1.75rem,4vh,2.75rem)]">{title}</PlateKicker>
         <SectionTitle id="publications-heading" className="sr-only">
-          {draftSectionTitles.publications}
+          {title}
         </SectionTitle>
         <Reveal>
-          {homePublications.map((pub, i) => (
+          {publications.map((pub, i) => (
             <div
               key={`${pub.year}-${pub.title}`}
               className={cn(
                 "grid items-baseline gap-x-[clamp(0.875rem,2.5vw,2rem)] border-t border-border py-5",
                 "grid-cols-[60px_1fr_auto]",
-                i === homePublications.length - 1 && "border-b",
+                i === publications.length - 1 && "border-b",
               )}
             >
               <span className={cn("font-mono text-[11px]", pub.featured ? "text-oxblood" : "text-ink")}>{pub.year}</span>

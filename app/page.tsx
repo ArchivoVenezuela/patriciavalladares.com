@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import { ArchiveSection } from "@/components/home/ArchiveSection";
-import { CorrespondenceFooter } from "@/components/home/CorrespondenceFooter";
-import { CriticalAI } from "@/components/home/CriticalAI";
-import { HomeHeader } from "@/components/home/HomeHeader";
-import { HomeResearchQuestions } from "@/components/home/HomeResearchQuestions";
-import { HomeResearchThemes } from "@/components/home/HomeResearchThemes";
-import { InstrumentsIndex } from "@/components/home/InstrumentsIndex";
-import { Masthead } from "@/components/home/Masthead";
-import { PublicationsStrip } from "@/components/home/PublicationsStrip";
-import {
-  archiveLede,
-  archiveSpecimens,
-  archiveStats,
-  criticalAiDemo,
-  criticalAiSection,
-} from "@/content/homeDesign";
+import { HomePageClient } from "./HomePageClient";
+import { client } from "@/tina/__generated__/client";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/content/site";
 
@@ -23,22 +9,71 @@ export const metadata: Metadata = createPageMetadata({
   path: "/",
 });
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [
+    heroResult,
+    themesResult,
+    questionsResult,
+    publicationsResult,
+    connectionResult,
+    contactResult,
+    projectsOverviewResult,
+    programResult,
+  ] = await Promise.all([
+    client.queries.homeHero({ relativePath: "hero.mdx" }),
+    client.queries.homeThemes({ relativePath: "research-themes.mdx" }),
+    client.queries.homeQuestions({ relativePath: "research-questions.mdx" }),
+    client.queries.publications({ relativePath: "overview.mdx" }),
+    client.queries.projectConnection(),
+    client.queries.contact({ relativePath: "contact.mdx" }),
+    client.queries.homeProjectsOverview({
+      relativePath: "projects-overview.mdx",
+    }),
+    client.queries.homeProgram({ relativePath: "research-program.mdx" }),
+  ]);
+
   return (
-    <div className="min-h-screen bg-paper">
-      <HomeHeader />
-      <Masthead />
-      <InstrumentsIndex />
-      <HomeResearchThemes />
-      <HomeResearchQuestions />
-      <ArchiveSection
-        lede={archiveLede}
-        stats={archiveStats}
-        specimens={archiveSpecimens}
-      />
-      <CriticalAI section={criticalAiSection} demo={criticalAiDemo} />
-      <PublicationsStrip />
-      <CorrespondenceFooter />
-    </div>
+    <HomePageClient
+      hero={{
+        query: heroResult.query,
+        variables: heroResult.variables,
+        data: heroResult.data,
+      }}
+      themes={{
+        query: themesResult.query,
+        variables: themesResult.variables,
+        data: themesResult.data,
+      }}
+      questions={{
+        query: questionsResult.query,
+        variables: questionsResult.variables,
+        data: questionsResult.data,
+      }}
+      publications={{
+        query: publicationsResult.query,
+        variables: publicationsResult.variables,
+        data: publicationsResult.data,
+      }}
+      connection={{
+        query: connectionResult.query,
+        variables: connectionResult.variables,
+        data: connectionResult.data,
+      }}
+      contact={{
+        query: contactResult.query,
+        variables: contactResult.variables,
+        data: contactResult.data,
+      }}
+      projectsOverview={{
+        query: projectsOverviewResult.query,
+        variables: projectsOverviewResult.variables,
+        data: projectsOverviewResult.data,
+      }}
+      program={{
+        query: programResult.query,
+        variables: programResult.variables,
+        data: programResult.data,
+      }}
+    />
   );
 }

@@ -4,11 +4,25 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { getResearchQuestionsContent, sectionTitles } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
-export function HomeResearchQuestions() {
-  const { questions } = getResearchQuestionsContent();
+interface HomeResearchQuestionsProps {
+  kicker: string;
+  title: string;
+  questions: string[];
+  tinaFields?: {
+    kicker?: string;
+    title?: string;
+    questions?: string;
+  };
+}
+
+export function HomeResearchQuestions({
+  kicker,
+  title,
+  questions,
+  tinaFields,
+}: HomeResearchQuestionsProps) {
   return (
     <HomeSection
       id="inquiry"
@@ -20,13 +34,18 @@ export function HomeResearchQuestions() {
     >
       <EditorialContainer>
         <div className="mb-[clamp(2rem,5vh,3.25rem)]">
-          <PlateKicker>{sectionTitles.researchProgram}</PlateKicker>
-          <SectionTitle id="inquiry-heading">
-            Current Research Questions
-          </SectionTitle>
+          <div data-tina-field={tinaFields?.kicker}>
+            <PlateKicker>{kicker}</PlateKicker>
+          </div>
+          <div data-tina-field={tinaFields?.title}>
+            <SectionTitle id="inquiry-heading">{title}</SectionTitle>
+          </div>
         </div>
         <Reveal>
-          <ol className="m-0 list-none border-t-2 border-t-ink p-0">
+          <ol
+            className="m-0 list-none border-t-2 border-t-ink p-0"
+            data-tina-field={tinaFields?.questions}
+          >
             {questions.map((question, index) => (
               <li
                 key={question}

@@ -3,5 +3,218 @@ fragment BiographyParts on Biography {
   title
   kicker
   folioLabel
+  languagesTitle
+  languagesBody
+  educationTitle
+  educationBody
+  body
+}
+
+fragment HomeHeroParts on HomeHero {
+  __typename
+  label
+  name
+  titleLine
+  institution
+  figureLabel
+  body
+}
+
+fragment HomeThemesParts on HomeThemes {
+  __typename
+  title
+  kicker
+  themes {
+    __typename
+    id
+    title
+    description
+  }
+  criticalAi {
+    __typename
+    machineReading
+    communityReading
+    captionMachine
+    captionCommunity
+    objectId
+    objectLabel
+    machineTags
+    machineConfidence
+    machineNote
+    communityLead
+    communityNote
+  }
+  body
+}
+
+fragment HomeQuestionsParts on HomeQuestions {
+  __typename
+  title
+  kicker
+  questions
+  body
+}
+
+fragment HomeProgramParts on HomeProgram {
+  __typename
+  title
+  kicker
+  body
+}
+
+fragment HomeProjectsOverviewParts on HomeProjectsOverview {
+  __typename
+  title
+  kicker
+  folioLabel
+  toolsSectionTitle
+  toolsIntro
+  body
+}
+
+fragment ResearchOverviewParts on ResearchOverview {
+  __typename
+  title
+  kicker
+  folioLabel
+  programSectionTitle
+  themesSectionTitle
+  monographSectionKicker
+  body
+}
+
+fragment ResearchMethodsParts on ResearchMethods {
+  __typename
+  title
+  kicker
+  folioLabel
+  methods
+  body
+}
+
+fragment ProjectParts on Project {
+  __typename
+  slug
+  title
+  subtitle
+  tier
+  status
+  featured
+  homepageFeatured
+  homepageItalic
+  links {
+    __typename
+    label
+    url
+    external
+  }
+  homepage {
+    __typename
+    specimensLabel
+    specimenCardLabel
+    stats {
+      __typename
+      value
+      label
+      accent
+    }
+    specimens {
+      __typename
+      year
+      id
+      title
+      meta {
+        __typename
+        label
+        value
+      }
+      note
+    }
+  }
+  summary
+  body
+}
+
+fragment PublicationsParts on Publications {
+  __typename
+  title
+  kicker
+  folioLabel
+  intro
+  booksSectionTitle
+  articlesSectionTitle
+  filterSectionTitle
+  books {
+    __typename
+    id
+    title
+    subtitle
+    venue
+    publisher
+    year
+    type
+    featured
+    description
+    coverImage
+  }
+  articles {
+    __typename
+    id
+    title
+    venue
+    volume
+    pages
+    year
+    type
+    topic
+    featured
+  }
+  body
+}
+
+fragment PublicHumanitiesParts on PublicHumanities {
+  __typename
+  title
+  kicker
+  folioLabel
+  projectsSectionTitle
+  featuredProjectSlug
+  introThemeId
+  body
+}
+
+fragment TeachingParts on Teaching {
+  __typename
+  title
+  kicker
+  folioLabel
+  mentorshipTitle
+  courses {
+    __typename
+    id
+    title
+    code
+    semester
+    description
+  }
+  body
+}
+
+fragment ContactParts on Contact {
+  __typename
+  title
+  kicker
+  folioLabel
+  affiliationLabel
+  emailLabel
+  phoneLabel
+  cvLabel
+  cvButtonLabel
+  linksLabel
+  externalLinks {
+    __typename
+    label
+    url
+  }
   body
 }

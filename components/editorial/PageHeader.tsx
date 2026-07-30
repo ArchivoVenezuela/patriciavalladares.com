@@ -7,6 +7,13 @@ interface PageHeaderProps {
   title: string;
   description?: string;
   folioLabel?: string;
+  /** Optional Tina contextual-editing field paths */
+  tinaFields?: {
+    kicker?: string;
+    title?: string;
+    description?: string;
+    folioLabel?: string;
+  };
 }
 
 export function PageHeader({
@@ -14,18 +21,33 @@ export function PageHeader({
   title,
   description,
   folioLabel,
+  tinaFields,
 }: PageHeaderProps) {
   return (
     <header className="mb-12 max-w-3xl">
       <div className="mb-4 flex items-start justify-between gap-4">
-        {kicker && <Kicker>{kicker}</Kicker>}
-        {folioLabel && <FolioMarker label={folioLabel} />}
+        {kicker && (
+          <div data-tina-field={tinaFields?.kicker}>
+            <Kicker>{kicker}</Kicker>
+          </div>
+        )}
+        {folioLabel && (
+          <div data-tina-field={tinaFields?.folioLabel}>
+            <FolioMarker label={folioLabel} />
+          </div>
+        )}
       </div>
-      <h1 className="font-display text-display font-semibold text-ink">
+      <h1
+        className="font-display text-display font-semibold text-ink"
+        data-tina-field={tinaFields?.title}
+      >
         {title}
       </h1>
       {description && (
-        <p className="mt-5 text-lg leading-relaxed text-ink-muted">
+        <p
+          className="mt-5 text-lg leading-relaxed text-ink-muted"
+          data-tina-field={tinaFields?.description}
+        >
           {description}
         </p>
       )}

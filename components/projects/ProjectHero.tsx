@@ -5,19 +5,36 @@ import { StatusBadge } from "./StatusBadge";
 
 interface ProjectHeroProps {
   project: ProjectDetail;
+  /** Optional Tina contextual-editing field paths */
+  tinaFields?: {
+    title?: string;
+    subtitle?: string;
+    summary?: string;
+  };
 }
 
-export function ProjectHero({ project }: ProjectHeroProps) {
+export function ProjectHero({ project, tinaFields }: ProjectHeroProps) {
   return (
     <header className="mb-12">
       <div className="grid gap-10 lg:grid-cols-[1fr_min(320px,40%)] lg:items-start">
         <div>
           <Kicker>{project.category}</Kicker>
-          <h1 className="mt-3 font-display text-display font-semibold text-ink">
+          <h1
+            className="mt-3 font-display text-display font-semibold text-ink"
+            data-tina-field={tinaFields?.title}
+          >
             {project.title}
           </h1>
-          <p className="mt-3 text-lg italic text-ink-muted">{project.subtitle}</p>
-          <p className="mt-5 max-w-2xl leading-relaxed text-ink-muted">
+          <p
+            className="mt-3 text-lg italic text-ink-muted"
+            data-tina-field={tinaFields?.subtitle}
+          >
+            {project.subtitle}
+          </p>
+          <p
+            className="mt-5 max-w-2xl leading-relaxed text-ink-muted"
+            data-tina-field={tinaFields?.summary}
+          >
             {project.summary}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">

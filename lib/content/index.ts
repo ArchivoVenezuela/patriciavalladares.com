@@ -44,11 +44,14 @@ export interface ProjectFrontmatter {
   links?: ProjectLink[];
   homepage?: {
     stats?: { value: string; label: string; accent: "oxblood" | "forest" }[];
+    specimensLabel?: string;
+    specimenCardLabel?: string;
     specimens?: {
       year: string;
       id: string;
       title: string;
-      meta: [string, string][];
+      /** Prefer {label,value}; legacy tuple pairs still accepted. */
+      meta: ({ label: string; value: string } | [string, string])[];
       note: string;
     }[];
   };
@@ -177,74 +180,7 @@ function projectFromMdx(relativePath: string): ProjectDetail {
   };
 }
 
-const TOOL_PROJECTS: ProjectDetail[] = [
-  {
-    slug: "maracas",
-    title: "MARACAS",
-    subtitle: "Archival workflow tool",
-    tier: "infrastructure",
-    category: "Archival workflow tool",
-    summary: TODO,
-    status: "active",
-    role: TODO,
-    collaborators: [],
-    tags: [],
-    problem: TODO,
-    whyItMatters: TODO,
-    researchQuestions: [],
-    methodology: TODO,
-    technologies: [],
-    outcomes: [],
-    relatedPublicationIds: [],
-    relatedCourseIds: [],
-    relatedPublicHumanitiesIds: [],
-    links: [],
-  },
-  {
-    slug: "arepa",
-    title: "AREPA",
-    subtitle: "Digital preservation tool",
-    tier: "infrastructure",
-    category: "Digital preservation tool",
-    summary: TODO,
-    status: "active",
-    role: TODO,
-    collaborators: [],
-    tags: [],
-    problem: TODO,
-    whyItMatters: TODO,
-    researchQuestions: [],
-    methodology: TODO,
-    technologies: [],
-    outcomes: [],
-    relatedPublicationIds: [],
-    relatedCourseIds: [],
-    relatedPublicHumanitiesIds: [],
-    links: [],
-  },
-  {
-    slug: "avocado",
-    title: "AVOCADO",
-    subtitle: "Bibliographic metadata tool",
-    tier: "infrastructure",
-    category: "Bibliographic metadata tool",
-    summary: TODO,
-    status: "active",
-    role: TODO,
-    collaborators: [],
-    tags: [],
-    problem: TODO,
-    whyItMatters: TODO,
-    researchQuestions: [],
-    methodology: TODO,
-    technologies: [],
-    outcomes: [],
-    relatedPublicationIds: [],
-    relatedCourseIds: [],
-    relatedPublicHumanitiesIds: [],
-    links: [],
-  },
-];
+const TOOL_PROJECT_SLUGS = ["maracas", "arepa", "avocado"] as const;
 
 export function getAllProjects(): ProjectDetail[] {
   const mdxProjects = listMdxFiles("projects").map((file) =>
@@ -258,13 +194,18 @@ export function getAllProjects(): ProjectDetail[] {
     "graduate-certificate-applied-dh",
     "ai-lab-humanities",
     "fieldscholar",
+    ...TOOL_PROJECT_SLUGS,
   ];
 
   const ordered = manuscriptOrder
     .map((slug) => mdxProjects.find((p) => p.slug === slug))
     .filter((p): p is ProjectDetail => Boolean(p));
 
-  return [...ordered, ...TOOL_PROJECTS];
+  const extras = mdxProjects.filter(
+    (p) => !manuscriptOrder.includes(p.slug as (typeof manuscriptOrder)[number]),
+  );
+
+  return [...ordered, ...extras];
 }
 
 export function getProjectBySlug(slug: string): ProjectDetail | undefined {

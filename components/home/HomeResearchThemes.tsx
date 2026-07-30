@@ -5,10 +5,24 @@ import { HomeSection } from "@/components/ui/HomeSection";
 import { PlateKicker } from "@/components/ui/PlateKicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { getResearchThemesContent, sectionTitles } from "@/lib/content";
 
-export function HomeResearchThemes() {
-  const { themes, title } = getResearchThemesContent();
+interface HomeResearchThemesProps {
+  kicker: string;
+  title: string;
+  themes: { id: string; title: string; description: string }[];
+  tinaFields?: {
+    kicker?: string;
+    title?: string;
+    themes?: string;
+  };
+}
+
+export function HomeResearchThemes({
+  kicker,
+  title,
+  themes,
+  tinaFields,
+}: HomeResearchThemesProps) {
   return (
     <HomeSection
       id="themes"
@@ -20,22 +34,28 @@ export function HomeResearchThemes() {
     >
       <EditorialContainer>
         <div className="mb-[clamp(2rem,5vh,3.25rem)]">
-          <PlateKicker>{sectionTitles.researchThemes}</PlateKicker>
-          <SectionTitle id="themes-heading">{title}</SectionTitle>
+          <div data-tina-field={tinaFields?.kicker}>
+            <PlateKicker>{kicker}</PlateKicker>
+          </div>
+          <div data-tina-field={tinaFields?.title}>
+            <SectionTitle id="themes-heading">{title}</SectionTitle>
+          </div>
         </div>
-        <Reveal className="space-y-2">
-          {themes.map((theme, index) => (
-            <ThemeIndexItem
-              key={theme.id}
-              theme={{
-                id: theme.id,
-                number: String(index + 1).padStart(2, "0"),
-                title: theme.title,
-                description: theme.description,
-              }}
-            />
-          ))}
-        </Reveal>
+        <div data-tina-field={tinaFields?.themes}>
+          <Reveal className="space-y-2">
+            {themes.map((theme, index) => (
+              <ThemeIndexItem
+                key={theme.id}
+                theme={{
+                  id: theme.id,
+                  number: String(index + 1).padStart(2, "0"),
+                  title: theme.title,
+                  description: theme.description,
+                }}
+              />
+            ))}
+          </Reveal>
+        </div>
         <p className="mt-10">
           <Link
             href="/research"
